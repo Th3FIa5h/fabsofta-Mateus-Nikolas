@@ -24,7 +24,7 @@
  - Deletar contas utilizados
  - Configurar alertas de pagamentos pendentes
  - Configurar objetivos
- - Configurar limite de gastos
+ - Configurar limites
  - Configurar gráficos dinâmicos
  - Configurar relatórios mensais
  - Gerar spot de backup
@@ -105,7 +105,7 @@ Repositório com o sistema de controle financeiro que será utilizado como proje
 
  - Como um usuário eu gostaria de configurar os objetivos como: Alcançar 5000 reais para comprar um celular, ou guardar dinheiro para comprar um carro.
 
- - Como um usuário eu gostaria de configurar os limites de gastos como: Gastei 50% do que estava esperado gastar no mês, ainda falta 50%.
+ - Como um usuário eu gostaria de configurar os limites como: Só posso gastar até 15% do meu salário com lazeres, quero ver quanto falta para atingir o limite.
 
  - Como um usuário eu gostaria de configurar os gráficos dinâmicos como: Gráficos de acordo com os gastos variáveis do mês, gráficos de acordo com as receitas do mês, gráficos de acordo com os investimentos do mês.
  
@@ -129,4 +129,12 @@ Repositório com o sistema de controle financeiro que será utilizado como proje
   - Compilar o código Java em bytecode (.class)
   
 
+### Criação do Projeto no VSCode com Maven
 
+1) teclar F1
+2) digitar Java e escolher a opção create new java project
+3) project type: MAVEN
+4) Archetype: No Archetype
+5) pacote digitar domínio ao contrário ex: br.univille
+6) nome do projeto em minúsculo
+7) usar a pasta sugerida pelo vscode
