@@ -65,37 +65,37 @@ Repositório com o sistema de controle financeiro que será utilizado como proje
 
 ## Histórias de Usuário
 
- - Como um usuário eu gostaria de cadastrar as minhas despesas fixas como: Assinaturas, Faculdade e Financiamentos.
+ - Como um usuário eu gostaria de cadastrar as minhas despesas fixas como: Compras Parceladas, Assinaturas, Estudo, Energia, Água, Gás e Financiamentos.
 
- - Como um usuário eu gostaria de cadastrar as minhas despesas variáveis como: Fatura do cartão de crédito, Lazer, Energia, Água e Outros.
+ - Como um usuário eu gostaria de cadastrar as minhas despesas variáveis como: Fatura do cartão de crédito, Lazer, Saídas Avulsas.
 
- - Como um usuário eu gostaria de cadastrar as minhas receitas mensais como: Salário e Entradas Avulsas.
+ - Como um usuário eu gostaria de cadastrar as minhas receitas mensais como: Salário, e Entradas Avulsas.
 
- - Como um usuário eu gostaria de cadastrar os meus cartões de débito e crédito como: Número do cartão, CVC, Data de Validade, Nome do Cliente, Banco e Bandeira do cartão.
+ - Como um usuário eu gostaria de cadastrar os meus cartões de débito e crédito como: Número do cartão, CVV, Data de Validade, Nome do Cliente, Banco e Bandeira do cartão.
 
  - Como um usuário eu gostaria de cadastrar os investimentos como: Em curto prazo, médio prazo e longo prazo.
 
  - Como um usuário eu gostaria de cadastrar as contas utilizadas como: Número da conta, Agência e Nome do Banco.
 
- - Como um usuário eu gostaria de editar as minhas despesas fixas como: Assinaturas, Faculdade e Financiamentos.
+ - Como um usuário eu gostaria de editar as minhas despesas fixas como: Compras Parceladas, Assinaturas, Estudo, Energia, Água, Gás e Financiamentos.
 
- - Como um usuário eu gostaria de editar as minhas despesas variáveis como: Fatura do cartão de crédito, Lazer, Energia, Água e Outros.
+ - Como um usuário eu gostaria de editar as minhas despesas variáveis como: Fatura do cartão de crédito, Lazer, Saídas Avulsas.
 
  - Como um usuário eu gostaria de editar as minhas receitas mensais como: Salário e Entradas Avulsas.
 
- - Como um usuário eu gostaria de editar os meus cartões de débito e crédito como: Número do cartão, CVC, Data de Validade, Nome do Cliente, Banco e Bandeira do cartão.
+ - Como um usuário eu gostaria de editar os meus cartões de débito e crédito como: Número do cartão, CVV, Data de Validade, Nome do Cliente, Banco e Bandeira do cartão.
 
  - Como um usuário eu gostaria de editar os investimentos como: Em curto prazo, médio prazo e longo prazo.
 
  - Como um usuário eu gostaria de editar as contas utilizadas como: Número da conta, Agência e Nome do Banco.
 
- - Como um usuário eu gostaria de deletar as minhas despesas fixas como: Assinaturas, Faculdade e Financiamentos.
+ - Como um usuário eu gostaria de deletar as minhas despesas fixas como: Compras Parceladas, Assinaturas, Estudo, Energia, Água, Gás e Financiamentos.
 
- - Como um usuário eu gostaria de deletar as minhas despesas variáveis como: Fatura do cartão de crédito, Lazer, Energia, Água e Outros.
+ - Como um usuário eu gostaria de deletar as minhas despesas variáveis como: Fatura do cartão de crédito, Lazer, Saídas Avulsas.
 
  - Como um usuário eu gostaria de deletar as minhas receitas mensais como: Salário e Entradas Avulsas.
 
- - Como um usuário eu gostaria de deletar os meus cartões de débito e crédito como: Número do cartão, CVC, Data de Validade, Nome do Cliente, Banco e Bandeira do cartão.
+ - Como um usuário eu gostaria de deletar os meus cartões de débito e crédito como: Número do cartão, CVV, Data de Validade, Nome do Cliente, Banco e Bandeira do cartão.
 
  - Como um usuário eu gostaria de deletar os investimentos como: Em curto prazo, médio prazo e longo prazo.
 
