@@ -1,8 +1,31 @@
-package br.univille;
+package br.univille.entity;
 
 public class Pessoa {
     private String nome;
+    private Long id;
+    private String endereco;
 
+    private Cidade cidade;
+    
+    
+    public Cidade getCidade() {
+        return cidade;
+    }
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getEndereco() {
+        return endereco;
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
     //Construtor (mesmo nome da classe, não tem retorno)
     public Pessoa(String nome) {
         //this referencia a classe
@@ -11,7 +34,7 @@ public class Pessoa {
     //Dois metodos com assinatura semelhante = polimofirmo
     public Pessoa() {
     }
-    
+
     public String getNome() {
         return nome;
     }

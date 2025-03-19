@@ -1,4 +1,4 @@
-package br.univille;
+package br.univille.entity;
 
 public class Main {
     public static void main(String[] args) {
