@@ -1,5 +1,4 @@
 package br.univille.entity;
-
 import br.univille.entity.Pessoa;
 
 public class Cidade {

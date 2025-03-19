@@ -1,9 +1,21 @@
 package br.univille.entity;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Pessoa {
     private String nome;
     private Long id;
     private String endereco;
+
+    private ArrayList<Pokemon> listaPokemon = new ArrayList<Pokemon>();
+
+    public ArrayList<Pokemon> getListaPokemon(){
+        return listaPokemon;
+    }
+
+    public void setListaPokemon(ArrayList<Pokemon> listaPokemon){
+        this.listaPokemon = listaPokemon;
+    }
 
     private Cidade cidade;
     
