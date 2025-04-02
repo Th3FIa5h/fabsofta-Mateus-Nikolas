@@ -1,0 +1,143 @@
+@startuml
+package br.univille.projetofabsoftfinancas.entity {
+    class Despesa {
+        - Long id
+        - String descricao
+        - float valor
+        - LocalDate data
+        - String tipo
+        --
+        + getId(): Long
+        + setId(Long id): void
+        + getDescricao(): String
+        + setDescricao(String descricao): void
+        + getValor(): float
+        + setValor(float valor): void
+        + getData(): LocalDate
+        + setData(LocalDate data): void
+        + getTipo(): String
+        + setTipo(String tipo): void
+    }
+
+    class Receita {
+        - Long id
+        - String descricao
+        - float valor
+        - LocalDate data
+        - String tipo
+        --
+        + getId(): Long
+        + setId(Long id): void
+        + getDescricao(): String
+        + setDescricao(String descricao): void
+        + getValor(): float
+        + setValor(float valor): void
+        + getData(): LocalDate
+        + setData(LocalDate data): void
+        + getTipo(): String
+        + setTipo(String tipo): void
+    }
+
+    class Cartao {
+        - Long id
+        - String numero
+        - String cvv
+        - String validade
+        - String nomeCliente
+        - String banco
+        - String bandeira
+        --
+        + getId(): Long
+        + setId(Long id): void
+        + getNumero(): String
+        + setNumero(String numero): void
+        + getCvv(): String
+        + setCvv(String cvv): void
+        + getValidade(): String
+        + setValidade(String validade): void
+        + getNomeCliente(): String
+        + setNomeCliente(String nomeCliente): void
+        + getBanco(): String
+        + setBanco(String banco): void
+        + getBandeira(): String
+        + setBandeira(String bandeira): void
+    }
+
+    class Investimento {
+        - Long id
+        - String tipo
+        - float valor
+        - String descricao
+        --
+        + getId(): Long
+        + setId(Long id): void
+        + getTipo(): String
+        + setTipo(String tipo): void
+        + getValor(): float
+        + setValor(float valor): void
+        + getDescricao(): String
+        + setDescricao(String descricao): void
+    }
+
+    class Conta {
+        - Long id
+        - String numeroConta
+        - String agencia
+        - String nomeBanco
+        --
+        + getId(): Long
+        + setId(Long id): void
+        + getNumeroConta(): String
+        + setNumeroConta(String numeroConta): void
+        + getAgencia(): String
+        + setAgencia(String agencia): void
+        + getNomeBanco(): String
+        + setNomeBanco(String nomeBanco): void
+    }
+
+    class AlertaPagamento {
+        - Long id
+        - String descricao
+        - LocalDate dataVencimento
+        - boolean status
+        --
+        + getId(): Long
+        + setId(Long id): void
+        + getDescricao(): String
+        + setDescricao(String descricao): void
+        + getDataVencimento(): LocalDate
+        + setDataVencimento(LocalDate dataVencimento): void
+        + isStatus(): boolean
+        + setStatus(boolean status): void
+    }
+
+    class LimiteGastos {
+        - Long id
+        - float valorTotal
+        - float valorGasto
+        --
+        + getId(): Long
+        + setId(Long id): void
+        + getValorTotal(): float
+        + setValorTotal(float valorTotal): void
+        + getValorGasto(): float
+        + setValorGasto(float valorGasto): void
+    }
+
+    class Objetivo {
+        - Long id
+        - String descricao
+        - float valorAlvo
+        - float progressoAtual
+        --
+        + getId(): Long
+        + setId(Long id): void
+        + getDescricao(): String
+        + setDescricao(String descricao): void
+        + getValorAlvo(): float
+        + setValorAlvo(float valorAlvo): void
+        + getProgressoAtual(): float
+        + setProgressoAtual(float progressoAtual): void
+    }
+}
+@enduml

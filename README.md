@@ -65,17 +65,33 @@ Repositório com o sistema de controle financeiro que será utilizado como proje
 
 ## Histórias de Usuário
 
- - Como um usuário eu gostaria de cadastrar as minhas despesas fixas como: Compras Parceladas, Assinaturas, Estudo, Energia, Água, Gás e Financiamentos.
+ - Como um usuário eu gostaria de registrar as minhas despesas fixas como: Compras Parceladas, Assinaturas, Estudo, Energia, Água, Gás e Financiamentos.
 
- - Como um usuário eu gostaria de cadastrar as minhas despesas variáveis como: Fatura do cartão de crédito, Lazer, Saídas Avulsas.
+ - Como um usuário eu gostaria de registrar as minhas despesas variáveis como: Fatura do cartão de crédito, Lazer, Saídas Avulsas.
 
- - Como um usuário eu gostaria de cadastrar as minhas receitas mensais como: Salário, e Entradas Avulsas.
+ - Como um usuário eu gostaria de registrar as minhas receitas mensais como: Salário, e Entradas Avulsas.
 
- - Como um usuário eu gostaria de cadastrar os meus cartões de débito e crédito como: Número do cartão, CVV, Data de Validade, Nome do Cliente, Banco e Bandeira do cartão.
+ - Como um usuário eu gostaria de registrar os meus cartões de débito e crédito como: Número do cartão, CVV, Data de Validade, Nome do Cliente, Banco e Bandeira do cartão.
 
- - Como um usuário eu gostaria de cadastrar os investimentos como: Em curto prazo, médio prazo e longo prazo.
+ - Como um usuário eu gostaria de registrar os investimentos como: Em curto prazo, médio prazo e longo prazo.
 
- - Como um usuário eu gostaria de cadastrar as contas utilizadas como: Número da conta, Agência e Nome do Banco.
+ - Como um usuário eu gostaria de registrar as contas utilizadas como: Número da conta, Agência e Nome do Banco.
+
+ - Como um usuário eu gostaria de vincular as despesas à conta do usuário.
+
+ - Como um usuário eu gostaria de vincular as receitas à conta do usuário.
+
+ - Como um usuário eu gostaria de vincular os cartões à conta do usuário.
+
+ - Como um usuário eu gostaria de vincular os investimentos à conta do usuário.
+
+ - Como um usuário eu gostaria de vincular os alertas de pagamento com as despesas fixas como: compras parceladas, assinaturas, etc.
+
+ - Como um usuário eu gostaria de vincular o limite de gastos com as despesas.
+
+ - Como um usuário eu gostaria de vincular as despesas ao cartão.
+
+ - Como um usuário eu gostaria de vincular as receitas ao cartão. 
 
  - Como um usuário eu gostaria de editar as minhas despesas fixas como: Compras Parceladas, Assinaturas, Estudo, Energia, Água, Gás e Financiamentos.
 
