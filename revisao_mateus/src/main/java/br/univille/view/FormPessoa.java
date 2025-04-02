@@ -10,7 +10,6 @@ import br.univille.controller.ControllerPessoa;
 
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.lang.ModuleLayer.Controller;
 
 public class FormPessoa extends JFrame {
     
