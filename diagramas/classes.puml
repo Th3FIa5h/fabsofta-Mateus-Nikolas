@@ -1,24 +1,5 @@
 @startuml
 package br.univille.projetofabsoftfinancas.entity {
-    class Despesa {
-        - Long id
-        - String descricao
-        - float valor
-        - LocalDate data
-        - String tipo
-        --
-        + getId(): Long
-        + setId(Long id): void
-        + getDescricao(): String
-        + setDescricao(String descricao): void
-        + getValor(): float
-        + setValor(float valor): void
-        + getData(): LocalDate
-        + setData(LocalDate data): void
-        + getTipo(): String
-        + setTipo(String tipo): void
-    }
-
     class Receita {
         - Long id
         - String descricao
@@ -26,16 +7,26 @@ package br.univille.projetofabsoftfinancas.entity {
         - LocalDate data
         - String tipo
         --
-        + getId(): Long
-        + setId(Long id): void
-        + getDescricao(): String
-        + setDescricao(String descricao): void
-        + getValor(): float
-        + setValor(float valor): void
-        + getData(): LocalDate
-        + setData(LocalDate data): void
-        + getTipo(): String
-        + setTipo(String tipo): void
+        + Conta conta
+        + Cartao cartao
+    }
+
+    class Despesa {
+        - Long id
+        - String descricao
+        - float valor
+        - LocalDate data
+        - String tipo
+        --
+        + Conta conta
+        + Cartao cartao
+    }
+
+    class Conta {
+        - Long id
+        - String numero
+        - String agencia
+        - String banco
     }
 
     class Cartao {
@@ -47,52 +38,16 @@ package br.univille.projetofabsoftfinancas.entity {
         - String banco
         - String bandeira
         --
-        + getId(): Long
-        + setId(Long id): void
-        + getNumero(): String
-        + setNumero(String numero): void
-        + getCvv(): String
-        + setCvv(String cvv): void
-        + getValidade(): String
-        + setValidade(String validade): void
-        + getNomeCliente(): String
-        + setNomeCliente(String nomeCliente): void
-        + getBanco(): String
-        + setBanco(String banco): void
-        + getBandeira(): String
-        + setBandeira(String bandeira): void
+        + Conta conta
     }
 
     class Investimento {
         - Long id
-        - String tipo
-        - float valor
         - String descricao
+        - float valor
+        - String prazo
         --
-        + getId(): Long
-        + setId(Long id): void
-        + getTipo(): String
-        + setTipo(String tipo): void
-        + getValor(): float
-        + setValor(float valor): void
-        + getDescricao(): String
-        + setDescricao(String descricao): void
-    }
-
-    class Conta {
-        - Long id
-        - String numeroConta
-        - String agencia
-        - String nomeBanco
-        --
-        + getId(): Long
-        + setId(Long id): void
-        + getNumeroConta(): String
-        + setNumeroConta(String numeroConta): void
-        + getAgencia(): String
-        + setAgencia(String agencia): void
-        + getNomeBanco(): String
-        + setNomeBanco(String nomeBanco): void
+        + Conta conta
     }
 
     class AlertaPagamento {
@@ -101,27 +56,8 @@ package br.univille.projetofabsoftfinancas.entity {
         - LocalDate dataVencimento
         - boolean status
         --
-        + getId(): Long
-        + setId(Long id): void
-        + getDescricao(): String
-        + setDescricao(String descricao): void
-        + getDataVencimento(): LocalDate
-        + setDataVencimento(LocalDate dataVencimento): void
-        + isStatus(): boolean
-        + setStatus(boolean status): void
-    }
-
-    class LimiteGastos {
-        - Long id
-        - float valorTotal
-        - float valorGasto
-        --
-        + getId(): Long
-        + setId(Long id): void
-        + getValorTotal(): float
-        + setValorTotal(float valorTotal): void
-        + getValorGasto(): float
-        + setValorGasto(float valorGasto): void
+        + Conta conta
+        + Cartao cartao
     }
 
     class Objetivo {
@@ -130,14 +66,35 @@ package br.univille.projetofabsoftfinancas.entity {
         - float valorAlvo
         - float progressoAtual
         --
-        + getId(): Long
-        + setId(Long id): void
-        + getDescricao(): String
-        + setDescricao(String descricao): void
-        + getValorAlvo(): float
-        + setValorAlvo(float valorAlvo): void
-        + getProgressoAtual(): float
-        + setProgressoAtual(float progressoAtual): void
+        + Receita receita
+        + Investimento investimento
     }
+
+    class LimiteGastos {
+        - Long id
+        - float valorTotal
+        - float valorGasto
+    }
+
+    class GraficoDinamico {
+        - Long id
+        - String tipo
+    }
+
+    class RelatorioMensal {
+        - Long id
+        - String mesAno
+    }
+
+    Receita --> Conta : "associada a"
+    Receita --> Cartao : "associada a"
+    Despesa --> Conta : "associada a"
+    Despesa --> Cartao : "associada a"
+    Cartao --> Conta : "associado a"
+    Investimento --> Conta : "associado a"
+    AlertaPagamento --> Conta : "associado a"
+    AlertaPagamento --> Cartao : "associado a"
+    Objetivo --> Receita : "relacionado a"
+    Objetivo --> Investimento : "relacionado a"
 }
 @enduml

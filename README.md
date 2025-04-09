@@ -77,22 +77,6 @@ Repositório com o sistema de controle financeiro que será utilizado como proje
 
  - Como um usuário eu gostaria de registrar as contas utilizadas como: Número da conta, Agência e Nome do Banco.
 
- - Como um usuário eu gostaria de vincular as despesas à conta do usuário.
-
- - Como um usuário eu gostaria de vincular as receitas à conta do usuário.
-
- - Como um usuário eu gostaria de vincular os cartões à conta do usuário.
-
- - Como um usuário eu gostaria de vincular os investimentos à conta do usuário.
-
- - Como um usuário eu gostaria de vincular os alertas de pagamento com as despesas fixas como: compras parceladas, assinaturas, etc.
-
- - Como um usuário eu gostaria de vincular o limite de gastos com as despesas.
-
- - Como um usuário eu gostaria de vincular as despesas ao cartão.
-
- - Como um usuário eu gostaria de vincular as receitas ao cartão. 
-
  - Como um usuário eu gostaria de editar as minhas despesas fixas como: Compras Parceladas, Assinaturas, Estudo, Energia, Água, Gás e Financiamentos.
 
  - Como um usuário eu gostaria de editar as minhas despesas variáveis como: Fatura do cartão de crédito, Lazer, Saídas Avulsas.
@@ -130,6 +114,36 @@ Repositório com o sistema de controle financeiro que será utilizado como proje
  - Como um usuário eu gostaria de gerar um spot de backup como: Spot do projeto todo com as receitas, cartões, contas, despesas fixas, despesas variáveis e investimentos. 
 
  - Como um usuário eu gostaria de configurar o backup dos dados como: Preciso de um valor de despesa de 2 meses atrás e com o backup eu consigo visualizar, ou corrompeu o meu projeto, mas com o backup eu consigo voltar o backup e fazer funcionar de novo.
+
+ - Como um usuário eu gostaria de vincular as receitas aos cartões de débito ou crédito para identificar por qual meio a receita foi recebida.
+
+ - Como um usuário eu gostaria de vincular as receitas às contas utilizadas, para saber em qual conta entrou o valor.
+
+ - Como um usuário eu gostaria de vincular os investimentos às contas utilizadas, para saber de qual conta saiu o valor do investimento.
+
+ - Como um usuário eu gostaria de vincular as despesas fixas aos cartões, para saber quais despesas estão sendo pagas em qual cartão.
+
+ - Como um usuário eu gostaria de vincular as despesas variáveis aos cartões, para acompanhar os gastos de lazer e outros no cartão de crédito ou débito.
+
+ - Como um usuário eu gostaria de vincular as despesas fixas e variáveis às contas utilizadas, para indicar de qual conta os valores foram debitados.
+
+ - Como um usuário eu gostaria de vincular os alertas de pagamento aos cartões, para saber quando a fatura do cartão estiver próxima do vencimento.
+
+ - Como um usuário eu gostaria de vincular os alertas de pagamento às contas utilizadas, para alertar quando houver saldo insuficiente antes de um débito automático.
+
+ - Como um usuário eu gostaria de vincular os objetivos financeiros aos investimentos, para acompanhar o progresso de metas de curto, médio ou longo prazo.
+
+ - Como um usuário eu gostaria de vincular os objetivos financeiros às receitas, para reservar parte do valor mensal automaticamente para uma meta.
+
+ - Como um usuário eu gostaria de vincular os gráficos dinâmicos aos gastos fixos, variáveis, receitas e investimentos para uma visualização consolidada.
+
+ - Como um usuário eu gostaria de vincular os relatórios mensais aos dados da conta, para analisar os gastos e receitas por banco.
+
+ - Como um usuário eu gostaria de vincular os dados de backup a todas as minhas entidades cadastradas (despesas, receitas, cartões, contas, investimentos, alertas, objetivos, etc), para garantir que nenhuma informação será perdida em caso de falha.
+
+ - Como um usuário eu gostaria de vincular os cartões cadastrados às contas bancárias utilizadas, para saber qual cartão está associado a qual conta.
+
+ - Como um usuário eu gostaria de vincular o limite de gastos mensal com as despesas cadastradas, para ser alertado quando atingir ou ultrapassar esse limite.
 
 ### Configuração Java:
 
