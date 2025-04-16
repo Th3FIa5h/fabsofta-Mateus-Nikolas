@@ -72,8 +72,9 @@ package br.univille.projetofabsoftfinancas.entity {
 
     class LimiteGastos {
         - Long id
-        - float valorTotal
-        - float valorGasto
+        - float valorLimite
+        --
+        + Despesa despesa
     }
 
     class GraficoDinamico {
@@ -96,4 +97,5 @@ package br.univille.projetofabsoftfinancas.entity {
     AlertaPagamento "*" --> "1" Cartao 
     Objetivo "*" --> "*" Receita 
     Objetivo "*" --> "*" Investimento 
+    LimiteGastos "*" --> "1" Despesa
 @enduml

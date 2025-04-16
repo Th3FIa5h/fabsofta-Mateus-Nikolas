@@ -8,8 +8,39 @@ public class LimiteGastos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private float valorTotal;
-    private float valorGasto;
+    private float valorLimite;
+
+    @ManyToOne
+    private Despesa despesa;
 
     // Getters e Setters
+    
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public float getValorLimite() {
+        return valorLimite;
+    }
+
+    public void setValorLimite(float valorLimite) {
+        this.valorLimite = valorLimite;
+    }
+
+    public Despesa getDespesa() {
+        return despesa;
+    }
+
+    public void setDespesa(Despesa despesa) {
+        this.despesa = despesa;
+    }
+
+
+
+    
+    
 }
