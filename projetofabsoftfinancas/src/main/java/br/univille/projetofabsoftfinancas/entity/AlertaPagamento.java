@@ -7,24 +7,24 @@ import java.time.LocalDate;
 public class AlertaPagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private String descricao;
     private LocalDate dataVencimento;
     private boolean status; // Pendente ou Pago
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Conta conta;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Cartao cartao;
 
     // Getters e Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class Receita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private String descricao;
     private float valor;
@@ -21,11 +21,11 @@ public class Receita {
     private Cartao cartao;
 
     // Getters e Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

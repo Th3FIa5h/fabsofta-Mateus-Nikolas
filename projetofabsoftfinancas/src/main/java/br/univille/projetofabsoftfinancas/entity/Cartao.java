@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Cartao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private String numero;
     private String cvv;
@@ -19,11 +19,11 @@ public class Cartao {
     private Conta conta;
 
     // Getters e Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

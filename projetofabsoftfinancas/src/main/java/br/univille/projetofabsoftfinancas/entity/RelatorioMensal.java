@@ -6,16 +6,16 @@ import jakarta.persistence.*;
 public class RelatorioMensal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private String mesAno; // Exemplo: "Janeiro 2025"
 
     // Getters e Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

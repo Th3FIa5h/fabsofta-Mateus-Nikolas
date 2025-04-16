@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class LimiteGastos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private float valorTotal;
     private float valorGasto;

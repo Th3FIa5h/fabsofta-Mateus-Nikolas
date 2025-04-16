@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Objetivo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private String descricao;
     private float valorAlvo;
@@ -19,11 +19,11 @@ public class Objetivo {
     private Investimento investimento;
 
     // Getters e Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
