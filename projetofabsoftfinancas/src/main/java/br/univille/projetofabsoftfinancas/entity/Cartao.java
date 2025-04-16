@@ -15,7 +15,7 @@ public class Cartao {
     private String banco;
     private String bandeira;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Conta conta;
 
     // Getters e Setters

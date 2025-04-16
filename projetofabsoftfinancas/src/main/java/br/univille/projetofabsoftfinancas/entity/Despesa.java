@@ -14,10 +14,10 @@ public class Despesa {
     private LocalDate data;
     private String tipo; // Fixa ou Variável
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Conta conta;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Cartao cartao;
 
     // Getters e Setters

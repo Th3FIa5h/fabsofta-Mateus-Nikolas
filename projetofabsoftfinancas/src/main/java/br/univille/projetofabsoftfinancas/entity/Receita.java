@@ -14,10 +14,10 @@ public class Receita {
     private LocalDate data;
     private String tipo; // Salário ou Entrada Avulsa
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Conta conta;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Cartao cartao;
 
     // Getters e Setters
