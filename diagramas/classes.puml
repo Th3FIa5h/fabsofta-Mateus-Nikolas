@@ -86,15 +86,14 @@ package br.univille.projetofabsoftfinancas.entity {
         - String mesAno
     }
 
-    Receita --> Conta : "associada a"
-    Receita --> Cartao : "associada a"
-    Despesa --> Conta : "associada a"
-    Despesa --> Cartao : "associada a"
-    Cartao --> Conta : "associado a"
-    Investimento --> Conta : "associado a"
-    AlertaPagamento --> Conta : "associado a"
-    AlertaPagamento --> Cartao : "associado a"
-    Objetivo --> Receita : "relacionado a"
-    Objetivo --> Investimento : "relacionado a"
-}
+    Receita "*" --> "1" Conta 
+    Receita "*" --> "1" Cartao 
+    Despesa "*" --> "1" Conta 
+    Despesa "*" --> "1" Cartao 
+    Cartao "*" --> "1" Conta 
+    Investimento "*" --> "1" Conta 
+    AlertaPagamento "*" --> "1" Conta 
+    AlertaPagamento "*" --> "1" Cartao 
+    Objetivo "*" --> "*" Receita 
+    Objetivo "*" --> "*" Investimento 
 @enduml

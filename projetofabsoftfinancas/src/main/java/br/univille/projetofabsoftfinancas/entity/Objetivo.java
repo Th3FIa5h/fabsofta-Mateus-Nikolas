@@ -12,10 +12,10 @@ public class Objetivo {
     private float valorAlvo;
     private float progressoAtual;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Receita receita;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Investimento investimento;
 
     // Getters e Setters
