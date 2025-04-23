@@ -77,16 +77,6 @@ package br.univille.projetofabsoftfinancas.entity {
         + Despesa despesa
     }
 
-    class GraficoDinamico {
-        - Long id
-        - String tipo
-    }
-
-    class RelatorioMensal {
-        - Long id
-        - String mesAno
-    }
-
     Receita "*" --> "1" Conta 
     Receita "*" --> "1" Cartao 
     Despesa "*" --> "1" Conta 
