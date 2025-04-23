@@ -1,3 +1,8 @@
-### API CLIENTE GET
+### API LIMITEGASTOS GET GET http://localhost:8080/api/v1/limitegastos
 
-GET 
+### API LIMITEGASTOS POST http://localhost:8080/api/v1/limitegastos
+Content-Type: application/json
+
+{
+    "valorLimite": "500"
+}
