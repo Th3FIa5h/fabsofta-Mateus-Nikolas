@@ -1,5 +1,7 @@
 package br.univille.projetofabsoftfinancas.entity;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -12,11 +14,11 @@ public class Objetivo {
     private float valorAlvo;
     private float progressoAtual;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
-    private Receita receita;
+    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    private List<Receita> listaReceitas;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
-    private Investimento investimento;
+    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    private List<Investimento> listaInvestimento;
 
     // Getters e Setters
     public long getId() {
@@ -51,19 +53,21 @@ public class Objetivo {
         this.progressoAtual = progressoAtual;
     }
 
-    public Receita getReceita() {
-        return receita;
+    public List<Receita> getListaReceitas() {
+        return listaReceitas;
     }
 
-    public void setReceita(Receita receita) {
-        this.receita = receita;
+    public void setListaReceitas(List<Receita> listaReceitas) {
+        this.listaReceitas = listaReceitas;
     }
 
-    public Investimento getInvestimento() {
-        return investimento;
+    public List<Investimento> getListaInvestimento() {
+        return listaInvestimento;
     }
 
-    public void setInvestimento(Investimento investimento) {
-        this.investimento = investimento;
+    public void setListaInvestimento(List<Investimento> listaInvestimento) {
+        this.listaInvestimento = listaInvestimento;
     }
+
+
 }

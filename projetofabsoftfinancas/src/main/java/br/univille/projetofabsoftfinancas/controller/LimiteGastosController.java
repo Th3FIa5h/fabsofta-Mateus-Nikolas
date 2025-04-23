@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 
 
 import br.univille.projetofabsoftfinancas.entity.LimiteGastos;
@@ -29,7 +29,8 @@ public class LimiteGastosController {
     public ResponseEntity<List<LimiteGastos>> getLimiteGastos(){
         var listaLimiteGastos = service.getAll();
 
-        return new ResponseEntity<List<LimiteGastos>>(listaLimiteGastos, HttpStatus.OK);
+        return new ResponseEntity<List<LimiteGastos>>(listaLimiteGastos,
+                    HttpStatus.OK);
     }
 
     @PostMapping
@@ -40,7 +41,8 @@ public class LimiteGastosController {
         }
         if(limitegastos.getId() == 0){
             service.save(limitegastos);
-            return new ResponseEntity<LimiteGastos>(limitegastos, HttpStatus.OK);
+            return new ResponseEntity<LimiteGastos>(limitegastos,
+                        HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
@@ -57,8 +59,26 @@ public class LimiteGastosController {
         }
 
         limitegastosAntigo.setValorLimite(limitegastos.getValorLimite());
+        limitegastosAntigo.setDespesa(limitegastos.getDespesa());
         
         service.save(limitegastosAntigo);
-        return new ResponseEntity<LimiteGastos>(limitegastosAntigo, HttpStatus.OK);
+        return new ResponseEntity<LimiteGastos>(limitegastosAntigo,
+                    HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<LimiteGastos> deleteLimiteGastos(@PathVariable long id){
+        if(id <= 0){
+            return ResponseEntity.badRequest().build();
+        }
+        var limitegastosExcluir = service.getById(id);
+        if(limitegastosExcluir == null){
+            return ResponseEntity.notFound().build();
+        }
+
+        service.delete(id);
+        return new ResponseEntity<LimiteGastos>(limitegastosExcluir,
+                    HttpStatus.OK);
+
     }
 }
