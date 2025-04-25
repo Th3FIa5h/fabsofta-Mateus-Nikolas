@@ -1,7 +1,13 @@
 package br.univille.projetofabsoftfinancas.entity;
 
-import jakarta.persistence.*;
 import java.time.LocalDate;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class AlertaPagamento {
@@ -56,8 +62,8 @@ public class AlertaPagamento {
         return conta;
     }
 
-    public void setConta(Conta conta) {
-        this.conta = conta;
+    public static void setConta(AlertaPagamento alertaPagamento, Conta conta) {
+        alertaPagamento.conta = conta;
     }
 
     public Cartao getCartao() {
