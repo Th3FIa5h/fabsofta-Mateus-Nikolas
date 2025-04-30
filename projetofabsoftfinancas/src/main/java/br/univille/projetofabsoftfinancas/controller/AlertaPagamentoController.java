@@ -60,8 +60,8 @@ public class AlertaPagamentoController {
 
         alertapagamentoAntigo.setDescricao(alertapagamento.getDescricao());
         alertapagamentoAntigo.setDataVencimento(alertapagamento.getDataVencimento());
-        alertapagamentoAntigo.setStatus(alertapagamento.getStatus());
-        alertapagamentoAntigo.setConta(alertapagamento.getConta()); //Consertar com o Walter
+        alertapagamentoAntigo.setStatus(alertapagamento.isStatus());
+        alertapagamentoAntigo.setConta(alertapagamento.getConta());
         alertapagamentoAntigo.setCartao(alertapagamento.getCartao());
         
         service.save(alertapagamentoAntigo);

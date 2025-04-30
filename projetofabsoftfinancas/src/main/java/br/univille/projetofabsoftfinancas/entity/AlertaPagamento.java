@@ -62,8 +62,8 @@ public class AlertaPagamento {
         return conta;
     }
 
-    public static void setConta(AlertaPagamento alertaPagamento, Conta conta) {
-        alertaPagamento.conta = conta;
+    public void setConta(Conta conta) {
+        this.conta = conta;
     }
 
     public Cartao getCartao() {
