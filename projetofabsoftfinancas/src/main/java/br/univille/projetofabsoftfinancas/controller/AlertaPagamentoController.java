@@ -60,7 +60,7 @@ public class AlertaPagamentoController {
 
         alertapagamentoAntigo.setDescricao(alertapagamento.getDescricao());
         alertapagamentoAntigo.setDataVencimento(alertapagamento.getDataVencimento());
-        alertapagamentoAntigo.setStatus(alertapagamento.isStatus());
+        alertapagamentoAntigo.setStatus(alertapagamento.getStatus());
         alertapagamentoAntigo.setConta(alertapagamento.getConta());
         alertapagamentoAntigo.setCartao(alertapagamento.getCartao());
         

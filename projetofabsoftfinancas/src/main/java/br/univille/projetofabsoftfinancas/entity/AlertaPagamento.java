@@ -50,7 +50,7 @@ public class AlertaPagamento {
         this.dataVencimento = dataVencimento;
     }
 
-    public String Status() {
+    public String getStatus() {
         return status;
     }
 
