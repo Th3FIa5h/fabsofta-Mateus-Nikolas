@@ -17,7 +17,7 @@ public class AlertaPagamento {
 
     private String descricao;
     private LocalDate dataVencimento;
-    private boolean status; // Pendente ou Pago
+    private String status; // Pendente ou Pago
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
     private Conta conta;
@@ -50,11 +50,11 @@ public class AlertaPagamento {
         this.dataVencimento = dataVencimento;
     }
 
-    public boolean isStatus() {
+    public String Status() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
