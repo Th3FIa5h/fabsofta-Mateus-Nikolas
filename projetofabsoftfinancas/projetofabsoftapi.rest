@@ -8,7 +8,22 @@ Content-Type: application/json
 {
     "descricao": "Pagamento Faculdade",
     "dataVencimento": "2025-05-21",
-    "status": "Pendente"
+    "status": "Pendente",
+    "cartao": {
+        "id": 1,
+        "numero": "1234 5678 9012 3456",
+        "cvv": "123",
+        "validade": "2025-05-16",
+        "nomeCliente": "Mateus Santos",
+        "banco": "Nubank",
+        "bandeira": "MasterCard"
+    },
+    "conta": {
+        "id": 1,
+        "numero": "12345678-9",
+        "agencia": "1234",
+        "banco": "Nubank"
+    }
 }
 
 ### API ALERTAPAGAMENTO PUT
@@ -38,7 +53,13 @@ Content-Type: application/json
     "validade": "2025-05-16",
     "nomeCliente": "Mateus Santos",
     "banco": "Nubank",
-    "bandeira": "MasterCard"
+    "bandeira": "MasterCard",
+    "conta": {
+        "id": 1,
+        "numero": "12345678-9",
+        "agencia": "1234",
+        "banco": "Nubank"
+    }
 }
 
 ### API CARTAO PUT
@@ -93,7 +114,22 @@ Content-Type: application/json
     "descricao": "Jantar de Niver 2 anos Namoro",
     "valor": 200,
     "data": "2025-05-17",
-    "tipo": "Variável"
+    "tipo": "Variável",
+    "conta": {
+        "id": 1,
+        "numero": "12345678-9",
+        "agencia": "1234",
+        "banco": "Nubank"
+    },
+    "cartao": {
+        "id": 1,
+        "numero": "1234 5678 9012 3456",
+        "cvv": "123",
+        "validade": "2025-05-16",
+        "nomeCliente": "Mateus Santos",
+        "banco": "Nubank",
+        "bandeira": "MasterCard"
+    }
 }
 
 ### API DESPESA PUT
@@ -120,7 +156,13 @@ Content-Type: application/json
 {
     "descricao": "Reserva de Emergencia",
     "valor": 200,
-    "prazo": "Longo"
+    "prazo": "Longo",
+    "conta": {
+        "id": 1,
+        "numero": "12345678-9",
+        "agencia": "1234",
+        "banco": "Nubank"
+    }
 }
 
 ### API INVESTIMENTO PUT
@@ -146,7 +188,14 @@ POST http://localhost:8080/api/v1/limitegastos
 Content-Type: application/json
 
 {
-    "valorLimite": 500
+    "valorLimite": 500,
+    "despesa": {
+        "id": 1,
+        "descricao": "Jantar de Niver 2 anos Namoro",
+        "valor": 200,
+        "data": "2025-05-17",
+        "tipo": "Variável"
+    }
 }
 
 ### API LIMITEGASTOS PUT
@@ -173,7 +222,25 @@ Content-Type: application/json
 {
     "descricao": "Comprar Carro Novo",
     "valorAlvo": 80000,
-    "progressoAtual": 30000
+    "progressoAtual": 30000,
+    "listareceitas": [
+        {
+            "id": 1,
+            "descricao": "Salário Hengst",
+            "valor": 5000,
+            "data": "2025-08-13",
+            "tipo": "Salário"
+        }
+    ],
+    "listadespesas": [
+        {
+            "id": 1,
+            "descricao": "Jantar de Niver 2 anos Namoro",
+            "valor": 200,
+            "data": "2025-05-17",
+            "tipo": "Variável"
+        }
+    ]
 }
 
 ### API OBJETIVO PUT
@@ -201,7 +268,22 @@ Content-Type: application/json
     "descricao": "Salário Hengst",
     "valor": 5000,
     "data": "2025-08-13",
-    "tipo": "Salário"
+    "tipo": "Salário",
+    "conta": {
+        "id": 1,
+        "numero": "12345678-9",
+        "agencia": "1234",
+        "banco": "Nubank"
+    },
+    "cartao": {
+        "id": 1,
+        "numero": "1234 5678 9012 3456",
+        "cvv": "123",
+        "validade": "2025-05-16",
+        "nomeCliente": "Mateus Santos",
+        "banco": "Nubank",
+        "bandeira": "MasterCard"
+    }
 }
 
 ### API RECEITA PUT--
