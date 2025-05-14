@@ -14,10 +14,10 @@ public class Objetivo {
     private float valorAlvo;
     private float progressoAtual;
 
-    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH},fetch = FetchType.EAGER)
     private List<Receita> listaReceitas;
 
-    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH},fetch = FetchType.EAGER)
     private List<Investimento> listaInvestimento;
 
     // Getters e Setters

@@ -1,5 +1,9 @@
 package br.univille.projetofabsoftfinancas.entity;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 
 import jakarta.persistence.CascadeType;
@@ -8,6 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 public class AlertaPagamento {
@@ -16,7 +22,9 @@ public class AlertaPagamento {
     private long id;
 
     private String descricao;
-    private LocalDate dataVencimento;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dataVencimento;
     private String status; // Pendente ou Pago
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
@@ -42,14 +50,6 @@ public class AlertaPagamento {
         this.descricao = descricao;
     }
 
-    public LocalDate getDataVencimento() {
-        return dataVencimento;
-    }
-
-    public void setDataVencimento(LocalDate dataVencimento) {
-        this.dataVencimento = dataVencimento;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -72,5 +72,13 @@ public class AlertaPagamento {
 
     public void setCartao(Cartao cartao) {
         this.cartao = cartao;
+    }
+
+    public Date getDataVencimento() {
+        return dataVencimento;
+    }
+
+    public void setDataVencimento(Date dataVencimento) {
+        this.dataVencimento = dataVencimento;
     }
 }

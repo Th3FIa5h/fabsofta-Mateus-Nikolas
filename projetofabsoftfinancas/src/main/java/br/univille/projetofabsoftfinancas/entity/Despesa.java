@@ -2,6 +2,9 @@ package br.univille.projetofabsoftfinancas.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Despesa {
@@ -11,7 +14,9 @@ public class Despesa {
 
     private String descricao;
     private float valor;
-    private LocalDate data;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date data;
     private String tipo; // Fixa ou Variável
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
@@ -45,14 +50,6 @@ public class Despesa {
         this.valor = valor;
     }
 
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
     public String getTipo() {
         return tipo;
     }
@@ -76,4 +73,14 @@ public class Despesa {
     public void setCartao(Cartao cartao) {
         this.cartao = cartao;
     }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+    
+    
 }

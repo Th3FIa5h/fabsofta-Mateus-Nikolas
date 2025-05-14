@@ -1,7 +1,9 @@
 package br.univille.projetofabsoftfinancas.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Receita {
@@ -11,7 +13,9 @@ public class Receita {
 
     private String descricao;
     private float valor;
-    private LocalDate data;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date data;
     private String tipo; // Salário ou Entrada Avulsa
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
@@ -45,14 +49,6 @@ public class Receita {
         this.valor = valor;
     }
 
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
     public String getTipo() {
         return tipo;
     }
@@ -76,4 +72,14 @@ public class Receita {
     public void setCartao(Cartao cartao) {
         this.cartao = cartao;
     }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    
 }

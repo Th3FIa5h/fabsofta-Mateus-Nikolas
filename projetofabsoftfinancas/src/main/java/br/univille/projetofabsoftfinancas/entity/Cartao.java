@@ -1,5 +1,8 @@
 package br.univille.projetofabsoftfinancas.entity;
 
+import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -10,7 +13,9 @@ public class Cartao {
 
     private String numero;
     private String cvv;
-    private String validade;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date validade;
     private String nomeCliente;
     private String banco;
     private String bandeira;
@@ -41,14 +46,6 @@ public class Cartao {
 
     public void setCvv(String cvv) {
         this.cvv = cvv;
-    }
-
-    public String getValidade() {
-        return validade;
-    }
-
-    public void setValidade(String validade) {
-        this.validade = validade;
     }
 
     public String getNomeCliente() {
@@ -82,4 +79,13 @@ public class Cartao {
     public void setConta(Conta conta) {
         this.conta = conta;
     }
+
+    public Date getValidade() {
+        return validade;
+    }
+
+    public void setValidade(Date validade) {
+        this.validade = validade;
+    }
+
 }
