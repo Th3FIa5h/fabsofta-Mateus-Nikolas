@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ContaService {
-  apiURL = "http://localhost:8080/api/v1/contas";
+  apiURL = "http://localhost:8080/api/v1/conta";
 
   constructor(private http:HttpClient) {}
 
   getConta(){
-      return this.http.get<Conta[]>('this.apiURL');  
+      return this.http.get<Conta[]>(this.apiURL);  
     }
 }

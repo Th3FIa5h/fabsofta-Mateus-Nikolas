@@ -1,0 +1,39 @@
+<main class="container">
+    <h2>Conta</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Numero da Conta</th>
+                <th>Agencia da Conta</th>
+                <th>Banco da Conta</th>
+                <th>Numero do Cartao</th>
+                <th>Cvv do Cartão</th>
+                <th>Validade do Cartão</th>
+                <th>Nome do Cliente</th>
+                <th>Banco do Cartão</th>
+                <th>Bandeira do Cartão</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umdespesa of listaDespesas">
+                <td>{{umdespesa.descricao}}</td>
+                <td>{{umdespesa.valor}}</td>
+                <td>{{umdespesa.data}}</td>
+                <td>{{umdespesa.tipo}}</td>
+                <td>{{umdespesa.conta.numero}}</td>
+                <td>{{umdespesa.conta.agencia}}</td>
+                <td>{{umdespesa.conta.banco}}</td>
+                <td>{{umdespesa.cartao.numero}}</td>
+                <td>{{umdespesa.cartao.cvv}}</td>
+                <td>{{umdespesa.cartao.validade}}</td>
+                <td>{{umdespesa.cartao.nomeCliente}}</td>
+                <td>{{umdespesa.cartao.banco}}</td>
+                <td>{{umdespesa.cartao.bandeira}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>

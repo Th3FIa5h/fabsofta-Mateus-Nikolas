@@ -8,7 +8,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-conta',
   imports: [CommonModule, HttpClientModule],
   templateUrl: './conta.component.html',
-  styleUrl: './conta.component.css'
+  styleUrl: './conta.component.css',
+  providers: [ContaService]
 })
 export class ContaComponent {
   public listaContas: Conta[] = [];
@@ -16,8 +17,8 @@ export class ContaComponent {
     private contaService:ContaService
   ) {}
   ngOnInit(): void {
-    this.contaService.getConta().subscribe( resposta => {
-      this.listaContas = resposta;
+    this.contaService.getConta().subscribe( conta => {
+      this.listaContas = conta;
     })
   }
 }

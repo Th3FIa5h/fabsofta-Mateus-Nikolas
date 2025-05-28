@@ -1,0 +1,37 @@
+<main class="container">
+    <h2>Conta</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>DataVencimento</th>
+                <th>Status</th>
+                <th>Numero da Conta</th>
+                <th>Agencia da Conta</th>
+                <th>Banco da Conta</th>
+                <th>Numero do Cartao</th>
+                <th>Cvv do Cartão</th>
+                <th>Validade do Cartão</th>
+                <th>Nome do Cliente</th>
+                <th>Banco do Cartão</th>
+                <th>Bandeira do Cartão</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umalertapagamento of listaAlertaspagamento">
+                <td>{{umalertapagamento.descricao}}</td>
+                <td>{{umalertapagamento.dataVencimento}}</td>
+                <td>{{umalertapagamento.status}}</td>
+                <td>{{umalertapagamento.conta.numero}}</td>
+                <td>{{umalertapagamento.conta.agencia}}</td>
+                <td>{{umalertapagamento.conta.banco}}</td>
+                <td>{{umalertapagamento.cartao.numero}}</td>
+                <td>{{umalertapagamento.cartao.cvv}}</td>
+                <td>{{umalertapagamento.cartao.validade}}</td>
+                <td>{{umalertapagamento.cartao.nomeCliente}}</td>
+                <td>{{umalertapagamento.cartao.banco}}</td>
+                <td>{{umalertapagamento.cartao.bandeira}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
