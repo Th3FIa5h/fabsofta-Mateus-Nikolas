@@ -1,5 +1,19 @@
 <main class="container">
     <h2>Conta</h2>
     <table class="table">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>agencia</th>
+                <th>banco</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umconta of listaContas">
+                <td>{{umconta.numero}}</td>
+                <td>{{umconta.agencia}}</td>
+                <td>{{umconta.banco}}</td>
+            </tr>
+        </tbody>
     </table>
 </main>
