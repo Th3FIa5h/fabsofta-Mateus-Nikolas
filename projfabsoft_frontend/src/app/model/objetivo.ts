@@ -5,6 +5,6 @@ export class Objetivo {
     id: number;
     valorAlvo: number;
     progressoAtual: number;
-    receita: Receita;
-    investimento: Investimento;
+    listaReceitas: Receita[];
+    listaInvestimentos: Investimento[];
 }

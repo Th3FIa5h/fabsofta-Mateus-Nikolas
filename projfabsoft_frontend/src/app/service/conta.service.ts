@@ -13,4 +13,8 @@ export class ContaService {
   getConta(){
       return this.http.get<Conta[]>(this.apiURL);  
     }
+  
+  saveConta(conta: Conta) {
+    return this.http.post(this.apiURL, conta);
+  }
 }

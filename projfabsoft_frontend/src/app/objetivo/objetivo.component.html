@@ -18,13 +18,14 @@
             <tr *ngFor="let umobjetivo of listaObjetivos">
                 <td>{{umobjetivo.valorAlvo}}</td>
                 <td>{{umobjetivo.progressoAtual}}</td>
-                <td>{{umobjetivo.receita.descricao}}</td>
-                <td>{{umobjetivo.receita.valor}}</td>
-                <td>{{umobjetivo.receita.data}}</td>
-                <td>{{umobjetivo.receita.tipo}}</td>
-                <td>{{umobjetivo.investimento.descricao}}</td>
-                <td>{{umobjetivo.investimento.valor}}</td>
-                <td>{{umobjetivo.investimento.prazo}}</td>
+                <ul *ngFor="let umaReceita of umobjetivo.listaReceitas"
+                >
+                    <li>{{umaReceita.descricao}} - {{umaReceita.valor}} - {{umaReceita.data}} - {{umaReceita.tipo}}</li>
+                </ul>
+                <ul *ngFor="let umaDespesa of umobjetivo.listaInvestimentos"
+                >
+                    <li>{{umaDespesa.descricao}} - {{umaDespesa.valor}} - {{umaDespesa.prazo}}</li>
+                </ul>
             </tr>
         </tbody>
     </table>

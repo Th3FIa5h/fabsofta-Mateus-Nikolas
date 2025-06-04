@@ -6,6 +6,8 @@ import { DespesaComponent } from './despesa/despesa.component';
 import { InvestimentoComponent } from './investimento/investimento.component';
 import { LimitegastosComponent } from './limitegastos/limitegastos.component';
 import { ObjetivoComponent } from './objetivo/objetivo.component';
+import { ReceitaComponent } from './receita/receita.component';
+import { FormContaComponent } from './form-conta/form-conta.component';
 
 export const routes: Routes = [
     { path: 'contas', component: ContaComponent },
@@ -15,5 +17,6 @@ export const routes: Routes = [
     { path: 'investimento', component: InvestimentoComponent },
     { path: 'limitegastos', component: LimitegastosComponent },
     { path: 'objetivo', component: ObjetivoComponent },
-    { path: 'receita', component: ReceitaComponent }
+    { path: 'receita', component: ReceitaComponent },
+    { path: 'contas/novo', component: FormContaComponent },
 ];

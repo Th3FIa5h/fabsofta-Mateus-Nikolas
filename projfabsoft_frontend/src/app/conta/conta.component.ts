@@ -3,10 +3,11 @@ import { Conta } from '../model/conta';
 import { ContaService } from '../service/conta.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-conta',
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterLink],
   templateUrl: './conta.component.html',
   styleUrl: './conta.component.css',
   providers: [ContaService]
