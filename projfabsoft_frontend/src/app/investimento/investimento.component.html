@@ -1,1 +1,25 @@
-<p>investimento works!</p>
+<main class="container">
+    <h2>Investimento</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Prazo</th>
+                <th>Numero da Conta</th>
+                <th>Agencia da Conta</th>
+                <th>Banco da Conta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let uminvestimento of listaInvestimentos">
+                <td>{{uminvestimento.descricao}}</td>
+                <td>{{uminvestimento.valor}}</td>
+                <td>{{uminvestimento.prazo}}</td>
+                <td>{{uminvestimento.conta.numero}}</td>
+                <td>{{uminvestimento.conta.agencia}}</td>
+                <td>{{uminvestimento.conta.banco}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>

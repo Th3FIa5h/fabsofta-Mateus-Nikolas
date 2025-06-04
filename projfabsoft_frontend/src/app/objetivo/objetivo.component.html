@@ -1,1 +1,31 @@
-<p>objetivo works!</p>
+<main class="container">
+    <h2>Objetivo</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Valor Alvo</th>
+                <th>Progresso Atual</th>
+                <th>Descrição da Receita</th>
+                <th>Valor da Receita</th>
+                <th>Data da Receita</th>
+                <th>Tipo da Receita</th>
+                <th>Descrição do Investimento</th>
+                <th>Valor do Investimento</th>
+                <th>Prazo do Investimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umobjetivo of listaObjetivos">
+                <td>{{umobjetivo.valorAlvo}}</td>
+                <td>{{umobjetivo.progressoAtual}}</td>
+                <td>{{umobjetivo.receita.descricao}}</td>
+                <td>{{umobjetivo.receita.valor}}</td>
+                <td>{{umobjetivo.receita.data}}</td>
+                <td>{{umobjetivo.receita.tipo}}</td>
+                <td>{{umobjetivo.investimento.descricao}}</td>
+                <td>{{umobjetivo.investimento.valor}}</td>
+                <td>{{umobjetivo.investimento.prazo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>

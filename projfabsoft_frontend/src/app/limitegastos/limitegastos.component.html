@@ -1,1 +1,23 @@
-<p>limitegastos works!</p>
+<main class="container">
+    <h2>LimiteGastos</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Valor limite</th>
+                <th>Descrição da Despesa</th>
+                <th>Valor da Despesa/th>
+                <th>Data da Despesa</th>
+                <th>Tipo da Despesa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umlimitegastos of listaLimiteGastos">
+                <td>{{umlimitegastos.valorlimite}}</td>
+                <td>{{umlimitegastos.despesa.descricao}}</td>
+                <td>{{umlimitegastos.despesa.valor}}</td>
+                <td>{{umlimitegastos.despesa.data}}</td>
+                <td>{{umlimitegastos.despesa.tipo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
