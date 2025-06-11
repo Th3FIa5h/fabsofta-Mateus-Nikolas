@@ -11,6 +11,8 @@ import { FormContaComponent } from './form-conta/form-conta.component';
 
 export const routes: Routes = [
     { path: 'contas', component: ContaComponent },
+    { path: 'contas/novo', component: FormContaComponent },
+    { path: 'contas/alterar/:id', component: FormContaComponent },
     { path: 'cartao', component: CartaoComponent },
     { path: 'alertapagamento', component: AlertapagamentoComponent },
     { path: 'despesa', component: DespesaComponent },
@@ -18,5 +20,4 @@ export const routes: Routes = [
     { path: 'limitegastos', component: LimitegastosComponent },
     { path: 'objetivo', component: ObjetivoComponent },
     { path: 'receita', component: ReceitaComponent },
-    { path: 'contas/novo', component: FormContaComponent },
 ];
