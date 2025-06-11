@@ -1,0 +1,17 @@
+<main class="container">
+    <h2>Conta</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtnumero">Numero</label>
+                <input type="text" [(ngModel)]="conta.numero" class="form-control" name="numero" id="txtnumero">
+                <label for="txtagencia">Agencia</label>
+                <input type="text" [(ngModel)]="conta.agencia" class="form-control" name="agencia" id="txtagencia">
+                <label for="txtbanco">Banco</label>
+                <input type="text" [(ngModel)]="conta.banco" class="form-control" name="banco" id="txtbanco">
+            </div>
+        </div>
+        <button (click)="salvar()"
+        class="btn btn-primary">Salvar</button>
+    </div>
+</main>

@@ -1,0 +1,25 @@
+<main class="container">
+    <h2>Cartão</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Cvv</th>
+                <th>Validade</th>
+                <th>Nome do Cliente</th>
+                <th>Banco</th>
+                <th>Bandeira</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umCartao of listaCartoes">
+                <td>{{umCartao.numero}}</td>
+                <td>{{umCartao.cvv}}</td>
+                <td>{{umCartao.validade}}</td>
+                <td>{{umCartao.nomeCliente}}</td>
+                <td>{{umCartao.banco}}</td>
+                <td>{{umCartao.bandeira}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
