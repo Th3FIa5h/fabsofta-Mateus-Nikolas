@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+import br.univille.projetofabsoftfinancas.entity.Investimento;
 import br.univille.projetofabsoftfinancas.entity.LimiteGastos;
 import br.univille.projetofabsoftfinancas.service.LimiteGastosService;
 
@@ -32,7 +32,12 @@ public class LimiteGastosController {
         return new ResponseEntity<List<LimiteGastos>>(listaLimiteGastos,
                     HttpStatus.OK);
     }
+    @GetMapping("/id")
+    public ResponseEntity<LimiteGastos> getLimiteGastosId(@PathVariable Long id) {
+        var limitegastos = service.getById(id);
 
+        return new ResponseEntity<LimiteGastos>(limitegastos, HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<LimiteGastos> 
             postLimiteGastos(@RequestBody LimiteGastos limitegastos){

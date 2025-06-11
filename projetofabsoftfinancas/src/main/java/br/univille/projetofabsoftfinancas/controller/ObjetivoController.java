@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+import br.univille.projetofabsoftfinancas.entity.LimiteGastos;
 import br.univille.projetofabsoftfinancas.entity.Objetivo;
 import br.univille.projetofabsoftfinancas.service.ObjetivoService;
 
@@ -32,7 +32,12 @@ public class ObjetivoController {
         return new ResponseEntity<List<Objetivo>>(listaObjetivo,
                     HttpStatus.OK);
     }
+    @GetMapping("/id")
+    public ResponseEntity<Objetivo> getObjetivoId(@PathVariable Long id) {
+        var objetivo = service.getById(id);
 
+        return new ResponseEntity<Objetivo>(objetivo, HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<Objetivo> 
             postObjetivo(@RequestBody Objetivo objetivo){

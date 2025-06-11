@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.univille.projetofabsoftfinancas.entity.AlertaPagamento;
 import br.univille.projetofabsoftfinancas.service.AlertaPagamentoService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api/v1/alertapagamento")
@@ -32,7 +34,12 @@ public class AlertaPagamentoController {
         return new ResponseEntity<List<AlertaPagamento>>(listaAlertaPagamento,
                     HttpStatus.OK);
     }
+    @GetMapping("/id")
+    public ResponseEntity<AlertaPagamento> getAlertaPagamentoId(@PathVariable Long id) {
+        var alertapagamento = service.getById(id);
 
+        return new ResponseEntity<AlertaPagamento>(alertapagamento, HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<AlertaPagamento> 
             postAlertaPagamento(@RequestBody AlertaPagamento alertapagamento){

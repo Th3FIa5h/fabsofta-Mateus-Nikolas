@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+import br.univille.projetofabsoftfinancas.entity.LimiteGastos;
 import br.univille.projetofabsoftfinancas.entity.Receita;
 import br.univille.projetofabsoftfinancas.service.ReceitaService;
 
@@ -33,7 +33,12 @@ public class ReceitaController {
         return new ResponseEntity<List<Receita>>(listaReceita,
                     HttpStatus.OK);
     }
+    @GetMapping("/id")
+    public ResponseEntity<Receita> getReceitaId(@PathVariable Long id) {
+        var receita = service.getById(id);
 
+        return new ResponseEntity<Receita>(receita, HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<Receita> 
             postReceita(@RequestBody Receita receita){

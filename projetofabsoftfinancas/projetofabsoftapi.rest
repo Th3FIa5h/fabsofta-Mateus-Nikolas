@@ -98,7 +98,7 @@ Content-Type: application/json
 }
 
 ### API CONTA DELETE
-DELETE http://localhost:8080/api/v1/conta/1
+DELETE http://localhost:8080/api/v1/conta/4
 
 
 
