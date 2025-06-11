@@ -15,6 +15,13 @@ export class ContaService {
     }
   
   saveConta(conta: Conta) {
+    if(conta.id) {
+      return this.http.put(this.apiURL + '/' + conta.id, conta);
+    }
     return this.http.post(this.apiURL, conta);
+  }
+
+  getClienteById(id: any) {
+    return this.http.get<Conta>(this.apiURL + '/' + id);
   }
 }
