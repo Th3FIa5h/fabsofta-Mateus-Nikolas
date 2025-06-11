@@ -6,5 +6,5 @@ export class Objetivo {
     valorAlvo: number;
     progressoAtual: number;
     listaReceitas: Receita[];
-    listaInvestimentos: Investimento[];
+    listaInvestimento: Investimento[];
 }

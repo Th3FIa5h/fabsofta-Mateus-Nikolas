@@ -18,14 +18,41 @@
             <tr *ngFor="let umobjetivo of listaObjetivos">
                 <td>{{umobjetivo.valorAlvo}}</td>
                 <td>{{umobjetivo.progressoAtual}}</td>
-                <ul *ngFor="let umaReceita of umobjetivo.listaReceitas"
-                >
-                    <li>{{umaReceita.descricao}} - {{umaReceita.valor}} - {{umaReceita.data}} - {{umaReceita.tipo}}</li>
-                </ul>
-                <ul *ngFor="let umaDespesa of umobjetivo.listaInvestimentos"
-                >
-                    <li>{{umaDespesa.descricao}} - {{umaDespesa.valor}} - {{umaDespesa.prazo}}</li>
-                </ul>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
+                        {{umobjetivo.listaReceitas[0].descricao}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
+                        {{umobjetivo.listaReceitas[0].valor}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
+                        {{umobjetivo.listaReceitas[0].data}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
+                        {{umobjetivo.listaReceitas[0].tipo}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
+                        {{umobjetivo.listaInvestimento[0].descricao}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
+                        {{umobjetivo.listaInvestimento[0].valor}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
+                        {{umobjetivo.listaInvestimento[0].prazo}}
+                    </ng-container>
+                </td>
             </tr>
         </tbody>
     </table>
