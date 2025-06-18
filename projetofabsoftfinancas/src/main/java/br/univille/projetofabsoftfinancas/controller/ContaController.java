@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 import br.univille.projetofabsoftfinancas.entity.Conta;
+import br.univille.projetofabsoftfinancas.entity.Despesa;
 import br.univille.projetofabsoftfinancas.service.ContaService;
 
 
@@ -34,6 +35,13 @@ public class ContaController {
                     HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Conta> getContaId(@PathVariable Long id) {
+        var conta = service.getById(id);
+
+        return new ResponseEntity<Conta>(conta, HttpStatus.OK);
+    }
+    
     @PostMapping
     public ResponseEntity<Conta> 
             postConta(@RequestBody Conta conta){
