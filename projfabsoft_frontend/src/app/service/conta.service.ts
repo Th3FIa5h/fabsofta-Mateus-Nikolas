@@ -21,7 +21,11 @@ export class ContaService {
     return this.http.post(this.apiURL, conta);
   }
 
-  getClienteById(id: any) {
+  getContaById(id: any) {
     return this.http.get<Conta>(this.apiURL + '/' + id);
+  }
+
+  excluirConta(id: any){
+    return this.http.delete<Conta>(this.apiURL + '/' + id);
   }
 }
