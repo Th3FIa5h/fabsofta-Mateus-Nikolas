@@ -1,1 +1,18 @@
-<p>form-cartao works!</p>
+<main class="container">
+    <h2>Cartão</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtnumero">Número</label>
+                <input type="text" [(ngModel)]="cartao.numero" class="form-control" name="numero" id="txtnumero">
+
+                <label for="txtbandeira">Bandeira</label>
+                <input type="text" [(ngModel)]="cartao.bandeira" class="form-control" name="bandeira" id="txtbandeira">
+
+                <label for="txtvalidade">Validade</label>
+                <input type="text" [(ngModel)]="cartao.validade" class="form-control" name="validade" id="txtvalidade">
+            </div>
+        </div>
+        <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+    </div>
+</main>

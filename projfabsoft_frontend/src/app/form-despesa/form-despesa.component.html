@@ -1,1 +1,25 @@
-<p>form-despesa works!</p>
+<main class="container">
+    <h2>Despesa</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtdescricao">Descrição</label>
+                <input type="text" [(ngModel)]="despesa.descricao" class="form-control" name="descricao" id="txtdescricao">
+
+                <label for="txtvalor">Valor</label>
+                <input type="number" [(ngModel)]="despesa.valor" class="form-control" name="valor" id="txtvalor">
+
+                <label for="txtdata">Data</label>
+                <input type="date" [(ngModel)]="despesa.data" class="form-control" name="data" id="txtdata">
+
+                <label for="txttipo">Tipo</label>
+                <input type="text" [(ngModel)]="despesa.tipo" class="form-control" name="tipo" id="txttipo">
+
+                <label for="txtconta">Conta</label>
+                <input type="text" [(ngModel)]="despesa.conta.numero" class="form-control" name="conta" id="txtconta" placeholder="Número da Conta">
+
+                <label for="txtcartao">Cartão</label>
+                <input type="text" [(ngModel)]="despesa.cartao.numero" class="form-control" name="cartao" id="txtcartao" placeholder="Número do Cartão">
+            </div>
+        </div>
+        <button (click)="salvar()" class="btn btn-primary">Salvar</button>
