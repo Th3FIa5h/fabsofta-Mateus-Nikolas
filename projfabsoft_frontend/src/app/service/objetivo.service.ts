@@ -10,7 +10,23 @@ export class ObjetivoService {
 
   constructor(private http:HttpClient) {}
 
-  getObjetivos(){
+  getObjetivo(){
       return this.http.get<Objetivo[]>(this.apiURL);  
     }
+  
+  saveObjetivo(objetivo: Objetivo) {
+    if(objetivo.id) {
+      return this.http.put(this.apiURL + '/' + objetivo.id, objetivo);
+    }
+    return this.http.post(this.apiURL, objetivo);
+  }
+
+  getObjetivoById(id: any) {
+    return this.http.get<Objetivo>(this.apiURL + '/' + id);
+  }
+
+  excluirObjetivo(id: any){
+    return this.http.delete<Objetivo>(this.apiURL + '/' + id);
+  }
 }
+

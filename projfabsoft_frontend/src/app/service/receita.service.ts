@@ -10,7 +10,23 @@ export class ReceitaService {
 
   constructor(private http:HttpClient) {}
 
-  getReceitas(){
+  getReceita(){
       return this.http.get<Receita[]>(this.apiURL);  
     }
+  
+  saveReceita(receita: Receita) {
+    if(receita.id) {
+      return this.http.put(this.apiURL + '/' + receita.id, receita);
+    }
+    return this.http.post(this.apiURL, receita);
+  }
+
+  getReceitaById(id: any) {
+    return this.http.get<Receita>(this.apiURL + '/' + id);
+  }
+
+  excluirReceita(id: any){
+    return this.http.delete<Receita>(this.apiURL + '/' + id);
+  }
 }
+
