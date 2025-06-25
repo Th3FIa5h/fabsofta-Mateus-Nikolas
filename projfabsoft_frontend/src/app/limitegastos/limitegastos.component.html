@@ -1,0 +1,47 @@
+<main class="container">
+    <h2>LimiteGastos</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Valor limite</th>
+                <th>Descrição da Despesa</th>
+                <th>Valor da Despesa/th>
+                <th>Data da Despesa</th>
+                <th>Tipo da Despesa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umlimitegastos of listaLimiteGastos">
+                <td>{{umlimitegastos.valorLimite}}</td>
+                <td>{{umlimitegastos.despesa.descricao}}</td>
+                <td>{{umlimitegastos.despesa.valor}}</td>
+                <td>{{umlimitegastos.despesa.data}}</td>
+                <td>{{umlimitegastos.despesa.tipo}}</td>
+                <td>
+                    <a (click)="alterar(umlimitegastos)" 
+                    class="btn btn-secondary">Alterar</a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umlimitegastos)" 
+                    class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Conta</h5>
+            </div>
+            <div class="modal-body">
+            Confirma a exclusão da conta?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>

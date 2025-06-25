@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+import br.univille.projetofabsoftfinancas.entity.AlertaPagamento;
 import br.univille.projetofabsoftfinancas.entity.Cartao;
 import br.univille.projetofabsoftfinancas.service.CartaoService;
 
@@ -33,7 +33,12 @@ public class CartaoController {
         return new ResponseEntity<List<Cartao>>(listaCartao,
                     HttpStatus.OK);
     }
+    @GetMapping("/id")
+    public ResponseEntity<Cartao> getCartaoId(@PathVariable Long id) {
+        var cartao = service.getById(id);
 
+        return new ResponseEntity<Cartao>(cartao, HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<Cartao> 
             postCartao(@RequestBody Cartao cartao){

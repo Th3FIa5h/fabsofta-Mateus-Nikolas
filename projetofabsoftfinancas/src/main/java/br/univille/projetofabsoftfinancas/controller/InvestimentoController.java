@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+import br.univille.projetofabsoftfinancas.entity.Despesa;
 import br.univille.projetofabsoftfinancas.entity.Investimento;
 import br.univille.projetofabsoftfinancas.service.InvestimentoService;
 
@@ -32,7 +32,12 @@ public class InvestimentoController {
         return new ResponseEntity<List<Investimento>>(listaInvestimento,
                     HttpStatus.OK);
     }
+    @GetMapping("/id")
+    public ResponseEntity<Investimento> getInvestimentoId(@PathVariable Long id) {
+        var investimento = service.getById(id);
 
+        return new ResponseEntity<Investimento>(investimento, HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<Investimento> 
             postInvestimento(@RequestBody Investimento investimento){

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+import br.univille.projetofabsoftfinancas.entity.Cartao;
 import br.univille.projetofabsoftfinancas.entity.Despesa;
 import br.univille.projetofabsoftfinancas.service.DespesaService;
 
@@ -33,7 +33,12 @@ public class DespesaController {
         return new ResponseEntity<List<Despesa>>(listaDespesa,
                     HttpStatus.OK);
     }
+    @GetMapping("/id")
+    public ResponseEntity<Despesa> getDespesaId(@PathVariable Long id) {
+        var despesa = service.getById(id);
 
+        return new ResponseEntity<Despesa>(despesa, HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<Despesa> 
             postDespesa(@RequestBody Despesa despesa){

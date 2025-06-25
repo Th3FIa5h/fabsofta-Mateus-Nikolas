@@ -1,7 +1,6 @@
 package br.univille.projetofabsoftfinancas.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;

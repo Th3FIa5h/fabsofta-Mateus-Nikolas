@@ -1,0 +1,63 @@
+<main class="container">
+    <h2>Despesa</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Numero da Conta</th>
+                <th>Agencia da Conta</th>
+                <th>Banco da Conta</th>
+                <th>Numero do Cartao</th>
+                <th>Cvv do Cartão</th>
+                <th>Validade do Cartão</th>
+                <th>Nome do Cliente</th>
+                <th>Banco do Cartão</th>
+                <th>Bandeira do Cartão</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umdespesa of listaDespesas">
+                <td>{{umdespesa.descricao}}</td>
+                <td>{{umdespesa.valor}}</td>
+                <td>{{umdespesa.data}}</td>
+                <td>{{umdespesa.tipo}}</td>
+                <td>{{umdespesa.conta.numero}}</td>
+                <td>{{umdespesa.conta.agencia}}</td>
+                <td>{{umdespesa.conta.banco}}</td>
+                <td>{{umdespesa.cartao.numero}}</td>
+                <td>{{umdespesa.cartao.cvv}}</td>
+                <td>{{umdespesa.cartao.validade}}</td>
+                <td>{{umdespesa.cartao.nomeCliente}}</td>
+                <td>{{umdespesa.cartao.banco}}</td>
+                <td>{{umdespesa.cartao.bandeira}}</td>
+                <td>
+                    <a (click)="alterar(umdespesa)" 
+                    class="btn btn-secondary">Alterar</a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umdespesa)" 
+                    class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Conta</h5>
+            </div>
+            <div class="modal-body">
+            Confirma a exclusão da conta?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>

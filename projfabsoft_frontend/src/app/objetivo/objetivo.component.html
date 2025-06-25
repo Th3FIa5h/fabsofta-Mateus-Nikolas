@@ -1,0 +1,83 @@
+<main class="container">
+    <h2>Objetivo</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Valor Alvo</th>
+                <th>Progresso Atual</th>
+                <th>Descrição da Receita</th>
+                <th>Valor da Receita</th>
+                <th>Data da Receita</th>
+                <th>Tipo da Receita</th>
+                <th>Descrição do Investimento</th>
+                <th>Valor do Investimento</th>
+                <th>Prazo do Investimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umobjetivo of listaObjetivos">
+                <td>{{umobjetivo.valorAlvo}}</td>
+                <td>{{umobjetivo.progressoAtual}}</td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
+                        {{umobjetivo.listaReceitas[0].descricao}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
+                        {{umobjetivo.listaReceitas[0].valor}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
+                        {{umobjetivo.listaReceitas[0].data}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
+                        {{umobjetivo.listaReceitas[0].tipo}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
+                        {{umobjetivo.listaInvestimento[0].descricao}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
+                        {{umobjetivo.listaInvestimento[0].valor}}
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
+                        {{umobjetivo.listaInvestimento[0].prazo}}
+                    </ng-container>
+                </td>
+                 <td>
+                    <a (click)="alterar(umobjetivo)" 
+                    class="btn btn-secondary">Alterar</a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umobjetivo)" 
+                    class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Conta</h5>
+            </div>
+            <div class="modal-body">
+            Confirma a exclusão da conta?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
