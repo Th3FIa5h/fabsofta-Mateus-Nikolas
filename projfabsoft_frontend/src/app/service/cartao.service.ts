@@ -13,4 +13,20 @@ export class CartaoService {
   getCartao(){
       return this.http.get<Cartao[]>(this.apiURL);  
     }
+  
+  saveCartao(cartao: Cartao) {
+    if(cartao.id) {
+      return this.http.put(this.apiURL + '/' + cartao.id, cartao);
+    }
+    return this.http.post(this.apiURL, cartao);
+  }
+
+  getCartaoById(id: any) {
+    return this.http.get<Cartao>(this.apiURL + '/' + id);
+  }
+
+  excluirCartao(id: any){
+    return this.http.delete<Cartao>(this.apiURL + '/' + id);
+  }
 }
+

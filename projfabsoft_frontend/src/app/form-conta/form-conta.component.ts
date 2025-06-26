@@ -22,7 +22,7 @@ export class FormContaComponent {
   ) {
     const id = this.activedRoute.snapshot.paramMap.get('id');
     if (id) {
-      this.contaService.getClienteById(id)
+      this.contaService.getContaById(id)
       .subscribe( conta => {
         this.conta = conta;
       });

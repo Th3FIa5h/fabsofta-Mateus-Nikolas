@@ -1,0 +1,24 @@
+<main class="container">
+    <h2>Alerta de Pagamento</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtdescricao">Descrição</label>
+                <input type="text" [(ngModel)]="alertapagamento.descricao" class="form-control" name="descricao" id="txtdescricao">
+
+                <label for="txtdataVencimento">Data de Vencimento</label>
+                <input type="date" [(ngModel)]="alertapagamento.dataVencimento" class="form-control" name="dataVencimento" id="txtdataVencimento">
+
+                <label for="txtstatus">Status</label>
+                <input type="text" [(ngModel)]="alertapagamento.status" class="form-control" name="status" id="txtstatus">
+
+                <label for="txtconta">Conta</label>
+                <input type="text" [(ngModel)]="alertapagamento.conta.numero" class="form-control" name="conta" id="txtconta" placeholder="Número da Conta">
+
+                <label for="txtcartao">Cartão</label>
+                <input type="text" [(ngModel)]="alertapagamento.cartao.numero" class="form-control" name="cartao" id="txtcartao" placeholder="Número do Cartão">
+            </div>
+        </div>
+        <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+    </div>
+</main>

@@ -1,0 +1,15 @@
+<main class="container">
+    <h2>Objetivo</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtvalorAlvo">Valor Alvo</label>
+                <input type="number" [(ngModel)]="objetivo.valorAlvo" class="form-control" name="valorAlvo" id="txtvalorAlvo">
+
+                <label for="txtprogressoAtual">Progresso Atual</label>
+                <input type="number" [(ngModel)]="objetivo.progressoAtual" class="form-control" name="progressoAtual" id="txtprogressoAtual">
+            </div>
+        </div>
+        <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+    </div>
+</main>

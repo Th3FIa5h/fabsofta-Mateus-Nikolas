@@ -1,0 +1,24 @@
+<main class="container">
+    <h2>Limite de Gastos</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtvalorLimite">Valor Limite</label>
+                <input type="number" [(ngModel)]="limitegastos.valorLimite" class="form-control" name="valorLimite" id="txtvalorLimite">
+
+                <label for="txtdespesaDescricao">Descrição da Despesa</label>
+                <input type="text" [(ngModel)]="limitegastos.despesa.descricao" class="form-control" name="despesaDescricao" id="txtdespesaDescricao">
+
+                <label for="txtdespesaValor">Valor da Despesa</label>
+                <input type="number" [(ngModel)]="limitegastos.despesa.valor" class="form-control" name="despesaValor" id="txtdespesaValor">
+
+                <label for="txtdespesaData">Data da Despesa</label>
+                <input type="date" [(ngModel)]="limitegastos.despesa.data" class="form-control" name="despesaData" id="txtdespesaData">
+
+                <label for="txtdespesaTipo">Tipo da Despesa</label>
+                <input type="text" [(ngModel)]="limitegastos.despesa.tipo" class="form-control" name="despesaTipo" id="txtdespesaTipo">
+            </div>
+        </div>
+        <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+    </div>
+</main>

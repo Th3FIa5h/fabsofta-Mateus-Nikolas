@@ -10,7 +10,23 @@ export class InvestimentoService {
 
   constructor(private http:HttpClient) {}
 
-  getInvestimentos(){
+  getInvestimento(){
       return this.http.get<Investimento[]>(this.apiURL);  
     }
+  
+  saveInvestimento(investimento: Investimento) {
+    if(investimento.id) {
+      return this.http.put(this.apiURL + '/' + investimento.id, investimento);
+    }
+    return this.http.post(this.apiURL, investimento);
+  }
+
+  getInvestimentoById(id: any) {
+    return this.http.get<Investimento>(this.apiURL + '/' + id);
+  }
+
+  excluirInvestimento(id: any){
+    return this.http.delete<Investimento>(this.apiURL + '/' + id);
+  }
 }
+
