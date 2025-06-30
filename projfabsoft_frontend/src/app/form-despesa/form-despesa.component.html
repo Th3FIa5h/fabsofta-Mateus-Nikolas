@@ -1,68 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="form-despesa.component.css" />
-  </head>
-  <body>
-    <div class="despesa-novo-editar">
-      <div class="overlap-group-wrapper">
-        <div class="overlap-group">
-          <div class="overlap">
-            <img class="icone-home" src="img/icone-home.png" />
-            <div class="mihas-despesas">Minhas Despesas</div>
-            <div class="div">
-              <div class="botao-despesas"></div>
-              <div class="ver-despesas">Ver Despesa</div>
-              <img class="icone-despesa" src="img/icone-despesa.png" />
-            </div>
-          </div>
-          <div class="overlap-2">
-            <div class="descricao">Descrição</div>
-            <div class="data">Data</div>
-            <div class="valor">Valor</div>
-            <div class="banco">Banco</div>
-            <div class="cartao">Cartão</div>
-            <div class="tipo">Tipo</div>
-            <div class="overlap-3">
-              <img class="linha" src="img/linha-2.svg" />
-              <img class="img" src="img/linha-3.svg" />
-              <img class="linha-2" src="img/linha-4.svg" />
-              <img class="linha-3" src="img/linha-5.svg" />
-              <img class="linha-4" src="img/linha.svg" />
-              <img class="linha-5" src="img/image.svg" />
-            </div>
-          </div>
-          <div class="cancelar-wrapper"><div class="cancelar">Cancelar</div></div>
-          <div class="salvar-wrapper"><div class="salvar">Salvar</div></div>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <div class="receita-novo-editar">
+    <div class="overlap-group-wrapper">
+      <div class="overlap-group">
+        <div class="header">
+    <div class="header-top">
+      <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+      <button (click)="irParaDespesas()" class="btn-view"><i class="bi bi-piggy-bank"></i> Ver Despesas</button>
+    </div>
+    <h1 class="title">Minhas Despesas</h1>
+    </div>
+        <div class="overlap-2">
+          <table class="form-tabela">
+            <thead>
+              <tr>
+                <th>Valor</th>
+                  <th>Descrição</th>
+                  <th>Data</th>
+                  <th>Banco</th>
+                  <th>Tipo</th>
+                  <th>Conta</th>
+                  <th>Cartão</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                 <td><input type="number" [(ngModel)]="despesa.valor" class="form-control" /></td>
+                  <td><input type="text" [(ngModel)]="despesa.descricao" class="form-control" /></td>
+                  <td><input type="date" [(ngModel)]="despesa.data" class="form-control" /></td>
+                  <td><input type="text" [(ngModel)]="despesa.conta.banco" class="form-control" /></td>
+                  <td><input type="text" [(ngModel)]="despesa.tipo" class="form-control" /></td>
+                  <td><input type="text" [(ngModel)]="despesa.conta.numero" class="form-control" placeholder="Número da Conta" /></td>
+                  <td><input type="text" [(ngModel)]="despesa.cartao.numero" class="form-control" placeholder="Número do Cartão" /></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <div class="botoes-centro">
+          <div class="cancelar-wrapper" (click)="cancelar()">
+            <div class="cancelar">Cancelar</div>
+          </div>
+
+          <div class="salvar-wrapper" (click)="salvar()">
+            <div class="salvar">Salvar</div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
-<main class="container">
-    <h2>Despesa</h2>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="txtdescricao">Descrição</label>
-                <input type="text" [(ngModel)]="despesa.descricao" class="form-control" name="descricao" id="txtdescricao">
-
-                <label for="txtvalor">Valor</label>
-                <input type="number" [(ngModel)]="despesa.valor" class="form-control" name="valor" id="txtvalor">
-
-                <label for="txtdata">Data</label>
-                <input type="date" [(ngModel)]="despesa.data" class="form-control" name="data" id="txtdata">
-
-                <label for="txttipo">Tipo</label>
-                <input type="text" [(ngModel)]="despesa.tipo" class="form-control" name="tipo" id="txttipo">
-
-                <label for="txtconta">Conta</label>
-                <input type="text" [(ngModel)]="despesa.conta.numero" class="form-control" name="conta" id="txtconta" placeholder="Número da Conta">
-
-                <label for="txtcartao">Cartão</label>
-                <input type="text" [(ngModel)]="despesa.cartao.numero" class="form-control" name="cartao" id="txtcartao" placeholder="Número do Cartão">
-            </div>
-        </div>
-        <button (click)="salvar()" class="btn btn-primary">Salvar</button>

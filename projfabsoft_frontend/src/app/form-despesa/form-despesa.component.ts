@@ -35,4 +35,16 @@ export class FormDespesaComponent {
       this.router.navigate(['/despesa']);
     });
   }
+
+  cancelar() {
+    this.router.navigate(['/despesa'])
+  }
+
+  irParaDespesas() {
+  this.router.navigate(['/despesa']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }

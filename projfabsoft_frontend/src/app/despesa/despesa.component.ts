@@ -63,4 +63,12 @@ export class DespesaComponent {
       }
     );
   }
+
+  irParaReceitas() {
+  this.router.navigate(['/receita']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }

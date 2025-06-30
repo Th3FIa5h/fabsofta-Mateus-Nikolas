@@ -1,148 +1,143 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="despesa.component.css" />
-  </head>
-  <body>
-    <div class="despesa">
-      <div class="overlap-group-wrapper">
-        <div class="overlap-group">
-          <div class="plano-fundo"></div>
-          <div class="header"></div>
-          <img class="icone-home" src="img/icone-home.png" />
-          <div class="minhas-despesas">Minhas Despesas</div>
-          <div class="campo-fixas"></div>
-          <div class="campo-variaveis"></div>
-          <div class="variaveis">Variáveis</div>
-          <div class="fixas">Fixas</div>
-          <img class="linha" src="img/linha-3.svg" />
-          <img class="img" src="img/linha-5.svg" />
-          <img class="linha-2" src="img/linha-12.svg" />
-          <img class="linha-3" src="img/linha-24.svg" />
-          <img class="linha-4" src="img/linha-21.svg" />
-          <img class="linha-5" src="img/linha-28.svg" />
-          <img class="linha-6" src="img/linha-26.svg" />
-          <img class="linha-7" src="img/linha-9.svg" />
-          <img class="linha-8" src="img/linha-13.svg" />
-          <img class="linha-9" src="img/linha-4.svg" />
-          <img class="linha-9" src="img/linha-16.svg" />
-          <img class="linha-10" src="img/linha-22.svg" />
-          <img class="linha-11" src="img/linha-18.svg" />
-          <img class="linha-12" src="img/linha-15.svg" />
-          <img class="linha-13" src="img/linha-14.svg" />
-          <img class="linha-14" src="img/linha-29.svg" />
-          <img class="linha-15" src="img/linha-30.svg" />
-          <img class="linha-16" src="img/linha-11.svg" />
-          <img class="linha-17" src="img/image.svg" />
-          <img class="linha-18" src="img/linha-17.svg" />
-          <img class="linha-19" src="img/linha-27.svg" />
-          <img class="linha-20" src="img/linha-6.svg" />
-          <img class="linha-21" src="img/linha-7.svg" />
-          <img class="linha-22" src="img/linha.svg" />
-          <img class="linha-23" src="img/linha-2.svg" />
-          <img class="linha-24" src="img/linha-19.svg" />
-          <img class="linha-24" src="img/linha-25.svg" />
-          <img class="linha-25" src="img/linha-23.svg" />
-          <img class="linha-26" src="img/linha-10.svg" />
-          <img class="linha-27" src="img/linha-20.svg" />
-          <img class="linha-28" src="img/linha-8.svg" />
-          <div class="descricao">Descrição</div>
-          <div class="data">Data</div>
-          <div class="valor">Valor</div>
-          <div class="banco">Banco</div>
-          <div class="cartao">Cartão</div>
-          <div class="editar">Editar/Excluir</div>
-          <div class="editar4">Editar/Excluir</div>
-          <div class="text-wrapper">Descrição</div>
-          <div class="div">Data</div>
-          <div class="valor-2">Valor</div>
-          <div class="banco-2">Banco</div>
-          <div class="cartao-2">Cartão</div>
-          <div class="banco-fixas">Nubank</div>
-          <div class="cartao-fixas">Crédito</div>
-          <div class="valor-fixas">R$1000,00</div>
-          <div class="data-fixas">31/12/9999</div>
-          <p class="descricao-fixas">Fatura Cartão de Crédito - Nubank</p>
-          <div class="banco-variaveis">Inter</div>
-          <div class="cartao-variaveis">Débito</div>
-          <div class="valor-variaveis">R$200,00</div>
-          <div class="data-variaiveis">31/12/9999</div>
-          <div class="descricao-variaveis">Retiro Jovens Igreja</div>
-          <img class="editar-2" src="img/editar-1.png" />
-          <img class="editar-3" src="img/editar-2.png" />
-          <div class="botao-adicionar"></div>
-          <div class="adicionar">Adicionar</div>
-          <div class="botao-receitas"></div>
-          <div class="ver-receitas">Ver Receitas</div>
-          <img class="icone-receita" src="img/icone-receita.png" />
-          <img class="excluir" src="img/excluir-1.png" />
-          <img class="excluir-2" src="img/excluir-2.png" />
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>Minhas Despesas</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-top">
+      <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+      <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
+      <button (click)="irParaReceitas()" class="btn-view"><i class="bi bi-cash-coin"></i> Ver Receitas</button>
+    </div>
+    <h1 class="title">Minhas Despesas</h1>
+  </div>
+
+  <div class="tables-section">
+    <div class="table-card">
+      <h2>Fixas</h2>
+      <div class="tabela-receitas-wrapper">
+        <table class="table tabela-receitas">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Numero da Conta</th>
+              <th>Agencia da Conta</th>
+              <th>Banco da Conta</th>
+              <th>Numero do Cartao</th>
+              <th>Cvv do Cartão</th>
+              <th>Validade do Cartão</th>
+              <th>Nome do Cliente</th>
+              <th>Banco do Cartão</th>
+              <th>Bandeira do Cartão</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let umdespesa of listaDespesas">
+              <td>{{umdespesa.descricao}}</td>
+              <td>{{umdespesa.valor}}</td>
+              <td>{{umdespesa.data}}</td>
+              <td>{{umdespesa.tipo}}</td>
+              <td>{{umdespesa.conta.numero}}</td>
+              <td>{{umdespesa.conta.agencia}}</td>
+              <td>{{umdespesa.conta.banco}}</td>
+              <td>{{umdespesa.cartao.numero}}</td>
+              <td>{{umdespesa.cartao.cvv}}</td>
+              <td>{{umdespesa.cartao.validade}}</td>
+              <td>{{umdespesa.cartao.nomeCliente}}</td>
+              <td>{{umdespesa.cartao.banco}}</td>
+              <td>{{umdespesa.cartao.bandeira}}</td>
+              <td>
+                <a (click)="alterar(umdespesa)" class="icon-btn editar">
+                  <i class="bi bi-pencil-fill"></i>
+                </a>
+                <a (click)="abrirConfirmacao(umdespesa)" class="icon-btn excluir">
+                  <i class="bi bi-eraser-fill"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <h2>Variáveis</h2>
+      <div class="tabela-receitas-wrapper">
+        <table class="table tabela-receitas">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Numero da Conta</th>
+              <th>Agencia da Conta</th>
+              <th>Banco da Conta</th>
+              <th>Numero do Cartao</th>
+              <th>Cvv do Cartão</th>
+              <th>Validade do Cartão</th>
+              <th>Nome do Cliente</th>
+              <th>Banco do Cartão</th>
+              <th>Bandeira do Cartão</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let umdespesa of listaDespesas">
+              <td>{{umdespesa.descricao}}</td>
+              <td>{{umdespesa.valor}}</td>
+              <td>{{umdespesa.data}}</td>
+              <td>{{umdespesa.tipo}}</td>
+              <td>{{umdespesa.conta.numero}}</td>
+              <td>{{umdespesa.conta.agencia}}</td>
+              <td>{{umdespesa.conta.banco}}</td>
+              <td>{{umdespesa.cartao.numero}}</td>
+              <td>{{umdespesa.cartao.cvv}}</td>
+              <td>{{umdespesa.cartao.validade}}</td>
+              <td>{{umdespesa.cartao.nomeCliente}}</td>
+              <td>{{umdespesa.cartao.banco}}</td>
+              <td>{{umdespesa.cartao.bandeira}}</td>
+              <td>
+                <a (click)="alterar(umdespesa)" class="icon-btn editar">
+                  <i class="bi bi-pencil-fill"></i>
+                </a>
+                <a (click)="abrirConfirmacao(umdespesa)" class="icon-btn excluir">
+                  <i class="bi bi-eraser-fill"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Excluir Cartão</h5>
+        </div>
+        <div class="modal-body">
+          Confirma a exclusão do cartão?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+</body>
+
 </html>
-
-<main class="container">
-    <h2>Despesa</h2>
-    <a (click)="novo()" class="btn btn-primary">Nova Conta</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Descrição</th>
-                <th>Valor</th>
-                <th>Data</th>
-                <th>Tipo</th>
-                <th>Numero da Conta</th>
-                <th>Agencia da Conta</th>
-                <th>Banco da Conta</th>
-                <th>Numero do Cartao</th>
-                <th>Cvv do Cartão</th>
-                <th>Validade do Cartão</th>
-                <th>Nome do Cliente</th>
-                <th>Banco do Cartão</th>
-                <th>Bandeira do Cartão</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let umdespesa of listaDespesas">
-                <td>{{umdespesa.descricao}}</td>
-                <td>{{umdespesa.valor}}</td>
-                <td>{{umdespesa.data}}</td>
-                <td>{{umdespesa.tipo}}</td>
-                <td>{{umdespesa.conta.numero}}</td>
-                <td>{{umdespesa.conta.agencia}}</td>
-                <td>{{umdespesa.conta.banco}}</td>
-                <td>{{umdespesa.cartao.numero}}</td>
-                <td>{{umdespesa.cartao.cvv}}</td>
-                <td>{{umdespesa.cartao.validade}}</td>
-                <td>{{umdespesa.cartao.nomeCliente}}</td>
-                <td>{{umdespesa.cartao.banco}}</td>
-                <td>{{umdespesa.cartao.bandeira}}</td>
-                <td>
-                    <a (click)="alterar(umdespesa)" 
-                    class="btn btn-secondary">Alterar</a>
-                    &nbsp;
-                    <a (click)="abrirConfirmacao(umdespesa)" 
-                    class="btn btn-danger">Excluir</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</main>
-
-<div class="modal fade" #myModal tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Excluir Conta</h5>
-            </div>
-            <div class="modal-body">
-            Confirma a exclusão da conta?
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
-            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
-            </div>

@@ -15,6 +15,7 @@ import { FormInvestimentoComponent } from './form-investimento/form-investimento
 import { FormLimitegastosComponent } from './form-limitegastos/form-limitegastos.component';
 import { FormObjetivoComponent } from './form-objetivo/form-objetivo.component';
 import { FormReceitaComponent } from './form-receita/form-receita.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
     { path: 'contas', component: ContaComponent },
@@ -47,5 +48,7 @@ export const routes: Routes = [
 
     { path: 'receita', component: ReceitaComponent },
     { path: 'receita/novo', component: FormReceitaComponent },
-    { path: 'receita/alterar/:id', component: FormReceitaComponent }
+    { path: 'receita/alterar/:id', component: FormReceitaComponent },
+
+    { path: 'dashboard', component: DashboardComponent}
 ];

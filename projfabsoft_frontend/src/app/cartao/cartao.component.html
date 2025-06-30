@@ -17,27 +17,60 @@
               <img class="icone-conta" src="img/icone-conta.png" />
             </div>
             <div class="meus-cartoes">Meus Cartões</div>
-            <div class="adicionar-wrapper"><div class="adicionar">Adicionar</div></div>
+            <div class="adicionar-wrapper">
+              <a (click)="novo()" class="adicionar btn btn-primary">Adicionar</a>
+            </div>
           </div>
-          <div class="overlap-2">
-            <div class="numero">1234&nbsp;&nbsp;5678&nbsp;&nbsp;9012&nbsp;&nbsp;3456</div>
-            <div class="validade">Val: 01/01/9999</div>
-            <div class="cvv">CVV: 123</div>
-            <div class="nome">Mateus Medeiros dos Santos</div>
-            <div class="bandeira">Mastercard</div>
-            <div class="banco">Inter</div>
-            <img class="editar" src="img/editar-1.png" />
-            <img class="excluir" src="img/excluir-1.png" />
+          <div class="tabela-cartoes-wrapper">
+            <table class="table tabela-cartoes">
+              <thead>
+                <tr>
+                  <th>Numero</th>
+                  <th>CVV</th>
+                  <th>Validade</th>
+                  <th>Nome do Cliente</th>
+                  <th>Banco</th>
+                  <th>Bandeira</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let umCartao of listaCartoes">
+                  <td>{{umCartao.numero}}</td>
+                  <td>{{umCartao.cvv}}</td>
+                  <td>{{umCartao.validade}}</td>
+                  <td>{{umCartao.nomeCliente}}</td>
+                  <td>{{umCartao.banco}}</td>
+                  <td>{{umCartao.bandeira}}</td>
+                  <td>
+                    <a (click)="alterar(umCartao)" class="btn btn-secondary editar">
+                      <img src="img/editar-1.png" alt="Editar" style="width:20px;height:20px;vertical-align:middle;">
+                    </a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umCartao)" class="btn btn-danger excluir">
+                      <img src="img/excluir-1.png" alt="Excluir" style="width:20px;height:20px;vertical-align:middle;">
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="overlap-3">
-            <div class="numero-cartao">1234&nbsp;&nbsp;5678&nbsp;&nbsp;9012&nbsp;&nbsp;3456</div>
-            <div class="validade-cartao">Val: 01/01/9999</div>
-            <div class="cvv-cartao">CVV: 123</div>
-            <div class="nome-cartao">Mateus Medeiros dos Santos</div>
-            <div class="banco-cartao">Nubank</div>
-            <div class="bandeira-cartao">Mastercard</div>
-            <img class="img" src="img/editar-2.png" />
-            <img class="excluir-2" src="img/excluir-2.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" #myModal tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Excluir Cartão</h5>
+          </div>
+          <div class="modal-body">
+            Confirma a exclusão do cartão?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
           </div>
         </div>
       </div>
@@ -46,49 +79,3 @@
 </html>
 
 
-<main class="container">
-    <h2>Cartão</h2>
-    <a (click)="novo()" class="btn btn-primary">Nova Conta</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Numero</th>
-                <th>Cvv</th>
-                <th>Validade</th>
-                <th>Nome do Cliente</th>
-                <th>Banco</th>
-                <th>Bandeira</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let umCartao of listaCartoes">
-                <td>{{umCartao.numero}}</td>
-                <td>{{umCartao.cvv}}</td>
-                <td>{{umCartao.validade}}</td>
-                <td>{{umCartao.nomeCliente}}</td>
-                <td>{{umCartao.banco}}</td>
-                <td>{{umCartao.bandeira}}</td>
-                <td>
-                    <a (click)="alterar(umCartao)" 
-                    class="btn btn-secondary">Alterar</a>
-                    &nbsp;
-                    <a (click)="abrirConfirmacao(umCartao)" 
-                    class="btn btn-danger">Excluir</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</main>
-
-<div class="modal fade" #myModal tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Excluir Conta</h5>
-            </div>
-            <div class="modal-body">
-            Confirma a exclusão da conta?
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
-            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>

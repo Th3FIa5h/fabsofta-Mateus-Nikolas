@@ -35,4 +35,16 @@ export class FormReceitaComponent {
       this.router.navigate(['/receita']);
     });
   }
+
+  cancelar() {
+    this.router.navigate(['/receita'])
+  }
+
+  irParaReceita() {
+  this.router.navigate(['/receita']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }

@@ -63,4 +63,12 @@ export class ReceitaComponent {
       }
     );
   }
+
+  irParaDespesa() {
+  this.router.navigate(['/despesa']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }
