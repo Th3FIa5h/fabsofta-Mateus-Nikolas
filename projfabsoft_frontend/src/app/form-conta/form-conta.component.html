@@ -1,17 +1,33 @@
-<main class="container">
-    <h2>Conta</h2>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="txtnumero">Numero</label>
-                <input type="text" [(ngModel)]="conta.numero" class="form-control" name="numero" id="txtnumero">
-                <label for="txtagencia">Agencia</label>
-                <input type="text" [(ngModel)]="conta.agencia" class="form-control" name="agencia" id="txtagencia">
-                <label for="txtbanco">Banco</label>
-                <input type="text" [(ngModel)]="conta.banco" class="form-control" name="banco" id="txtbanco">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="form-conta.component.css" />
+  </head>
+  <body>
+    <div class="conta-novo-editar">
+      <div class="overlap-group-wrapper">
+        <div class="overlap-group">
+          <div class="overlap">
+            <img class="icone-home" src="img/icone-home.png" />
+            <div class="minhas-contas">Minhas Contas</div>
+            <div class="div">
+              <div class="ver-contas">Ver Contas</div>
+              <img class="icone-conta" src="img/icone-conta.png" />
+              <div class="botao-contas"></div>
             </div>
+          </div>
+          <div class="campo-nome-banco"></div>
+          <div class="campo-agencia"></div>
+          <div class="campo-conta"></div>
+          <div class="nome-banco">Nome do Banco:</div>
+          <div class="agencia">Agência:</div>
+          <div class="conta">Conta:</div>
+          <div class="cancelar-wrapper"><div class="cancelar">Cancelar</div></div>
+          <div class="salvar-wrapper"><div class="salvar">Salvar</div></div>
         </div>
-        <button (click)="salvar()"
-        class="btn btn-primary">Salvar</button>
+      </div>
     </div>
-</main>
+  </body>
+</html>

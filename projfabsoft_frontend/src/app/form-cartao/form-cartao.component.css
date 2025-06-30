@@ -1,0 +1,322 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+
+.carto-novo-editar {
+  background-color: #e1e3e7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.carto-novo-editar .overlap-group-wrapper {
+  background-color: #e1e3e7;
+  width: 1920px;
+  height: 992px;
+}
+
+.carto-novo-editar .overlap-group {
+  position: relative;
+  width: 1778px;
+  height: 862px;
+  top: 65px;
+  left: 71px;
+  background-color: #fcfdff;
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px 1px #00000040;
+}
+
+.carto-novo-editar .overlap {
+  position: absolute;
+  width: 1778px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  background-color: #e7f1fc;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.carto-novo-editar .icone-home {
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  top: 19px;
+  left: 17px;
+  object-fit: cover;
+}
+
+.carto-novo-editar .meus-cartoes {
+  position: absolute;
+  top: 193px;
+  left: 682px;
+  text-shadow: 4px 4px 4px #00000040;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 64px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.carto-novo-editar .div {
+  position: absolute;
+  width: 193px;
+  height: 52px;
+  top: 32px;
+  left: 1539px;
+  border-radius: 15px;
+}
+
+.carto-novo-editar .botao-cartoes {
+  position: absolute;
+  width: 193px;
+  height: 52px;
+  top: 0;
+  left: 0;
+  background-color: #c5c5c533;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px #00000040;
+}
+
+.carto-novo-editar .ver-cartoes {
+  position: absolute;
+  top: 14px;
+  left: 61px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.carto-novo-editar .icone-cartao {
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  top: 8px;
+  left: 23px;
+  object-fit: cover;
+}
+
+.carto-novo-editar .campo-cartao-nome {
+  position: absolute;
+  width: 406px;
+  height: 73px;
+  top: 406px;
+  left: 526px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #ecf3f9;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.carto-novo-editar .campo-cartao {
+  position: absolute;
+  width: 283px;
+  height: 73px;
+  top: 406px;
+  left: 977px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #ecf3f9;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.carto-novo-editar .campo-cartao-cvv {
+  position: absolute;
+  width: 136px;
+  height: 73px;
+  top: 548px;
+  left: 1124px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #ecf3f9;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.carto-novo-editar .campo-numero-cartao {
+  position: absolute;
+  width: 569px;
+  height: 73px;
+  top: 548px;
+  left: 526px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #ecf3f9;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.carto-novo-editar .campo-conta {
+  position: absolute;
+  width: 377px;
+  height: 73px;
+  top: 686px;
+  left: 526px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #ecf3f9;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.carto-novo-editar .campo-bandeira {
+  position: absolute;
+  width: 328px;
+  height: 73px;
+  top: 686px;
+  left: 932px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #ecf3f9;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.carto-novo-editar .nome-banco {
+  position: absolute;
+  top: 371px;
+  left: 650px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.carto-novo-editar .numero-cartao {
+  position: absolute;
+  top: 513px;
+  left: 719px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.carto-novo-editar .cvv {
+  position: absolute;
+  top: 513px;
+  left: 1167px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.carto-novo-editar .validade {
+  position: absolute;
+  top: 371px;
+  left: 1073px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.carto-novo-editar .conta {
+  position: absolute;
+  top: 651px;
+  left: 682px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.carto-novo-editar .bandeira {
+  position: absolute;
+  top: 651px;
+  left: 1050px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.carto-novo-editar .cancelar-wrapper {
+  position: absolute;
+  width: 122px;
+  height: 36px;
+  top: 776px;
+  left: 756px;
+  background-color: #e6e5e5;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.carto-novo-editar .cancelar {
+  position: absolute;
+  top: 7px;
+  left: 27px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.carto-novo-editar .salvar-wrapper {
+  position: absolute;
+  width: 122px;
+  height: 36px;
+  top: 776px;
+  left: 909px;
+  background-color: #0a7eec;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.carto-novo-editar .salvar {
+  position: absolute;
+  top: 7px;
+  left: 38px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}

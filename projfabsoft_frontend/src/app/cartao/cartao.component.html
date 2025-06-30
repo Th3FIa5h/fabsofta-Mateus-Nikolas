@@ -1,3 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="cartao.component.css" />
+  </head>
+  <body>
+    <div class="carto">
+      <div class="overlap-group-wrapper">
+        <div class="overlap-group">
+          <div class="overlap">
+            <img class="icone-home" src="img/icone-home.png" />
+            <div class="div">
+              <a href="index.html"><div class="botao-contas"></div></a>
+              <div class="ver-contas">Ver Contas</div>
+              <img class="icone-conta" src="img/icone-conta.png" />
+            </div>
+            <div class="meus-cartoes">Meus Cartões</div>
+            <div class="adicionar-wrapper"><div class="adicionar">Adicionar</div></div>
+          </div>
+          <div class="overlap-2">
+            <div class="numero">1234&nbsp;&nbsp;5678&nbsp;&nbsp;9012&nbsp;&nbsp;3456</div>
+            <div class="validade">Val: 01/01/9999</div>
+            <div class="cvv">CVV: 123</div>
+            <div class="nome">Mateus Medeiros dos Santos</div>
+            <div class="bandeira">Mastercard</div>
+            <div class="banco">Inter</div>
+            <img class="editar" src="img/editar-1.png" />
+            <img class="excluir" src="img/excluir-1.png" />
+          </div>
+          <div class="overlap-3">
+            <div class="numero-cartao">1234&nbsp;&nbsp;5678&nbsp;&nbsp;9012&nbsp;&nbsp;3456</div>
+            <div class="validade-cartao">Val: 01/01/9999</div>
+            <div class="cvv-cartao">CVV: 123</div>
+            <div class="nome-cartao">Mateus Medeiros dos Santos</div>
+            <div class="banco-cartao">Nubank</div>
+            <div class="bandeira-cartao">Mastercard</div>
+            <img class="img" src="img/editar-2.png" />
+            <img class="excluir-2" src="img/excluir-2.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
 <main class="container">
     <h2>Cartão</h2>
     <a (click)="novo()" class="btn btn-primary">Nova Conta</a>
@@ -44,7 +92,3 @@
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
             <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
-            </div>
-        </div>
-    </div>
-</div>
