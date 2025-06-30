@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Alertapagamento } from '../model/alertapagamento';
 import { AlertapagamentoService } from '../service/alertapagamento.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,8 +13,9 @@ import * as bootstrap from 'bootstrap';
   styleUrl: './alertapagamento.component.css',
   providers: [AlertapagamentoService, Router]
 })
-export class AlertapagamentoComponent {
+export class AlertapagamentoComponent implements OnInit {
   public listaAlertaspagamento: Alertapagamento[] = [];
+  public ultimosAlertas: Alertapagamento[] = [];
 
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
@@ -29,6 +30,9 @@ export class AlertapagamentoComponent {
   ngOnInit(): void {
     this.alertaService.getAlertapagamento().subscribe(alertas => {
       this.listaAlertaspagamento = alertas;
+      this.ultimosAlertas = alertas
+        .sort((a, b) => new Date(b.dataVencimento).getTime() - new Date(a.dataVencimento).getTime())
+        .slice(0, 4);
     });
   }
 

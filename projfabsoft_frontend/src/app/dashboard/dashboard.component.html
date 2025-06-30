@@ -1,1 +1,74 @@
-<p>dashboard works!</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+   </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a (click)="irParaConta()">Contas</a></li>
+        <li><a (click)="irParaCartao()">Cartões</a></li>
+        <li><a (click)="irParaReceitas()">Receitas</a></li>
+        <li><a (click)="irParaDespesas()">Despesas</a></li>
+        <li><a (click)="irParaInvestimento()">Investimentos</a></li>
+        <li><a (click)="irParaObjetivo()">Objetivos</a></li>
+        <li><a (click)="irParaLimiteGastos()">Limite de Gastos</a></li>
+        <li><a (click)="irParaAlertaPagamento()">Alertas de Pagamento</a></li>
+      </ul>
+    </nav>
+
+    <main class="dashboard">
+      <section class="resumos">
+        <div class="card resumo">Saldo Total Disponível<br><strong>R$15000,00</strong></div>
+        <div class="card resumo">Saldo Mensal Disponível<br><strong>R$3300,00</strong></div>
+        <div class="card resumo">Receita do Mês<br><strong>R$4500,00</strong></div>
+        <div class="card resumo">Despesa do Mês<br><strong>R$1200,00</strong></div>
+      </section>
+
+      <section class="limites-grafico">
+        <div class="card limites">
+          <h3>Limite Gastos Por Categoria</h3>
+          <div class="categorias">
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+          </div>
+        </div>
+        <div class="card grafico">
+          <h3>Gráfico Receitas/Despesas Mês</h3>
+        </div>
+      </section>
+
+      <div class="dash-content">
+        <div class="left-panel">
+          <div class="card alertas">
+            <h3>Alertas Despesas</h3>
+            <ul class="lista-alertas">
+            </ul>
+          </div>
+          <div class="card transacoes">
+            <h3>Últimas Transações</h3>
+            <ul class="lista-transacoes">
+            </ul>
+          </div>
+        </div>
+        
+        <div class="right-panel">
+          <div class="card botoes-card">
+            <div class="acoes">
+              <a (click)="irParaNovaReceitas()" class="btn receita">+ Nova Receita</a>
+              <a (click)="irParaNovaDespesa()" class="btn despesa">+ Nova Despesa</a>
+              <a (click)="irParaNovoInvestimento()" class="btn investimento">+ Novo Investimento</a>
+              <a (click)="irParaNovoObjetivo()" class="btn objetivo">+ Novo Objetivo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

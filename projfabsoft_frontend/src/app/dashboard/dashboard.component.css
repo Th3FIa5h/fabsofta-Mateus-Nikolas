@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #e1e3e7;
+    color: #000;
+}
+
+.navbar {
+    background-color: #dce9f9;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    gap: 10px;
+}
+
+.navbar li {
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 65px;
+    padding: 10px 0;
+}
+
+.dashboard {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.resumos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.resumo {
+    flex: 1;
+    min-width: 200px;
+}
+
+.resumo strong {
+    font-size: 20px;
+    display: block;
+    margin-top: 8px;
+}
+
+.limites-grafico {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.limites,
+.grafico {
+    flex: 1;
+    min-width: 300px;
+}
+
+.categorias {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.categoria {
+    width: 40px;
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 6px;
+}
+
+.alertas,
+.transacoes {
+    min-height: 200px;
+}
+
+.dash-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left-panel {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-panel {
+    flex: 1;
+    min-width: 300px;
+}
+
+.botoes-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 200px;
+    justify-content: center;
+}
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.receita {
+    background-color: #f39c12;
+    color: white;
+}
+
+.despesa {
+    background-color: #27ae60;
+    color: white;
+}
+
+.investimento {
+    background-color: #3498db;
+    color: white;
+}
+
+.objetivo {
+    background-color: #95a5a6;
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    .resumos,
+    .limites-grafico,
+    .acoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dash-content {
+        flex-direction: column;
+    }
+}
