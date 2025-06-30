@@ -1,0 +1,243 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+.conta-novo-editar {
+  background-color: #e1e3e7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.conta-novo-editar .overlap-group-wrapper {
+  background-color: #e1e3e7;
+  width: 1920px;
+  height: 992px;
+}
+
+.conta-novo-editar .overlap-group {
+  position: relative;
+  width: 1778px;
+  height: 862px;
+  top: 65px;
+  left: 71px;
+  background-color: #fcfdff;
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px 1px #00000040;
+}
+
+.conta-novo-editar .overlap {
+  position: absolute;
+  width: 1778px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  background-color: #e7f1fc;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.conta-novo-editar .icone-home {
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  top: 19px;
+  left: 17px;
+  object-fit: cover;
+}
+
+.conta-novo-editar .minhas-contas {
+  position: absolute;
+  top: 193px;
+  left: 662px;
+  text-shadow: 4px 4px 4px #00000040;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 64px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.conta-novo-editar .div {
+  position: absolute;
+  width: 193px;
+  height: 52px;
+  top: 32px;
+  left: 1539px;
+  border-radius: 15px;
+}
+
+.conta-novo-editar .ver-contas {
+  position: absolute;
+  top: 14px;
+  left: 61px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.conta-novo-editar .icone-conta {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  top: 12px;
+  left: 25px;
+  object-fit: cover;
+}
+
+.conta-novo-editar .botao-contas {
+  position: absolute;
+  width: 193px;
+  height: 52px;
+  top: 0;
+  left: 0;
+  background-color: #c5c5c533;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px #00000040;
+}
+
+.conta-novo-editar .campo-nome-banco {
+  position: absolute;
+  width: 569px;
+  height: 73px;
+  top: 407px;
+  left: 604px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #ecf3f9;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.conta-novo-editar .campo-agencia {
+  position: absolute;
+  width: 569px;
+  height: 73px;
+  top: 549px;
+  left: 604px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #ecf3f9;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.conta-novo-editar .campo-conta {
+  position: absolute;
+  width: 569px;
+  height: 73px;
+  top: 691px;
+  left: 604px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #ecf3f9;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.conta-novo-editar .nome-banco {
+  position: absolute;
+  top: 375px;
+  left: 604px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.conta-novo-editar .agencia {
+  position: absolute;
+  top: 517px;
+  left: 604px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.conta-novo-editar .conta {
+  position: absolute;
+  top: 659px;
+  left: 604px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.conta-novo-editar .cancelar-wrapper {
+  position: absolute;
+  width: 122px;
+  height: 36px;
+  top: 782px;
+  left: 604px;
+  background-color: #e6e5e5;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.conta-novo-editar .cancelar {
+  position: absolute;
+  top: 7px;
+  left: 26px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.conta-novo-editar .salvar-wrapper {
+  position: absolute;
+  width: 122px;
+  height: 36px;
+  top: 782px;
+  left: 757px;
+  background-color: #0a7eec;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px #00000040;
+}
+
+.conta-novo-editar .salvar {
+  position: absolute;
+  top: 7px;
+  left: 37px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}

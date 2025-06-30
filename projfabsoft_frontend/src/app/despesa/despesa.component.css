@@ -1,0 +1,751 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+
+.despesa {
+  background-color: #e1e3e7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.despesa .overlap-group-wrapper {
+  background-color: #e1e3e7;
+  width: 1920px;
+  height: 992px;
+}
+
+.despesa .overlap-group {
+  position: relative;
+  width: 1778px;
+  height: 874px;
+  top: 63px;
+  left: 71px;
+}
+
+.despesa .plano-fundo {
+  position: absolute;
+  width: 1778px;
+  height: 862px;
+  top: 0;
+  left: 0;
+  background-color: #fcfdff;
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px 1px #00000040;
+}
+
+.despesa .header {
+  position: absolute;
+  width: 1778px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  background-color: #e7f1fc;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.despesa .icone-home {
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  top: 19px;
+  left: 17px;
+  object-fit: cover;
+}
+
+.despesa .minhas-despesas {
+  position: absolute;
+  top: 193px;
+  left: 620px;
+  text-shadow: 4px 4px 4px #00000040;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 64px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .campo-fixas {
+  position: absolute;
+  width: 815px;
+  height: 457px;
+  top: 405px;
+  left: 57px;
+  background-color: #ffffff;
+  border-radius: 25px 25px 0px 0px;
+  border: 2px solid;
+  border-color: #e6eefa;
+  box-shadow: 4px 4px 30px #00000040;
+}
+
+.despesa .campo-variaveis {
+  position: absolute;
+  width: 815px;
+  height: 457px;
+  top: 405px;
+  left: 914px;
+  background-color: #ffffff;
+  border-radius: 25px 25px 0px 0px;
+  border: 2px solid;
+  border-color: #e6eefa;
+  box-shadow: 4px 4px 30px #00000040;
+}
+
+.despesa .variaveis {
+  position: absolute;
+  top: 343px;
+  left: 1242px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .fixas {
+  position: absolute;
+  top: 343px;
+  left: 419px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .linha {
+  width: 13px;
+  height: 443px;
+  top: 427px;
+  left: 169px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .img {
+  width: 796px;
+  height: 21px;
+  top: 446px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-2 {
+  width: 796px;
+  height: 21px;
+  top: 490px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-3 {
+  width: 796px;
+  height: 21px;
+  top: 535px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-4 {
+  width: 796px;
+  height: 21px;
+  top: 625px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-5 {
+  width: 796px;
+  height: 21px;
+  top: 708px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-6 {
+  width: 796px;
+  height: 21px;
+  top: 580px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-7 {
+  width: 796px;
+  height: 21px;
+  top: 670px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-8 {
+  width: 796px;
+  height: 21px;
+  top: 753px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-9 {
+  width: 796px;
+  height: 21px;
+  top: 798px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-10 {
+  width: 796px;
+  height: 21px;
+  top: 843px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-11 {
+  width: 13px;
+  height: 443px;
+  top: 427px;
+  left: 445px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-12 {
+  width: 13px;
+  height: 443px;
+  top: 427px;
+  left: 554px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-13 {
+  width: 13px;
+  height: 443px;
+  top: 427px;
+  left: 674px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-14 {
+  width: 13px;
+  height: 443px;
+  top: 431px;
+  left: 758px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-15 {
+  width: 13px;
+  height: 443px;
+  top: 427px;
+  left: 1029px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-16 {
+  width: 796px;
+  height: 21px;
+  top: 446px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-17 {
+  width: 796px;
+  height: 21px;
+  top: 490px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-18 {
+  width: 796px;
+  height: 21px;
+  top: 535px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-19 {
+  width: 796px;
+  height: 21px;
+  top: 625px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-20 {
+  width: 796px;
+  height: 21px;
+  top: 708px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-21 {
+  width: 796px;
+  height: 21px;
+  top: 580px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-22 {
+  width: 796px;
+  height: 21px;
+  top: 670px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-23 {
+  width: 796px;
+  height: 21px;
+  top: 753px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-24 {
+  width: 796px;
+  height: 21px;
+  top: 798px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-25 {
+  width: 796px;
+  height: 21px;
+  top: 843px;
+  left: 925px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-26 {
+  width: 13px;
+  height: 443px;
+  top: 427px;
+  left: 1326px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-27 {
+  width: 13px;
+  height: 443px;
+  top: 427px;
+  left: 1435px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .linha-28 {
+  width: 13px;
+  height: 443px;
+  top: 427px;
+  left: 1555px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.despesa .descricao {
+  position: absolute;
+  top: 434px;
+  left: 289px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .data {
+  position: absolute;
+  top: 434px;
+  left: 489px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .valor {
+  position: absolute;
+  top: 434px;
+  left: 98px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .banco {
+  left: 599px;
+  position: absolute;
+  top: 434px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .cartao {
+  position: absolute;
+  top: 434px;
+  left: 699px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .editar {
+  position: absolute;
+  top: 434px;
+  left: 773px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .editar4 {
+  position: absolute;
+  top: 434px;
+  left: 1630px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .text-wrapper {
+  position: absolute;
+  top: 434px;
+  left: 1150px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .div {
+  position: absolute;
+  top: 434px;
+  left: 1372px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .valor-2 {
+  position: absolute;
+  top: 434px;
+  left: 962px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .banco-2 {
+  left: 1482px;
+  position: absolute;
+  top: 434px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .cartao-2 {
+  position: absolute;
+  top: 434px;
+  left: 1562px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .banco-fixas {
+  position: absolute;
+  top: 469px;
+  left: 594px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .cartao-fixas {
+  position: absolute;
+  top: 469px;
+  left: 703px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .valor-fixas {
+  position: absolute;
+  top: 469px;
+  left: 80px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .data-fixas {
+  position: absolute;
+  top: 469px;
+  left: 469px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .descricao-fixas {
+  position: absolute;
+  top: 469px;
+  left: 212px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .banco-variaveis {
+  position: absolute;
+  top: 469px;
+  left: 1487px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .cartao-variaveis {
+  position: absolute;
+  width: 42px;
+  top: 469px;
+  left: 1562px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .valor-variaveis {
+  position: absolute;
+  top: 470px;
+  left: 946px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .data-variaiveis {
+  position: absolute;
+  top: 469px;
+  left: 1352px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .descricao-variaveis {
+  position: absolute;
+  top: 469px;
+  left: 1120px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .editar-2 {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 465px;
+  left: 789px;
+  object-fit: cover;
+}
+
+.despesa .editar-3 {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 465px;
+  left: 1644px;
+  object-fit: cover;
+}
+
+.despesa .botao-adicionar {
+  position: absolute;
+  width: 183px;
+  height: 49px;
+  top: 35px;
+  left: 106px;
+  background-color: #0a7eec;
+  border-radius: 9px;
+}
+
+.despesa .adicionar {
+  position: absolute;
+  top: 44px;
+  left: 142px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.despesa .botao-receitas {
+  position: absolute;
+  width: 193px;
+  height: 52px;
+  top: 32px;
+  left: 1539px;
+  background-color: #c5c5c533;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px #00000040;
+}
+
+.despesa .ver-receitas {
+  position: absolute;
+  top: 45px;
+  left: 1596px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.despesa .icone-receita {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 41px;
+  left: 1559px;
+  object-fit: cover;
+}
+
+.despesa .excluir {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 465px;
+  left: 813px;
+  object-fit: cover;
+}
+
+.despesa .excluir-2 {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 465px;
+  left: 1668px;
+  object-fit: cover;
+}
