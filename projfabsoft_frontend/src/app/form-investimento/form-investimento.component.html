@@ -1,1 +1,19 @@
-<p>form-investimento works!</p>
+<main class="container">
+    <h2>Investimento</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtdescricao">Descrição</label>
+                <input type="text" [(ngModel)]="investimento.descricao" class="form-control" name="descricao" id="txtdescricao">
+
+                <label for="txtvalor">Valor</label>
+                <input type="number" [(ngModel)]="investimento.valor" class="form-control" name="valor" id="txtvalor">
+
+                <label for="txtprazo">Prazo</label>
+                <input type="text" [(ngModel)]="investimento.prazo" class="form-control" name="prazo" id="txtprazo">
+
+                <label for="txtconta">Conta</label>
+                <input type="text" [(ngModel)]="investimento.conta.numero" class="form-control" name="conta" id="txtconta" placeholder="Número da Conta">
+            </div>
+        </div>
+        <button (click)="salvar()" class="btn btn-primary">Salvar</button>

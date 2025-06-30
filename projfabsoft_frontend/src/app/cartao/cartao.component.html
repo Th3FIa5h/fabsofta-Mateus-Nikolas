@@ -44,3 +44,51 @@
     </div>
   </body>
 </html>
+
+
+<main class="container">
+    <h2>Cartão</h2>
+    <a (click)="novo()" class="btn btn-primary">Nova Conta</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Cvv</th>
+                <th>Validade</th>
+                <th>Nome do Cliente</th>
+                <th>Banco</th>
+                <th>Bandeira</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umCartao of listaCartoes">
+                <td>{{umCartao.numero}}</td>
+                <td>{{umCartao.cvv}}</td>
+                <td>{{umCartao.validade}}</td>
+                <td>{{umCartao.nomeCliente}}</td>
+                <td>{{umCartao.banco}}</td>
+                <td>{{umCartao.bandeira}}</td>
+                <td>
+                    <a (click)="alterar(umCartao)" 
+                    class="btn btn-secondary">Alterar</a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umCartao)" 
+                    class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Conta</h5>
+            </div>
+            <div class="modal-body">
+            Confirma a exclusão da conta?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>

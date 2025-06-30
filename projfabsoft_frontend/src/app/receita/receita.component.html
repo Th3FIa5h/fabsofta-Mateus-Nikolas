@@ -74,6 +74,68 @@
           <img class="excluir-2" src="img/excluir-2.png" />
           <div class="avulsas">Avulsas</div>
           <div class="fixas">Fixas</div>
+
+<main class="container">
+    <h2>Receita</h2>
+    <a (click)="novo()" class="btn btn-primary">Nova Conta</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Numero da Conta</th>
+                <th>Agencia da Conta</th>
+                <th>Banco da Conta</th>
+                <th>Numero do Cartao</th>
+                <th>Cvv do Cartão</th>
+                <th>Validade do Cartão</th>
+                <th>Nome do Cliente</th>
+                <th>Banco do Cartão</th>
+                <th>Bandeira do Cartão</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umreceita of listaReceitas">
+                <td>{{umreceita.descricao}}</td>
+                <td>{{umreceita.valor}}</td>
+                <td>{{umreceita.data}}</td>
+                <td>{{umreceita.tipo}}</td>
+                <td>{{umreceita.conta.numero}}</td>
+                <td>{{umreceita.conta.agencia}}</td>
+                <td>{{umreceita.conta.banco}}</td>
+                <td>{{umreceita.cartao.numero}}</td>
+                <td>{{umreceita.cartao.cvv}}</td>
+                <td>{{umreceita.cartao.validade}}</td>
+                <td>{{umreceita.cartao.nomeCliente}}</td>
+                <td>{{umreceita.cartao.banco}}</td>
+                <td>{{umreceita.cartao.bandeira}}</td>
+                <td>
+                    <a (click)="alterar(umreceita)" 
+                    class="btn btn-secondary">Alterar</a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umreceita)" 
+                    class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Conta</h5>
+            </div>
+            <div class="modal-body">
+            Confirma a exclusão da conta?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
         </div>
       </div>
     </div>
