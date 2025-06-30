@@ -30,9 +30,24 @@ export class FormCartaoComponent {
   }
 
   salvar() {
+    if (this.cartao.validade && this.cartao.validade.length === 7) {
+      this.cartao.validade = this.cartao.validade + '-01';
+    }
     this.cartaoService.saveCartao(this.cartao)
-    .subscribe(res => {
-      this.router.navigate(['/cartao']);
-    });
+      .subscribe(res => {
+        this.router.navigate(['/cartao']);
+      });
   }
+
+  cancelar() {
+    this.router.navigate(['/cartao'])
+  }
+
+  irParaCartao() {
+  this.router.navigate(['/cartao']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }

@@ -63,4 +63,11 @@ export class CartaoComponent {
       }
     );
   }
+  irParaConta() {
+  this.router.navigate(['/contas']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }

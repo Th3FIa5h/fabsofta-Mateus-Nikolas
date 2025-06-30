@@ -1,57 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="form-cartao.component.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Novo Cartão</title>
   </head>
   <body>
-    <div class="carto-novo-editar">
-      <div class="overlap-group-wrapper">
-        <div class="overlap-group">
-          <div class="overlap">
-            <img class="icone-home" src="img/icone-home.png" />
-            <div class="meus-cartoes">Meus Cartões</div>
-            <div class="div">
-              <div class="botao-cartoes"></div>
-              <div class="ver-cartoes">Ver Cartões</div>
-              <img class="icone-cartao" src="img/icone-cartao.png" />
-            </div>
+    <div class="conta-editar-container">
+      <div class="form-wrapper">
+        <div class="header">
+          <div class="header-top">
+            <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i> Home</button>
+            <button (click)="irParaCartao()" class="btn-view"><i class="bi bi-credit-card"></i> Meus Cartões</button>
           </div>
-          <div class="campo-cartao-nome"></div>
-          <div class="campo-cartao"></div>
-          <div class="campo-cartao-cvv"></div>
-          <div class="campo-numero-cartao"></div>
-          <div class="campo-conta"></div>
-          <div class="campo-bandeira"></div>
-          <div class="nome-banco">Nome do Banco:</div>
-          <div class="numero-cartao">Número do Cartão:</div>
-          <div class="cvv">CVV:</div>
-          <div class="validade">Validade:</div>
-          <div class="conta">Conta:</div>
-          <div class="bandeira">Bandeira:</div>
-          <div class="cancelar-wrapper"><div class="cancelar">Cancelar</div></div>
-          <div class="salvar-wrapper"><div class="salvar">Salvar</div></div>
+          <h1 class="title">Novo Cartão</h1>
         </div>
+
+        <main class="formulario">
+          <div class="form-group">
+            <label for="txtnumero">Número do Cartão</label>
+            <input type="text" [(ngModel)]="cartao.numero" id="txtnumero" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="txtcvv">CVV</label>
+            <input type="text" [(ngModel)]="cartao.cvv" id="txtcvv" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="txtvalidade">Validade</label>
+            <input type="month" [(ngModel)]="cartao.validade" id="txtvalidade" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="txtnomecliente">Nome do Cliente</label>
+            <input type="text" [(ngModel)]="cartao.nomeCliente" id="txtnomecliente" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="txtbanco">Banco</label>
+            <input type="text" [(ngModel)]="cartao.banco" id="txtbanco" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="txtbandeira">Bandeira</label>
+            <input type="text" [(ngModel)]="cartao.bandeira" id="txtbandeira" class="form-control" />
+          </div>
+
+          <div class="botoes">
+            <button (click)="cancelar()" class="btn btn-secundario">Cancelar</button>
+            <button (click)="salvar()" class="btn btn-primario">Salvar</button>
+          </div>
+        </main>
       </div>
     </div>
-    <main class="container">
-        <h2>Cartão</h2>
-        <div class="card">
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="txtnumero">Número</label>
-                    <input type="text" [(ngModel)]="cartao.numero" class="form-control" name="numero" id="txtnumero">
-
-                    <label for="txtbandeira">Bandeira</label>
-                    <input type="text" [(ngModel)]="cartao.bandeira" class="form-control" name="bandeira" id="txtbandeira">
-
-                    <label for="txtvalidade">Validade</label>
-                    <input type="text" [(ngModel)]="cartao.validade" class="form-control" name="validade" id="txtvalidade">
-                </div>
-            </div>
-            <button (click)="salvar()" class="btn btn-primary">Salvar</button>
-        </div>
-      </main>
   </body>
 </html>

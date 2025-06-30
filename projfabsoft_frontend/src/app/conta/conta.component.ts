@@ -65,4 +65,11 @@ export class ContaComponent {
         }
     );
   }
+  irParaCartao() {
+  this.router.navigate(['/cartao']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }

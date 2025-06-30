@@ -35,4 +35,16 @@ export class FormContaComponent {
       this.router.navigate(['/contas']);
     });
   }
+
+  cancelar() {
+    this.router.navigate(['/contas'])
+  }
+
+  irParaConta() {
+  this.router.navigate(['/contas']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }
