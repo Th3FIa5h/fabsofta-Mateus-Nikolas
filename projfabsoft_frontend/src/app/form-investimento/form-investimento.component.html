@@ -1,19 +1,38 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<div class="header">
+    <div class="header-top">
+        <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+        <button (click)="irParaInvestimento()" class="btn-view"><i class="bi bi-bullseye"></i> Ver Investimento</button>
+    </div>
+    <h1 class="title">Adicionar Investimento</h1>
+</div>
+
 <main class="container">
-    <h2>Investimento</h2>
     <div class="card">
         <div class="card-body">
             <div class="form-group">
                 <label for="txtdescricao">Descrição</label>
-                <input type="text" [(ngModel)]="investimento.descricao" class="form-control" name="descricao" id="txtdescricao">
+                <input type="text" [(ngModel)]="investimento.descricao" class="form-control" name="descricao"
+                    id="txtdescricao" required>
 
                 <label for="txtvalor">Valor</label>
-                <input type="number" [(ngModel)]="investimento.valor" class="form-control" name="valor" id="txtvalor">
+                <input type="number" [(ngModel)]="investimento.valor" class="form-control" name="valor" id="txtvalor"
+                    required>
 
                 <label for="txtprazo">Prazo</label>
-                <input type="text" [(ngModel)]="investimento.prazo" class="form-control" name="prazo" id="txtprazo">
+                <select [(ngModel)]="investimento.prazo" class="form-control" name="prazo" id="txtprazo" required>
+                    <option value="" disabled selected>Selecione o Prazo</option>
+                    <option value="Curto">Curto</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Longo">Longo</option>
+                </select>
 
                 <label for="txtconta">Conta</label>
-                <input type="text" [(ngModel)]="investimento.conta.numero" class="form-control" name="conta" id="txtconta" placeholder="Número da Conta">
+                <input type="text" [(ngModel)]="investimento.conta.numero" class="form-control" name="conta"
+                    id="txtconta" placeholder="Número da Conta" required>
             </div>
         </div>
         <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+    </div>
+</main>

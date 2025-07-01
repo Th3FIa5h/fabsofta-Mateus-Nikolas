@@ -15,10 +15,12 @@ import { Router } from '@angular/router';
 })
 export class InvestimentoComponent {
   public listaInvestimentos: Investimento[] = [];
+  public listaInvestimentosCurto: Investimento[] = [];
+  public listaInvestimentosMedio: Investimento[] = [];
+  public listaInvestimentosLongo: Investimento[] = [];
 
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
-
   private investimentoSelecionado!: Investimento;
 
   constructor(
@@ -29,6 +31,9 @@ export class InvestimentoComponent {
   ngOnInit(): void {
     this.investimentoService.getInvestimento().subscribe(investimentos => {
       this.listaInvestimentos = investimentos;
+      this.listaInvestimentosCurto = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'curto');
+      this.listaInvestimentosMedio = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'medio');
+      this.listaInvestimentosLongo = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'longo');
     });
   }
 
@@ -56,11 +61,20 @@ export class InvestimentoComponent {
         this.fecharConfirmacao();
         this.investimentoService.getInvestimento().subscribe(investimentos => {
           this.listaInvestimentos = investimentos;
+          this.listaInvestimentosCurto = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'curto');
+          this.listaInvestimentosMedio = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'medio');
+          this.listaInvestimentosLongo = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'longo');
         });
       },
       error => {
         console.error('Erro ao excluir investimento:', error);
       }
     );
+  }
+  home() {
+  this.router.navigate(['/dashboard']);
+  }
+  irParaObjetivos() {
+    this.router.navigate(['/objetivo']);
   }
 }

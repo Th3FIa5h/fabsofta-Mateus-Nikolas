@@ -4,6 +4,6 @@ export class Investimento {
     id: number;
     descricao: string;
     valor: number;
-    prazo: Date;
+    prazo: string;
     conta: Conta;
 }

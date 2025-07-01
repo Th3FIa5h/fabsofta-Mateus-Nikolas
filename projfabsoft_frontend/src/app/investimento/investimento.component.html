@@ -1,50 +1,125 @@
-<main class="container">
-    <h2>Investimento</h2>
-    <a (click)="novo()" class="btn btn-primary">Nova Conta</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Descrição</th>
-                <th>Valor</th>
-                <th>Prazo</th>
-                <th>Numero da Conta</th>
-                <th>Agencia da Conta</th>
-                <th>Banco da Conta</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let uminvestimento of listaInvestimentos">
-                <td>{{uminvestimento.descricao}}</td>
-                <td>{{uminvestimento.valor}}</td>
-                <td>{{uminvestimento.prazo}}</td>
-                <td>{{uminvestimento.conta.numero}}</td>
-                <td>{{uminvestimento.conta.agencia}}</td>
-                <td>{{uminvestimento.conta.banco}}</td>
-            <td>
-                    <a (click)="alterar(uminvestimento)" 
-                    class="btn btn-secondary">Alterar</a>
-                    &nbsp;
-                    <a (click)="abrirConfirmacao(uminvestimento)" 
-                    class="btn btn-danger">Excluir</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</main>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<div class="modal fade" #myModal tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Excluir Conta</h5>
-            </div>
-            <div class="modal-body">
-            Confirma a exclusão da conta?
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
-            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
-            </div>
+<div class="investimento">
+  <div class="overlap-group-wrapper">
+    <div class="overlap-group">
+      <div class="header">
+        <div class="header-top">
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+          <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
+          <button (click)="irParaObjetivos()" class="btn-view"><i class="bi bi-bullseye"></i> Ver Objetivos</button>
         </div>
+        <h1 class="title">Minhas Despesas</h1>
+      </div>
+
+      <div class="tables-section">
+        <div class="table-card">
+          <h2>Curto Prazo</h2>
+          <div class="tabela-receitas-wrapper">
+            <table class="table tabela-receitas">
+              <thead>
+                <tr>
+                  <th>Valor</th>
+                  <th>Descrição</th>
+                  <th>Banco</th>
+                  <th>Editar/Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let uminvestimento of listaInvestimentosCurto">
+                  <td>{{uminvestimento.valor}}</td>
+                  <td>{{uminvestimento.descricao}}</td>
+                  <td>{{uminvestimento.conta.banco}}</td>
+                  <td>
+                    <a (click)="alterar(uminvestimento)" class="icon-btn editar">
+                      <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a (click)="abrirConfirmacao(uminvestimento)" class="icon-btn excluir">
+                      <i class="bi bi-eraser-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="table-card">
+          <h2>Médio Prazo</h2>
+          <div class="tabela-receitas-wrapper">
+            <table class="table tabela-receitas">
+              <thead>
+                <tr>
+                  <th>Valor</th>
+                  <th>Descrição</th>
+                  <th>Banco</th>
+                  <th>Editar/Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let uminvestimento of listaInvestimentosMedio">
+                  <td>{{uminvestimento.valor}}</td>
+                  <td>{{uminvestimento.descricao}}</td>
+                  <td>{{uminvestimento.conta.banco}}</td>
+                  <td>
+                    <a (click)="alterar(uminvestimento)" class="icon-btn editar">
+                      <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a (click)="abrirConfirmacao(uminvestimento)" class="icon-btn excluir">
+                      <i class="bi bi-eraser-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="table-card">
+          <h2>Longo Prazo</h2>
+          <div class="tabela-receitas-wrapper">
+            <table class="table tabela-receitas">
+              <thead>
+                <tr>
+                  <th>Valor</th>
+                  <th>Descrição</th>
+                  <th>Banco</th>
+                  <th>Editar/Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let uminvestimento of listaInvestimentosLongo">
+                  <td>{{uminvestimento.valor}}</td>
+                  <td>{{uminvestimento.descricao}}</td>
+                  <td>{{uminvestimento.conta.banco}}</td>
+                  <td>
+                    <a (click)="alterar(uminvestimento)" class="icon-btn editar">
+                      <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a (click)="abrirConfirmacao(uminvestimento)" class="icon-btn excluir">
+                      <i class="bi bi-eraser-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Investimento</h5>
+      </div>
+      <div class="modal-body">
+        Confirma a exclusão do investimento?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+      </div>
+    </div>
+  </div>
 </div>

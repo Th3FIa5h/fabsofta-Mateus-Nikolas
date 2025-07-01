@@ -1,63 +1,48 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="cartao.component.css" />
-    <title>Meus Cartões</title>
-  </head>
-
-  <body>
-    <div class="pagina-cartao">
-      <div class="header">
-        <div class="header-top">
-          <button (click)="home()" class="btn-home">
-            <i class="bi bi-house-door-fill"></i> Home
-          </button>
-          <a (click)="novo()" class="btn-add">
-            <i class="bi bi-plus-lg"> Adicionar</i>
-          </a>
-          <button (click)="irParaConta()" class="btn-view">
-            <i class="bi bi-bank"></i> Ver Contas
-          </button>
-        </div>
-        <h1 class="title">Meus Cartões</h1>
-      </div>
-
-      <main class="conteudo">
-        <div class="cartoes-grid">
-          <div class="card-cartao" *ngFor="let cartao of listaCartoes">
-            <div class="banco">{{ cartao.banco }}</div>
-            <div class="bandeira">{{ cartao.bandeira }}</div>
-            <div class="dados">Número: {{ cartao.numero }}</div>
-            <div class="dados">CVV: {{ cartao.cvv }}</div>
-            <div class="dados">Validade: {{ cartao.validade }}</div>
-            <div class="dados">Nome: {{ cartao.nomeCliente }}</div>
-            <div class="botoes">
-              <a (click)="alterar(cartao)" class="btn btn-secundario">Alterar</a>
-              <a (click)="abrirConfirmacao(cartao)" class="btn btn-perigo">Excluir</a>
-            </div>
-          </div>
-        </div>
-      </main>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+<div class="pagina-cartao">
+  <div class="header">
+    <div class="header-top">
+      <button (click)="home()" class="btn-home">
+        <i class="bi bi-house-door-fill"></i> Home
+      </button>
+      <a (click)="novo()" class="btn-add">
+        <i class="bi bi-plus-lg"> Adicionar</i>
+      </a>
+      <button (click)="irParaConta()" class="btn-view">
+        <i class="bi bi-bank"></i> Ver Contas
+      </button>
     </div>
-    <div class="modal fade" #myModal tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Excluir Cartão</h5>
-          </div>
-          <div class="modal-body">Confirma a exclusão do cartão?</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
-            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
-          </div>
+    <h1 class="title">Meus Cartões</h1>
+  </div>
+
+  <main class="conteudo">
+    <div class="cartoes-grid">
+      <div class="card-cartao" *ngFor="let cartao of listaCartoes">
+        <div class="banco">{{ cartao.banco }}</div>
+        <div class="bandeira">{{ cartao.bandeira }}</div>
+        <div class="dados">Número: {{ cartao.numero }}</div>
+        <div class="dados">CVV: {{ cartao.cvv }}</div>
+        <div class="dados">Validade: {{ cartao.validade }}</div>
+        <div class="dados">Nome: {{ cartao.nomeCliente }}</div>
+        <div class="botoes">
+          <a (click)="alterar(cartao)" class="btn btn-secundario">Alterar</a>
+          <a (click)="abrirConfirmacao(cartao)" class="btn btn-perigo">Excluir</a>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </main>
+</div>
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Cartão</h5>
+      </div>
+      <div class="modal-body">Confirma a exclusão do cartão?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
