@@ -28,7 +28,13 @@
               <td><input type="text" [(ngModel)]="despesa.descricao" class="form-control" /></td>
               <td><input type="date" [(ngModel)]="despesa.data" class="form-control" /></td>
               <td><input type="text" [(ngModel)]="despesa.conta.banco" class="form-control" /></td>
-              <td><input type="text" [(ngModel)]="despesa.tipo" class="form-control" /></td>
+              <td>
+                <select [(ngModel)]="despesa.tipo" class="form-control">
+                  <option value="" disabled selected>Selecione o Tipo</option>
+                  <option value="Fixa">Fixa</option>
+                  <option value="Variável">Variável</option>
+                </select>
+              </td>
               <td><input type="text" [(ngModel)]="despesa.conta.numero" class="form-control"
                   placeholder="Número da Conta" /></td>
               <td><input type="text" [(ngModel)]="despesa.cartao.numero" class="form-control"

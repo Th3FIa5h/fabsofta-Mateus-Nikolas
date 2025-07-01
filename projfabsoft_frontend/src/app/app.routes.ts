@@ -50,5 +50,6 @@ export const routes: Routes = [
     { path: 'receita/novo', component: FormReceitaComponent },
     { path: 'receita/alterar/:id', component: FormReceitaComponent },
 
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent}
 ];

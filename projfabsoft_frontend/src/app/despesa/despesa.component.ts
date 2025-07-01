@@ -15,6 +15,8 @@ import * as bootstrap from 'bootstrap';
 })
 export class DespesaComponent {
   public listaDespesas: Despesa[] = [];
+  public listaDespesasFixa: Despesa[] = [];
+  public listaDespesasVariavel: Despesa[] = [];
 
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
@@ -29,6 +31,8 @@ export class DespesaComponent {
   ngOnInit(): void {
     this.despesaService.getDespesa().subscribe(despesas => {
       this.listaDespesas = despesas;
+      this.listaDespesasFixa = despesas.filter(d => d.tipo?.toLowerCase() === 'fixa');
+      this.listaDespesasVariavel = despesas.filter(d => d.tipo?.toLowerCase() === 'variável' || d.tipo?.toLowerCase() === 'variavel');
     });
   }
 
