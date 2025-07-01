@@ -5,18 +5,12 @@
   font-family: 'Arial', sans-serif;
 }
 
-body {
-  background-color: #e4e7eb;
-}
-
-/* Estrutura da página */
 .pagina-cartao {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Header */
 .header {
   background-color: #ddecfd;
   border-bottom: 1px solid #cbd5e0;
@@ -70,7 +64,6 @@ body {
   text-align: center;
 }
 
-/* Conteúdo */
 .conteudo {
   flex: 1;
   padding: 40px;
@@ -83,7 +76,6 @@ body {
   justify-content: flex-start;
 }
 
-/* Card do cartão */
 .card-cartao {
   background-color: #fff;
   border-radius: 20px;

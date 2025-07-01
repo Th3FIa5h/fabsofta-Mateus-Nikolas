@@ -1,8 +1,7 @@
-body {
+* {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #e4e7eb;
 }
 
 .header {
@@ -104,10 +103,12 @@ body {
   font-weight: 600;
 }
 
-.icon-btn img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
+.icon-btn {
   cursor: pointer;
   margin-right: 5px;
+}
+
+.icon-btn i {
+  font-size: 20px;
+  vertical-align: middle;
 }

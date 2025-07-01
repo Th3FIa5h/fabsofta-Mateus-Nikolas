@@ -1,53 +1,41 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <title>Minhas Contas</title>
-</head>
-
-<body>
-  <div class="pagina-conta">
-    <div class="header">
-      <div class="header-top">
-        <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
-        <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
-        <button (click)="irParaCartao()" class="btn-view"><i class="bi bi-credit-card-fill"></i> Ver Cartões</button>
-      </div>
-      <h1 class="title">Minhas Contas</h1>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+<div class="pagina-conta">
+  <div class="header">
+    <div class="header-top">
+      <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+      <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
+      <button (click)="irParaCartao()" class="btn-view"><i class="bi bi-credit-card-fill"></i> Ver Cartões</button>
     </div>
-
-    <main class="conteudo">
-      <div class="contas-grid">
-        <div class="card-conta" *ngFor="let umconta of listaContas">
-          <div class="nome-banco">{{ umconta.banco }}</div>
-          <div class="dados">Agência: {{ umconta.agencia }}</div>
-          <div class="dados">Conta: {{ umconta.numero }}</div>
-          <div class="botoes">
-            <a (click)="alterar(umconta)" class="btn btn-secundario">Alterar</a>
-            <a (click)="abrirConfirmacao(umconta)" class="btn btn-perigo">Excluir</a>
-          </div>
-        </div>
-      </div>
-    </main>
+    <h1 class="title">Minhas Contas</h1>
   </div>
-</body>
-<div class="modal fade" #myModal tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Excluir Conta</h5>
-            </div>
-            <div class="modal-body">
-            Confirma a exclusão da conta?
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
-            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
-            </div>
+
+  <main class="conteudo">
+    <div class="contas-grid">
+      <div class="card-conta" *ngFor="let umconta of listaContas">
+        <div class="nome-banco">{{ umconta.banco }}</div>
+        <div class="dados">Agência: {{ umconta.agencia }}</div>
+        <div class="dados">Conta: {{ umconta.numero }}</div>
+        <div class="botoes">
+          <a (click)="alterar(umconta)" class="btn btn-secundario">Alterar</a>
+          <a (click)="abrirConfirmacao(umconta)" class="btn btn-perigo">Excluir</a>
         </div>
+      </div>
     </div>
+  </main>
 </div>
-</html>
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Conta</h5>
+      </div>
+      <div class="modal-body">
+        Confirma a exclusão da conta?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>

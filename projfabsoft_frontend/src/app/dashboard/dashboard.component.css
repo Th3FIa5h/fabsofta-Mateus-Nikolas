@@ -5,11 +5,6 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #e1e3e7;
-    color: #000;
-}
-
 .navbar {
     background-color: #dce9f9;
     padding: 10px 20px;
@@ -90,11 +85,6 @@ body {
     border-radius: 6px;
 }
 
-.alertas,
-.transacoes {
-    min-height: 200px;
-}
-
 .dash-content {
     display: flex;
     flex-wrap: wrap;
@@ -159,8 +149,12 @@ body {
     color: white;
 }
 
-@media (max-width: 768px) {
+.alertas,
+.transacoes {
+    min-height: 200px;
+}
 
+@media (max-width: 768px) {
     .resumos,
     .limites-grafico,
     .acoes {

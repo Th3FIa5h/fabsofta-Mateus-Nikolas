@@ -5,12 +5,6 @@
   font-family: 'Arial', sans-serif;
 }
 
-body, html {
-  height: 100%;
-  background-color: #e1e3e7;
-}
-
-/* Container geral */
 .conta-editar-container {
   display: flex;
   justify-content: center;
@@ -18,7 +12,6 @@ body, html {
   padding: 40px 0;
 }
 
-/* Área branca com sombra */
 .form-wrapper {
   background-color: #fcfdff;
   width: 100%;
@@ -26,20 +19,6 @@ body, html {
   border-radius: 30px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #e4e7eb;
 }
 
 .header {
@@ -61,7 +40,6 @@ body {
 }
 
 .btn-home,
-.btn-add,
 .btn-view {
   padding: 10px 16px;
   border: none;
@@ -75,14 +53,6 @@ body {
   font-size: 24px;
 }
 
-.btn-add {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  font-style: normal;
-}
-
 .btn-view {
   background-color: #f3f4f6;
   border: 1px solid #ccc;
@@ -94,9 +64,8 @@ body {
   font-weight: bold;
   margin: 30px 0 20px;
   text-shadow: 1px 1px 2px #ccc;
-} 
+}
 
-/* Formulário */
 .formulario {
   padding: 40px;
   display: flex;
@@ -121,7 +90,6 @@ body {
   box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Botões */
 .botoes {
   margin-top: 30px;
   display: flex;

@@ -1,14 +1,8 @@
-/* Mesmo conteúdo do form-conta.component.css */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-}
-
-body, html {
-  height: 100%;
-  background-color: #e1e3e7;
 }
 
 .conta-editar-container {
@@ -46,7 +40,6 @@ body, html {
 }
 
 .btn-home,
-.btn-add,
 .btn-view {
   padding: 10px 16px;
   border: none;
@@ -58,13 +51,6 @@ body, html {
 .btn-home {
   background-color: transparent;
   font-size: 24px;
-}
-
-.btn-add {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 .btn-view {

@@ -15,6 +15,8 @@ import * as bootstrap from 'bootstrap';
 })
 export class ReceitaComponent {
   public listaReceitas: Receita[] = [];
+  public listaReceitasFixa: Receita[] = [];
+  public listaReceitasAvulsa: Receita[] = [];
 
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
@@ -29,6 +31,8 @@ export class ReceitaComponent {
   ngOnInit(): void {
     this.receitaService.getReceita().subscribe(receitas => {
       this.listaReceitas = receitas;
+      this.listaReceitasFixa = receitas.filter(r => r.tipo?.toLowerCase() === 'fixa');
+      this.listaReceitasAvulsa = receitas.filter(r => r.tipo?.toLowerCase() === 'avulsa');
     });
   }
 
@@ -56,6 +60,8 @@ export class ReceitaComponent {
         this.fecharConfirmacao();
         this.receitaService.getReceita().subscribe(receitas => {
           this.listaReceitas = receitas;
+          this.listaReceitasFixa = receitas.filter(r => r.tipo?.toLowerCase() === 'fixa');
+          this.listaReceitasAvulsa = receitas.filter(r => r.tipo?.toLowerCase() === 'avulsa');
         });
       },
       error => {
@@ -65,10 +71,10 @@ export class ReceitaComponent {
   }
 
   irParaDespesa() {
-  this.router.navigate(['/despesa']);
+    this.router.navigate(['/despesa']);
   }
 
   home() {
-  this.router.navigate(['/dashboard']);
-}
+    this.router.navigate(['/dashboard']);
+  }
 }

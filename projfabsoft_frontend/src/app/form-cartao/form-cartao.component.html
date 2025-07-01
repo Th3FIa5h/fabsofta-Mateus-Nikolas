@@ -1,59 +1,49 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Novo Cartão</title>
-  </head>
-  <body>
-    <div class="conta-editar-container">
-      <div class="form-wrapper">
-        <div class="header">
-          <div class="header-top">
-            <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i> Home</button>
-            <button (click)="irParaCartao()" class="btn-view"><i class="bi bi-credit-card"></i> Meus Cartões</button>
-          </div>
-          <h1 class="title">Novo Cartão</h1>
-        </div>
-
-        <main class="formulario">
-          <div class="form-group">
-            <label for="txtnumero">Número do Cartão</label>
-            <input type="text" [(ngModel)]="cartao.numero" id="txtnumero" class="form-control" />
-          </div>
-
-          <div class="form-group">
-            <label for="txtcvv">CVV</label>
-            <input type="text" [(ngModel)]="cartao.cvv" id="txtcvv" class="form-control" />
-          </div>
-
-          <div class="form-group">
-            <label for="txtvalidade">Validade</label>
-            <input type="month" [(ngModel)]="cartao.validade" id="txtvalidade" class="form-control" />
-          </div>
-
-          <div class="form-group">
-            <label for="txtnomecliente">Nome do Cliente</label>
-            <input type="text" [(ngModel)]="cartao.nomeCliente" id="txtnomecliente" class="form-control" />
-          </div>
-
-          <div class="form-group">
-            <label for="txtbanco">Banco</label>
-            <input type="text" [(ngModel)]="cartao.banco" id="txtbanco" class="form-control" />
-          </div>
-
-          <div class="form-group">
-            <label for="txtbandeira">Bandeira</label>
-            <input type="text" [(ngModel)]="cartao.bandeira" id="txtbandeira" class="form-control" />
-          </div>
-
-          <div class="botoes">
-            <button (click)="cancelar()" class="btn btn-secundario">Cancelar</button>
-            <button (click)="salvar()" class="btn btn-primario">Salvar</button>
-          </div>
-        </main>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+<div class="conta-editar-container">
+  <div class="form-wrapper">
+    <div class="header">
+      <div class="header-top">
+        <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i> Home</button>
+        <button (click)="irParaCartao()" class="btn-view"><i class="bi bi-credit-card"></i> Meus Cartões</button>
       </div>
+      <h1 class="title">Novo Cartão</h1>
     </div>
-  </body>
-</html>
+
+    <main class="formulario">
+      <div class="form-group">
+        <label for="txtnumero">Número do Cartão</label>
+        <input type="text" [(ngModel)]="cartao.numero" id="txtnumero" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="txtcvv">CVV</label>
+        <input type="text" [(ngModel)]="cartao.cvv" id="txtcvv" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="txtvalidade">Validade</label>
+        <input type="month" [(ngModel)]="cartao.validade" id="txtvalidade" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="txtnomecliente">Nome do Cliente</label>
+        <input type="text" [(ngModel)]="cartao.nomeCliente" id="txtnomecliente" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="txtbanco">Banco</label>
+        <input type="text" [(ngModel)]="cartao.banco" id="txtbanco" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="txtbandeira">Bandeira</label>
+        <input type="text" [(ngModel)]="cartao.bandeira" id="txtbandeira" class="form-control" />
+      </div>
+
+      <div class="botoes">
+        <button (click)="cancelar()" class="btn btn-secundario">Cancelar</button>
+        <button (click)="salvar()" class="btn btn-primario">Salvar</button>
+      </div>
+    </main>
+  </div>
+</div>
