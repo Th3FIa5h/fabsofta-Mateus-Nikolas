@@ -1,15 +1,52 @@
-<main class="container">
-    <h2>Objetivo</h2>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="txtvalorAlvo">Valor Alvo</label>
-                <input type="number" [(ngModel)]="objetivo.valorAlvo" class="form-control" name="valorAlvo" id="txtvalorAlvo">
-
-                <label for="txtprogressoAtual">Progresso Atual</label>
-                <input type="number" [(ngModel)]="objetivo.progressoAtual" class="form-control" name="progressoAtual" id="txtprogressoAtual">
-            </div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+<div class="objetivo">
+  <div class="overlap-group-wrapper">
+    <div class="overlap-group">
+      <div class="header">
+        <div class="header-top">
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+          <button (click)="irParaObjetivo()" class="btn-view"><i class="bi bi-bullseye"></i> Meus Objetivos</button>
         </div>
-        <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+        <h1 class="title">Novo Objetivo</h1>
+      </div>
+      <div class="objetivos-grid" style="justify-content: center;">
+        <div class="objetivo-card">
+          <div class="form-group">
+            <label for="txtdescricao">Descrição</label>
+            <input type="text" [(ngModel)]="objetivo.descricao" class="form-control" id="txtdescricao" />
+
+            <label for="txtvalorAlvo">Valor Alvo</label>
+            <input type="number" [(ngModel)]="objetivo.valorAlvo" class="form-control" id="txtvalorAlvo" />
+
+            <label for="txtprogressoAtual">Progresso Atual</label>
+            <input type="number" [(ngModel)]="objetivo.progressoAtual" class="form-control" id="txtprogressoAtual" />
+          </div>
+
+          <div class="info-blocks">
+            <div class="overlap-4">
+              <div class="ultimas-receitas">Receitas Relacionadas</div>
+              <select multiple [(ngModel)]="objetivo.listaReceitas" class="form-control">
+                <option *ngFor="let receita of receitasDisponiveis" [ngValue]="receita">
+                  {{ receita.descricao }} - {{ receita.valor | currency }}
+                </option>
+              </select>
+            </div>
+            <div class="overlap-5">
+              <div class="ultimos">Investimentos Relacionados</div>
+              <select multiple [(ngModel)]="objetivo.listaInvestimento" class="form-control">
+                <option *ngFor="let investimento of investimentosDisponiveis" [ngValue]="investimento">
+                  {{ investimento.descricao }} - {{ investimento.valor | currency }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="acoes-centro">
+            <button (click)="cancelar()" class="btn btn-secundario">Cancelar</button>
+            <button (click)="salvar()" class="btn btn-primario">Salvar</button>
+          </div>
+        </div>
+      </div>
     </div>
-</main>
+  </div>
+</div>

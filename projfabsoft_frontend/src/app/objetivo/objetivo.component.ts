@@ -63,4 +63,12 @@ export class ObjetivoComponent {
       }
     );
   }
+
+  irParaInvestimento() {
+    this.router.navigate(['/investimento']);
+  }
+
+  home() {
+    this.router.navigate(['/dashboard']);
+  }
 }

@@ -1,84 +1,71 @@
-<main class="container">
-    <h2>Objetivo</h2>
-    <a (click)="novo()" class="btn btn-primary">Nova Conta</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Valor Alvo</th>
-                <th>Progresso Atual</th>
-                <th>Descrição da Receita</th>
-                <th>Valor da Receita</th>
-                <th>Data da Receita</th>
-                <th>Tipo da Receita</th>
-                <th>Descrição do Investimento</th>
-                <th>Valor do Investimento</th>
-                <th>Prazo do Investimento</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let umobjetivo of listaObjetivos">
-                <td>{{umobjetivo.valorAlvo}}</td>
-                <td>{{umobjetivo.progressoAtual}}</td>
-                <td>
-                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
-                        {{umobjetivo.listaReceitas[0].descricao}}
-                    </ng-container>
-                </td>
-                <td>
-                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
-                        {{umobjetivo.listaReceitas[0].valor}}
-                    </ng-container>
-                </td>
-                <td>
-                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
-                        {{umobjetivo.listaReceitas[0].data}}
-                    </ng-container>
-                </td>
-                <td>
-                    <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
-                        {{umobjetivo.listaReceitas[0].tipo}}
-                    </ng-container>
-                </td>
-                <td>
-                    <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
-                        {{umobjetivo.listaInvestimento[0].descricao}}
-                    </ng-container>
-                </td>
-                <td>
-                    <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
-                        {{umobjetivo.listaInvestimento[0].valor}}
-                    </ng-container>
-                </td>
-                <td>
-                    <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
-                        {{umobjetivo.listaInvestimento[0].prazo}}
-                    </ng-container>
-                </td>
-                 <td>
-                    <a (click)="alterar(umobjetivo)" 
-                    class="btn btn-secondary">Alterar</a>
-                    &nbsp;
-                    <a (click)="abrirConfirmacao(umobjetivo)" 
-                    class="btn btn-danger">Excluir</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</main>
-
-<div class="modal fade" #myModal tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Excluir Conta</h5>
-            </div>
-            <div class="modal-body">
-            Confirma a exclusão da conta?
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
-            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
-            </div>
+<div class="objetivo">
+  <div class="overlap-group-wrapper">
+    <div class="overlap-group">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+      <div class="header">
+        <div class="header-top">
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+          <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
+          <button (click)="irParaInvestimento()" class="btn-view"><i class="bi bi-currency-exchange"></i> Ver Investimentos</button>
         </div>
+        <h1 class="title">Meus Objetivos</h1>
+      </div>
+
+      <div class="objetivos-grid">
+        <div class="objetivo-card" *ngFor="let umobjetivo of listaObjetivos">
+          <div class="nome-objetivo">{{umobjetivo.descricao}}</div>
+          <div class="valor-alvo">Alvo: {{umobjetivo.valorAlvo | currency}}</div>
+          <div class="valor-atual">Atual<br />{{umobjetivo.progressoAtual | currency}}</div>
+          
+          <div class="barra-progressao"></div>
+          <div class="text-wrapper">Barra de Progressão: {{umobjetivo.progressoAtual}}%</div>
+
+          <div class="info-blocks">
+            <div class="overlap-4">
+              <div class="ultimas-receitas">Últimas Receitas</div>
+              <div class="valor-receita">Valor</div>
+              <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
+                <div class="dados-receitas">
+                  {{umobjetivo.listaReceitas[0].valor | currency}}
+                </div>
+              </ng-container>
+            </div>
+            <div class="overlap-5">
+              <div class="ultimos">Últimos Investimentos</div>
+              <div class="valor-investimento">Valor</div>
+              <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
+                <div class="dados-investimentos">
+                  {{umobjetivo.listaInvestimento[0].valor | currency}}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="acoes-centro">
+            <a (click)="alterar(umobjetivo)" class="icon-btn editar">
+              <i class="bi bi-pencil-fill"></i>
+            </a>
+            <a (click)="abrirConfirmacao(umobjetivo)" class="icon-btn excluir">
+              <i class="bi bi-eraser-fill"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Cartão</h5>
+      </div>
+      <div class="modal-body">
+        Confirma a exclusão do cartão?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+      </div>
+    </div>
+  </div>
 </div>
