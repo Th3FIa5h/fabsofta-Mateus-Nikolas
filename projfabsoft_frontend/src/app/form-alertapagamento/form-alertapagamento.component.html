@@ -1,24 +1,42 @@
-<main class="container">
-    <h2>Alerta de Pagamento</h2>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="txtdescricao">Descrição</label>
-                <input type="text" [(ngModel)]="alertapagamento.descricao" class="form-control" name="descricao" id="txtdescricao">
-
-                <label for="txtdataVencimento">Data de Vencimento</label>
-                <input type="date" [(ngModel)]="alertapagamento.dataVencimento" class="form-control" name="dataVencimento" id="txtdataVencimento">
-
-                <label for="txtstatus">Status</label>
-                <input type="text" [(ngModel)]="alertapagamento.status" class="form-control" name="status" id="txtstatus">
-
-                <label for="txtconta">Conta</label>
-                <input type="text" [(ngModel)]="alertapagamento.conta.numero" class="form-control" name="conta" id="txtconta" placeholder="Número da Conta">
-
-                <label for="txtcartao">Cartão</label>
-                <input type="text" [(ngModel)]="alertapagamento.cartao.numero" class="form-control" name="cartao" id="txtcartao" placeholder="Número do Cartão">
-            </div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+<div class="receita-novo-editar">
+  <div class="overlap-group-wrapper">
+    <div class="overlap-group">
+      <div class="header">
+        <div class="header-top">
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+          <button (click)="irParaAlertaPagamento()" class="btn-view"><i class="bi bi-exclamation-triangle"></i> Ver Alertas de Pagamento</button>
         </div>
-        <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+        <h1 class="title">Alerta de Pagamento</h1>
+      </div>
+      <div class="overlap-2">
+        <form>
+          <div class="form-group">
+            <label for="txtdescricao">Descrição</label>
+            <input type="text" [(ngModel)]="alertapagamento.descricao" class="form-control" name="descricao" id="txtdescricao">
+
+            <label for="txtdataVencimento">Data de Vencimento</label>
+            <input type="date" [(ngModel)]="alertapagamento.dataVencimento" class="form-control" name="dataVencimento" id="txtdataVencimento">
+
+            <label for="txtstatus">Status</label>
+            <input type="text" [(ngModel)]="alertapagamento.status" class="form-control" name="status" id="txtstatus">
+
+            <label for="txtconta">Conta</label>
+            <input type="text" [(ngModel)]="alertapagamento.conta.numero" class="form-control" name="conta" id="txtconta" placeholder="Número da Conta">
+
+            <label for="txtcartao">Cartão</label>
+            <input type="text" [(ngModel)]="alertapagamento.cartao.numero" class="form-control" name="cartao" id="txtcartao" placeholder="Número do Cartão">
+          </div>
+        </form>
+      </div>
+      <div class="botoes-centro">
+        <div class="cancelar-wrapper" (click)="cancelar()">
+          <div class="cancelar">Cancelar</div>
+        </div>
+        <div class="salvar-wrapper" (click)="salvar()">
+          <div class="salvar">Salvar</div>
+        </div>
+      </div>
     </div>
-</main>
+  </div>
+</div>

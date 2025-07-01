@@ -67,4 +67,12 @@ export class AlertapagamentoComponent implements OnInit {
       }
     );
   }
+
+    irParaDespesa() {
+      this.router.navigate(['/despesa']);
+    }
+  
+    home() {
+      this.router.navigate(['/dashboard']);
+    }
 }

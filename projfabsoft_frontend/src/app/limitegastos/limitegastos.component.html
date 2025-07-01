@@ -1,48 +1,61 @@
-<main class="container">
-    <h2>LimiteGastos</h2>
-    <a (click)="novo()" class="btn btn-primary">Nova Conta</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Valor limite</th>
-                <th>Descrição da Despesa</th>
-                <th>Valor da Despesa/th>
-                <th>Data da Despesa</th>
-                <th>Tipo da Despesa</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let umlimitegastos of listaLimiteGastos">
-                <td>{{umlimitegastos.valorLimite}}</td>
-                <td>{{umlimitegastos.despesa.descricao}}</td>
-                <td>{{umlimitegastos.despesa.valor}}</td>
-                <td>{{umlimitegastos.despesa.data}}</td>
-                <td>{{umlimitegastos.despesa.tipo}}</td>
-                <td>
-                    <a (click)="alterar(umlimitegastos)" 
-                    class="btn btn-secondary">Alterar</a>
-                    &nbsp;
-                    <a (click)="abrirConfirmacao(umlimitegastos)" 
-                    class="btn btn-danger">Excluir</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</main>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<div class="limite-gastos">
+  <div class="overlap-group-wrapper">
+    <div class="overlap-group">
+      <div class="header">
+        <div class="header-top">
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+          <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
+          <button (click)="irParaDespesas()" class="btn-view"><i class="bi bi-bullseye"></i> Ver Despesas</button>
+        </div>
+        <h1 class="title">Meus Limites de Gastos</h1>
+      </div>
+      <div class="limites-grid">
+        <div class="limite-card" *ngFor="let umlimitegastos of listaLimiteGastos">
+          <div class="limite-info">
+            <div class="limite-label">Valor Limite</div>
+            <div class="limite-valor">R$ {{ umlimitegastos.valorLimite }}</div>
+          </div>
+          <div class="limite-info">
+            <div class="limite-label">Valor Atingido</div>
+            <div class="limite-valor">R$ {{ getValorAtingido(umlimitegastos) }}</div>
+          </div>
+          <div class="limite-info">
+            <div class="limite-label">Despesas Vinculadas</div>
+            <div class="limite-valor">
+              {{ getDespesasArray(umlimitegastos).length }}
+            </div>
+          </div>
+          <div class="limite-info">
+            <div class="limite-label">Categoria</div>
+            <div class="limite-valor">
+              {{ getDespesasArray(umlimitegastos)[0]?.tipo || '-' }}
+            </div>
+          </div>
+          <div class="limite-acoes">
+            <a (click)="alterar(umlimitegastos)" class="btn btn-secondary">Alterar</a>
+            &nbsp;
+            <a (click)="abrirConfirmacao(umlimitegastos)" class="btn btn-danger">Excluir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="modal fade" #myModal tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Excluir Conta</h5>
-            </div>
-            <div class="modal-body">
-            Confirma a exclusão da conta?
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
-            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
-            </div>
-        </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Conta</h5>
+      </div>
+      <div class="modal-body">
+        Confirma a exclusão da conta?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+      </div>
     </div>
+  </div>
 </div>

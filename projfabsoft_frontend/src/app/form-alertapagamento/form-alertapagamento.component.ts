@@ -35,4 +35,16 @@ export class FormAlertapagamentoComponent {
       this.router.navigate(['/alertapagamento']);
     });
   }
+
+  cancelar() {
+    this.router.navigate(['/alertapagamento'])
+  }
+
+  irParaAlertaPagamento() {
+  this.router.navigate(['/alertapagamento']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }

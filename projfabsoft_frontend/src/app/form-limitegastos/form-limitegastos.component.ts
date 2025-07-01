@@ -35,4 +35,15 @@ export class FormLimitegastosComponent {
       this.router.navigate(['/limitegastos']);
     });
   }
+  cancelar() {
+    this.router.navigate(['/limitegastos'])
+  }
+
+  irParaLimiteGastos() {
+  this.router.navigate(['/limitegastos']);
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+}
 }

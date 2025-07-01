@@ -32,6 +32,16 @@ export class LimitegastosComponent {
     });
   }
 
+  getValorAtingido(limite: Limitegastos): number {
+    if (Array.isArray(limite.despesa)) {
+      return limite.despesa.reduce((total, despesa) => total + (despesa.valor || 0), 0);
+    }
+    if (limite.despesa && typeof limite.despesa.valor === 'number') {
+      return limite.despesa.valor;
+    }
+    return 0;
+  }
+
   novo() {
     this.router.navigate(['/limitegastos/novo']);
   }
@@ -62,5 +72,22 @@ export class LimitegastosComponent {
         console.error('Erro ao excluir limite de gastos:', error);
       }
     );
+  }
+
+  home() {
+  this.router.navigate(['/dashboard']);
+  }
+  irParaDespesas() {
+    this.router.navigate(['/despesa']);
+  }
+
+  getDespesasArray(limite: any): any[] {
+    if (Array.isArray(limite.despesa)) {
+      return limite.despesa;
+    }
+    if (limite.despesa) {
+      return [limite.despesa];
+    }
+    return [];
   }
 }
