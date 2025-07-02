@@ -32,31 +32,52 @@ export class FormAlertapagamentoComponent {
     const id = this.activedRoute.snapshot.paramMap.get('id');
     if (id) {
       this.alertapagamentoService.getAlertapagamentoById(id)
-      .subscribe(alerta => {
-        this.alertapagamento = alerta;
-      });
+        .subscribe(alerta => {
+          this.alertapagamento = alerta;
+
+          this.carregarContas(() => {
+            if (this.alertapagamento.conta && this.contas.length > 0) {
+              this.alertapagamento.conta = this.contas.find(c => c.id === this.alertapagamento.conta.id) || this.alertapagamento.conta;
+            }
+          });
+          this.carregarCartoes(() => {
+            if (this.alertapagamento.cartao && this.cartoes.length > 0) {
+              this.alertapagamento.cartao = this.cartoes.find(c => c.id === this.alertapagamento.cartao.id) || this.alertapagamento.cartao;
+            }
+          });
+
+          if (this.alertapagamento.dataVencimento) {
+            if (typeof this.alertapagamento.dataVencimento === 'number') {
+              this.alertapagamento.dataVencimento = new Date(this.alertapagamento.dataVencimento);
+            } else if (typeof this.alertapagamento.dataVencimento === 'string' && String(this.alertapagamento.dataVencimento).length > 10) {
+              this.alertapagamento.dataVencimento = new Date(this.alertapagamento.dataVencimento);
+            }
+          }
+        });
     }
     this.carregarContas();
     this.carregarCartoes();
   }
 
-  carregarContas() {
+  carregarContas(callback?: () => void) {
     this.contaService.getConta().subscribe(contas => {
       this.contas = contas;
+      if (callback) callback();
     });
   }
 
-  carregarCartoes() {
+  carregarCartoes(callback?: () => void) {
     this.cartaoService.getCartao().subscribe(cartoes => {
       this.cartoes = cartoes;
+      if (callback) callback();
     });
   }
 
   salvar() {
     this.alertapagamentoService.saveAlertapagamento(this.alertapagamento)
-    .subscribe(res => {
-      this.router.navigate(['/alertapagamento']);
-    });
+      .subscribe(res => {
+        this.router.navigate(['/alertapagamento']);
+      });
   }
 
   cancelar() {
@@ -64,10 +85,10 @@ export class FormAlertapagamentoComponent {
   }
 
   irParaAlertaPagamento() {
-  this.router.navigate(['/alertapagamento']);
+    this.router.navigate(['/alertapagamento']);
   }
 
   home() {
-  this.router.navigate(['/dashboard']);
-}
+    this.router.navigate(['/dashboard']);
+  }
 }

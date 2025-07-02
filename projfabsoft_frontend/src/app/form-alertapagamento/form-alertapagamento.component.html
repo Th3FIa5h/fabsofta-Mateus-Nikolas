@@ -16,10 +16,14 @@
             <input type="text" [(ngModel)]="alertapagamento.descricao" class="form-control" name="descricao" id="txtdescricao">
 
             <label for="txtdataVencimento">Data de Vencimento</label>
-            <input type="date" [(ngModel)]="alertapagamento.dataVencimento" class="form-control" name="dataVencimento" id="txtdataVencimento">
+            <input type="date" [ngModel]="alertapagamento.dataVencimento | date:'yyyy-MM-dd'" (ngModelChange)="alertapagamento.dataVencimento = $event" class="form-control" name="dataVencimento" id="txtdataVencimento">
 
             <label for="txtstatus">Status</label>
-            <input type="text" [(ngModel)]="alertapagamento.status" class="form-control" name="status" id="txtstatus">
+            <select [(ngModel)]="alertapagamento.status" class="form-control" name="status" id="txtstatus">
+              <option [ngValue]="null" disabled selected>Selecione o Status</option>
+              <option value="Pendente">Pendente</option>
+              <option value="Pago">Pago</option>
+            </select>
 
             <label for="txtconta">Conta</label>
             <select [(ngModel)]="alertapagamento.conta" class="form-control" name="conta" id="txtconta">
