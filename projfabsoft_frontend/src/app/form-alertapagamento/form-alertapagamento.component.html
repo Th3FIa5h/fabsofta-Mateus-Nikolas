@@ -10,7 +10,6 @@
         <h1 class="title">Meus Alertas</h1>
       </div>
       <div class="overlap-2">
-        <form>
           <div class="form-group">
             <label for="txtdescricao">Descrição</label>
             <input type="text" [(ngModel)]="alertapagamento.descricao" class="form-control" name="descricao" id="txtdescricao">
@@ -27,14 +26,9 @@
             <label for="txtcartao">Cartão</label>
             <input type="text" [(ngModel)]="alertapagamento.cartao.numero" class="form-control" name="cartao" id="txtcartao" placeholder="Número do Cartão">
           </div>
-        </form>
-      </div>
-      <div class="botoes-centro">
-        <div class="cancelar-wrapper" (click)="cancelar()">
-          <div class="cancelar">Cancelar</div>
-        </div>
-        <div class="salvar-wrapper" (click)="salvar()">
-          <div class="salvar">Salvar</div>
+            <div class="botoes">
+          <button (click)="cancelar()" class="btn btn-secundario">Cancelar</button>
+          <button (click)="salvar()" class="btn btn-primario">Salvar</button>
         </div>
       </div>
     </div>

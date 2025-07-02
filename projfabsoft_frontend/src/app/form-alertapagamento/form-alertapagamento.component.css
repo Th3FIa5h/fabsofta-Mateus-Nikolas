@@ -3,10 +3,6 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
-
 .header {
   background-color: #ddecfd;
   border-radius: 50px 50px 0 0;
@@ -78,9 +74,11 @@ a {
 
 .overlap-2 {
   position: absolute;
+  position: absolute;
   width: 1128px;
-  height: 151px;
-  top: 412px;
+  height: 500px;
+  top: 280px;
+  padding: 30px;
   left: 329px;
   background-color: #fcfdff;
   border-radius: 20px;
@@ -115,47 +113,29 @@ a {
   font-size: 14px;
 }
 
-.botoes-centro {
+.botoes {
+  margin-top: 30px;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
+  gap: 20px;
 }
 
-.cancelar-wrapper {
-  width: 122px;
-  height: 36px;
-  background-color: #e6e5e5;
+.btn {
+  padding: 12px 24px;
   border-radius: 8px;
-  box-shadow: 4px 4px 4px #00000040;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.cancelar {
-  font-family: "Inter-Medium", Helvetica;
-  font-weight: 500;
-  color: #000000;
   font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  min-width: 120px;
 }
 
-.salvar-wrapper {
-  width: 122px;
-  height: 36px;
+.btn-primario {
   background-color: #0a7eec;
-  border-radius: 8px;
-  box-shadow: 4px 4px 4px #00000040;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  color: white;
 }
 
-.salvar {
-  font-family: "Inter-Medium", Helvetica;
-  font-weight: 500;
-  color: #ffffff;
-  font-size: 16px;
+.btn-secundario {
+  background-color: #e6e5e5;
+  color: #000;
 }
