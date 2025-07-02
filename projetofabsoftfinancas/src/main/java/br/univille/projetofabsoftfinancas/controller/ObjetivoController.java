@@ -32,7 +32,7 @@ public class ObjetivoController {
         return new ResponseEntity<List<Objetivo>>(listaObjetivo,
                     HttpStatus.OK);
     }
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public ResponseEntity<Objetivo> getObjetivoId(@PathVariable Long id) {
         var objetivo = service.getById(id);
 

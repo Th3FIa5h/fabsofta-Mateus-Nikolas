@@ -30,9 +30,25 @@ export class DespesaComponent {
 
   ngOnInit(): void {
     this.despesaService.getDespesa().subscribe(despesas => {
-      this.listaDespesas = despesas;
-      this.listaDespesasFixa = despesas.filter(d => d.tipo?.toLowerCase() === 'fixa');
-      this.listaDespesasVariavel = despesas.filter(d => d.tipo?.toLowerCase() === 'variável' || d.tipo?.toLowerCase() === 'variavel');
+      this.listaDespesas = despesas.map(d => {
+        if (d.data && typeof d.data === 'number') {
+          const date = new Date(d.data);
+          d.data = date.toISOString().substring(0, 10) as any;
+        } else if (d.data && typeof d.data === 'string' && (d.data as string).includes('-')) {
+          d.data = (d.data as string).split('T')[0] as any;
+        }
+        if (d.cartao && d.cartao.validade) {
+          if (typeof d.cartao.validade === 'number') {
+            const vdate = new Date(d.cartao.validade);
+            d.cartao.validade = vdate.toISOString().substring(0, 7);
+          } else if (typeof d.cartao.validade === 'string' && d.cartao.validade.includes('-')) {
+            d.cartao.validade = d.cartao.validade.split('T')[0].substring(0, 7);
+          }
+        }
+        return d;
+      });
+      this.listaDespesasFixa = this.listaDespesas.filter(d => d.tipo?.toLowerCase() === 'fixa');
+      this.listaDespesasVariavel = this.listaDespesas.filter(d => d.tipo?.toLowerCase() === 'variável' || d.tipo?.toLowerCase() === 'variavel');
     });
   }
 

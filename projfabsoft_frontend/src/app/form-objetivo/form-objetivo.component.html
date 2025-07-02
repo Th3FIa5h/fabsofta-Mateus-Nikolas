@@ -19,13 +19,13 @@
             <input type="number" [(ngModel)]="objetivo.valorAlvo" class="form-control" id="txtvalorAlvo" />
 
             <label for="txtprogressoAtual">Progresso Atual</label>
-            <input type="number" [(ngModel)]="objetivo.progressoAtual" class="form-control" id="txtprogressoAtual" />
+            <input type="number" [(ngModel)]="objetivo.progressoAtual" class="form-control" id="txtprogressoAtual" readonly />
           </div>
 
           <div class="info-blocks">
             <div class="overlap-4">
               <div class="ultimas-receitas">Receitas Relacionadas</div>
-              <select multiple [(ngModel)]="objetivo.listaReceitas" class="form-control">
+              <select multiple [(ngModel)]="objetivo.listaReceitas" (ngModelChange)="onReceitasChange()" class="form-control">
                 <option *ngFor="let receita of receitasDisponiveis" [ngValue]="receita">
                   {{ receita.descricao }} - {{ receita.valor | currency }}
                 </option>
@@ -33,7 +33,7 @@
             </div>
             <div class="overlap-5">
               <div class="ultimos">Investimentos Relacionados</div>
-              <select multiple [(ngModel)]="objetivo.listaInvestimento" class="form-control">
+              <select multiple [(ngModel)]="objetivo.listaInvestimento" (ngModelChange)="onInvestimentosChange()" class="form-control">
                 <option *ngFor="let investimento of investimentosDisponiveis" [ngValue]="investimento">
                   {{ investimento.descricao }} - {{ investimento.valor | currency }}
                 </option>

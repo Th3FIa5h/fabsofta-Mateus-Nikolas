@@ -25,8 +25,8 @@
               <div class="ultimas-receitas">Últimas Receitas</div>
               <div class="valor-receita">Valor</div>
               <ng-container *ngIf="umobjetivo.listaReceitas && umobjetivo.listaReceitas.length > 0">
-                <div class="dados-receitas">
-                  {{umobjetivo.listaReceitas[0].valor | currency}}
+                <div class="dados-receitas" *ngFor="let receita of umobjetivo.listaReceitas">
+                  {{receita.descricao}} - {{receita.valor | currency}}
                 </div>
               </ng-container>
             </div>
@@ -34,8 +34,8 @@
               <div class="ultimos">Últimos Investimentos</div>
               <div class="valor-investimento">Valor</div>
               <ng-container *ngIf="umobjetivo.listaInvestimento && umobjetivo.listaInvestimento.length > 0">
-                <div class="dados-investimentos">
-                  {{umobjetivo.listaInvestimento[0].valor | currency}}
+                <div class="dados-investimentos" *ngFor="let investimento of umobjetivo.listaInvestimento">
+                  {{investimento.descricao}} - {{investimento.valor | currency}}
                 </div>
               </ng-container>
             </div>
