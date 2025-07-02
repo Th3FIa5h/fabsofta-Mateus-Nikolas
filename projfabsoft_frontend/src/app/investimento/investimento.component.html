@@ -20,6 +20,7 @@
                 <tr>
                   <th>Valor</th>
                   <th>Descrição</th>
+                  <th>Prazo</th>
                   <th>Banco</th>
                   <th>Editar/Excluir</th>
                 </tr>
@@ -28,7 +29,8 @@
                 <tr *ngFor="let uminvestimento of listaInvestimentosCurto">
                   <td>{{uminvestimento.valor}}</td>
                   <td>{{uminvestimento.descricao}}</td>
-                  <td>{{uminvestimento.conta.banco}}</td>
+                  <td>{{uminvestimento.prazo}}</td>
+                  <td>{{uminvestimento.conta?.banco }}</td>
                   <td>
                     <a (click)="alterar(uminvestimento)" class="icon-btn editar">
                       <i class="bi bi-pencil-fill"></i>
@@ -50,6 +52,7 @@
                 <tr>
                   <th>Valor</th>
                   <th>Descrição</th>
+                  <th>Prazo</th>
                   <th>Banco</th>
                   <th>Editar/Excluir</th>
                 </tr>
@@ -58,6 +61,7 @@
                 <tr *ngFor="let uminvestimento of listaInvestimentosMedio">
                   <td>{{uminvestimento.valor}}</td>
                   <td>{{uminvestimento.descricao}}</td>
+                  <td>{{uminvestimento.prazo}}</td>
                   <td>{{uminvestimento.conta.banco}}</td>
                   <td>
                     <a (click)="alterar(uminvestimento)" class="icon-btn editar">
@@ -80,6 +84,7 @@
                 <tr>
                   <th>Valor</th>
                   <th>Descrição</th>
+                  <th>Prazo</th>
                   <th>Banco</th>
                   <th>Editar/Excluir</th>
                 </tr>
@@ -88,6 +93,7 @@
                 <tr *ngFor="let uminvestimento of listaInvestimentosLongo">
                   <td>{{uminvestimento.valor}}</td>
                   <td>{{uminvestimento.descricao}}</td>
+                  <td>{{uminvestimento.prazo}}</td>
                   <td>{{uminvestimento.conta.banco}}</td>
                   <td>
                     <a (click)="alterar(uminvestimento)" class="icon-btn editar">

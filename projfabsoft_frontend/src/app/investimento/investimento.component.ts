@@ -31,9 +31,12 @@ export class InvestimentoComponent {
   ngOnInit(): void {
     this.investimentoService.getInvestimento().subscribe(investimentos => {
       this.listaInvestimentos = investimentos;
-      this.listaInvestimentosCurto = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'curto');
-      this.listaInvestimentosMedio = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'medio');
-      this.listaInvestimentosLongo = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'longo');
+      console.log(this.listaInvestimentos)
+      this.listaInvestimentosCurto = investimentos.filter(inv => inv.prazo?.toLowerCase() == 'curto');
+      console.log(this.listaInvestimentosCurto)
+      this.listaInvestimentosMedio = investimentos.filter(inv => inv.prazo?.toLowerCase() == 'médio');
+      console.log(this.listaInvestimentosMedio)
+      this.listaInvestimentosLongo = investimentos.filter(inv => inv.prazo?.toLowerCase() == 'longo');
     });
   }
 
@@ -64,6 +67,7 @@ export class InvestimentoComponent {
           this.listaInvestimentosCurto = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'curto');
           this.listaInvestimentosMedio = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'medio');
           this.listaInvestimentosLongo = investimentos.filter(inv => inv.prazo?.toLowerCase() === 'longo');
+          console.log(this.listaInvestimentosLongo)
         });
       },
       error => {
