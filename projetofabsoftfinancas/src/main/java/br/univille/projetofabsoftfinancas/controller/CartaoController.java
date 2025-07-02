@@ -33,7 +33,7 @@ public class CartaoController {
         return new ResponseEntity<List<Cartao>>(listaCartao,
                     HttpStatus.OK);
     }
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public ResponseEntity<Cartao> getCartaoId(@PathVariable Long id) {
         var cartao = service.getById(id);
 

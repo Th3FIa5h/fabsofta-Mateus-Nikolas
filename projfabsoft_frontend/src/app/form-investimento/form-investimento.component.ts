@@ -27,12 +27,21 @@ export class FormInvestimentoComponent {
   ) {
     this.contaService.getConta().subscribe(contas => {
       this.contas = contas;
+      if (this.investimento && this.investimento.conta) {
+        let contaId = typeof this.investimento.conta === 'number' ? this.investimento.conta : this.investimento.conta.id;
+        const contaEncontrada = this.contas.find((c: any) => c && c.id === contaId);
+        if (contaEncontrada) this.investimento.conta = contaEncontrada;
+      }
     });
 
     const id = this.activedRoute.snapshot.paramMap.get('id');
     if (id) {
       this.investimentoService.getInvestimentoById(id)
       .subscribe(investimento => {
+        if (investimento.conta && investimento.conta.id) {
+          const contaEncontrada = this.contas.find((c: any) => c && c.id === investimento.conta.id);
+          if (contaEncontrada) investimento.conta = contaEncontrada;
+        }
         this.investimento = investimento;
       });
     }
@@ -56,4 +65,4 @@ export class FormInvestimentoComponent {
   home() {
     this.router.navigate(['/dashboard']);
   }
-}  
+}

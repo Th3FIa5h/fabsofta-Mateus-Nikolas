@@ -30,13 +30,17 @@ export class ReceitaComponent {
 
   ngOnInit(): void {
     this.receitaService.getReceita().subscribe(receitas => {
-      console.log("teste")
-      this.listaReceitas = receitas;
-      console.log(this.listaReceitas)
-      this.listaReceitasFixa = receitas.filter(r => r.tipo?.toLowerCase() === 'fixa');
-      console.log(this.listaReceitasFixa)
-      this.listaReceitasAvulsa = receitas.filter(r => r.tipo?.toLowerCase() === 'avulsa')
-      console.log(this.listaReceitasAvulsa)
+      this.listaReceitas = receitas.map(r => {
+        if (r.data && typeof r.data === 'number') {
+          const date = new Date(r.data);
+          r.data = date.toISOString().substring(0, 10) as any;
+        } else if (r.data && typeof r.data === 'string' && (r.data as string).includes('-')) {
+          r.data = (r.data as string).split('T')[0] as any;
+        }
+        return r;
+      });
+      this.listaReceitasFixa = this.listaReceitas.filter(r => r.tipo?.toLowerCase() === 'fixa');
+      this.listaReceitasAvulsa = this.listaReceitas.filter(r => r.tipo?.toLowerCase() === 'avulsa');
     });
   }
 

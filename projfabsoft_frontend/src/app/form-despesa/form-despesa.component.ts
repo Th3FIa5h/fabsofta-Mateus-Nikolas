@@ -36,6 +36,30 @@ export class FormDespesaComponent {
     if (id) {
       this.despesaService.getDespesaById(id)
       .subscribe(despesa => {
+        if (despesa.data && typeof despesa.data === 'number') {
+          const date = new Date(despesa.data);
+          despesa.data = date.toISOString().substring(0, 10) as any;
+        } else if (despesa.data && typeof despesa.data === 'string' && (despesa.data as string).includes('-')) {
+          despesa.data = (despesa.data as string).split('T')[0] as any;
+        } else {
+          despesa.data = undefined as any;
+        }
+        if (despesa.conta && despesa.conta.id) {
+          const contaEncontrada = this.contas.find((c: any) => c && c.id === despesa.conta.id);
+          if (contaEncontrada) despesa.conta = contaEncontrada;
+        }
+        if (despesa.cartao && despesa.cartao.id) {
+          const cartaoEncontrado = this.cartoes.find((c: any) => c && c.id === despesa.cartao.id);
+          if (cartaoEncontrado) despesa.cartao = cartaoEncontrado;
+        }
+        if (despesa.cartao && despesa.cartao.validade) {
+          if (typeof despesa.cartao.validade === 'number') {
+            const vdate = new Date(despesa.cartao.validade);
+            despesa.cartao.validade = vdate.toISOString().substring(0, 7);
+          } else if (typeof despesa.cartao.validade === 'string' && despesa.cartao.validade.includes('-')) {
+            despesa.cartao.validade = despesa.cartao.validade.split('T')[0].substring(0, 7);
+          }
+        }
         this.despesa = despesa;
       });
     }

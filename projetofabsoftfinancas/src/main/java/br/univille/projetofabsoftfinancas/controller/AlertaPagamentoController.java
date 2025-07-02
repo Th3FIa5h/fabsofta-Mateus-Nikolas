@@ -34,7 +34,7 @@ public class AlertaPagamentoController {
         return new ResponseEntity<List<AlertaPagamento>>(listaAlertaPagamento,
                     HttpStatus.OK);
     }
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public ResponseEntity<AlertaPagamento> getAlertaPagamentoId(@PathVariable Long id) {
         var alertapagamento = service.getById(id);
 

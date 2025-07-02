@@ -32,7 +32,7 @@ public class InvestimentoController {
         return new ResponseEntity<List<Investimento>>(listaInvestimento,
                     HttpStatus.OK);
     }
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public ResponseEntity<Investimento> getInvestimentoId(@PathVariable Long id) {
         var investimento = service.getById(id);
 

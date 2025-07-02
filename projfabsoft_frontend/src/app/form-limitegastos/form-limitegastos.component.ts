@@ -1,24 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Limitegastos } from '../model/limitegastos';
 import { LimitegastosService } from '../service/limitegastos.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Despesa } from '../model/despesa';
+import { DespesaService } from '../service/despesa.service';
 
 @Component({
   selector: 'app-form-limitegastos',
   imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './form-limitegastos.component.html',
   styleUrl: './form-limitegastos.component.css',
-  providers: [LimitegastosService, Router]
+  providers: [LimitegastosService, Router, DespesaService]
 })
-export class FormLimitegastosComponent {
+export class FormLimitegastosComponent implements OnInit {
   limitegastos: Limitegastos = new Limitegastos();
+  despesasDisponiveis: Despesa[] = [];
+
   constructor(
     private limitegastosService: LimitegastosService,
     private router: Router,
-    private activedRoute: ActivatedRoute
+    private activedRoute: ActivatedRoute,
+    private despesaService: DespesaService
   ) {
     const id = this.activedRoute.snapshot.paramMap.get('id');
     if (id) {
@@ -27,6 +32,12 @@ export class FormLimitegastosComponent {
         this.limitegastos = limitegastos;
       });
     }
+  }
+
+  ngOnInit() {
+    this.despesaService.getDespesa().subscribe(despesas => {
+      this.despesasDisponiveis = despesas;
+    });
   }
 
   salvar() {

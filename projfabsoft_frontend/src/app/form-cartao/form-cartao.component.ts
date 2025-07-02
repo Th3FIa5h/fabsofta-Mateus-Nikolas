@@ -22,8 +22,15 @@ export class FormCartaoComponent {
   ) {
     const id = this.activedRoute.snapshot.paramMap.get('id');
     if (id) {
-      this.cartaoService.getCartaoById(id)
-      .subscribe(cartao => {
+      this.cartaoService.getCartaoById(id).subscribe(cartao => {
+        if (cartao.validade && typeof cartao.validade === 'number') {
+          const date = new Date(cartao.validade);
+          cartao.validade = date.toISOString().substring(0, 7);
+        } else if (cartao.validade && typeof cartao.validade === 'string' && cartao.validade.includes('-')) {
+          cartao.validade = cartao.validade.split('T')[0].substring(0, 7);
+        } else {
+          cartao.validade = '';
+        }
         this.cartao = cartao;
       });
     }

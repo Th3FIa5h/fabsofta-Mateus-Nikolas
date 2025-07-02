@@ -27,7 +27,7 @@
               <tbody>
                 <tr *ngFor="let umalertapagamento of listaAlertaspagamento">
                   <td>{{umalertapagamento.descricao}}</td>
-                  <td>{{umalertapagamento.dataVencimento}}</td>
+                  <td>{{ umalertapagamento.dataVencimento | date:'dd/MM/yyyy' }}</td>
                   <td>{{umalertapagamento.status}}</td>
                   <td>{{umalertapagamento.conta.banco}}</td>
                   <td>
@@ -63,4 +63,3 @@
       </div>
     </div>
   </div>
-</div>

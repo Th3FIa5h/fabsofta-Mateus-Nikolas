@@ -42,12 +42,18 @@ export class AlertapagamentoComponent implements OnInit {
         .sort((a, b) => new Date(b.dataVencimento).getTime() - new Date(a.dataVencimento).getTime())
         .slice(0, 4);
     });
-    this.contaService.getConta().subscribe(contas => {
-      this.contas = contas;
-    });
-    this.cartaoService.getCartao().subscribe(cartoes => {
-      this.cartoes = cartoes;
-    });
+    this.carregarContasECartoes();
+  }
+
+  carregarContasECartoes() {
+    this.contaService.getConta().subscribe(
+      contas => this.contas = contas || [],
+      () => this.contas = []
+    );
+    this.cartaoService.getCartao().subscribe(
+      cartoes => this.cartoes = cartoes || [],
+      () => this.cartoes = []
+    );
   }
 
   novo() {
@@ -82,11 +88,11 @@ export class AlertapagamentoComponent implements OnInit {
     );
   }
 
-    irParaDespesa() {
-      this.router.navigate(['/despesa']);
-    }
-  
-    home() {
-      this.router.navigate(['/dashboard']);
-    }
+  irParaDespesa() {
+    this.router.navigate(['/despesa']);
+  }
+
+  home() {
+    this.router.navigate(['/dashboard']);
+  }
 }
