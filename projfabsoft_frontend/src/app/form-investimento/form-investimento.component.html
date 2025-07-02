@@ -28,8 +28,12 @@
                 </select>
 
                 <label for="txtconta">Conta</label>
-                <input type="text" [(ngModel)]="investimento.conta.numero" class="form-control" name="conta"
-                    id="txtconta" placeholder="Número da Conta" required>
+                <select [(ngModel)]="investimento.conta" class="form-control" name="conta" id="txtconta" required>
+                    <option [ngValue]="null" disabled selected>Selecione a Conta</option>
+                    <option *ngFor="let conta of contas" [ngValue]="conta">
+                        {{ conta.banco }} - Agência: {{ conta.agencia }} - Conta: {{ conta.numero }}
+                    </option>
+                </select>
             </div>
         </div>
         <button (click)="salvar()" class="btn btn-primary">Salvar</button>

@@ -25,7 +25,14 @@
               <td><input type="number" [(ngModel)]="receita.valor" class="form-control" /></td>
               <td><input type="text" [(ngModel)]="receita.descricao" class="form-control" /></td>
               <td><input type="date" [(ngModel)]="receita.data" class="form-control" /></td>
-              <td><input type="text" [(ngModel)]="receita.conta.banco" class="form-control" /></td>
+              <td>
+                <select [(ngModel)]="receita.conta" class="form-control" name="contaSelect">
+                  <option [ngValue]="null" disabled selected>Selecione o Banco</option>
+                  <option *ngFor="let conta of contas" [ngValue]="conta">
+                    {{ conta.banco }} - Agência: {{ conta.agencia }} - Conta: {{ conta.numero }}
+                  </option>
+                </select>
+              </td>
               <td>
                 <select [(ngModel)]="receita.tipo" class="form-control">
                   <option value="" disabled selected>Selecione o Tipo</option>

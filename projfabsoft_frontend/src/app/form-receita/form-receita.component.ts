@@ -5,21 +5,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ContaService } from '../service/conta.service';
+import { Conta } from '../model/conta';
 
 @Component({
   selector: 'app-form-receita',
   imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './form-receita.component.html',
   styleUrl: './form-receita.component.css',
-  providers: [ReceitaService, Router]
+  providers: [ReceitaService, Router, ContaService]
 })
 export class FormReceitaComponent {
   receita: Receita = new Receita();
+  contas: Conta[] = [];
+
   constructor(
     private receitaService: ReceitaService,
+    private contaService: ContaService,
     private router: Router,
     private activedRoute: ActivatedRoute
   ) {
+    this.contaService.getConta().subscribe(contas => {
+      this.contas = contas;
+    });
     const id = this.activedRoute.snapshot.paramMap.get('id');
     if (id) {
       this.receitaService.getReceitaById(id)

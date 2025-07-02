@@ -5,17 +5,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
+import { ContaService } from '../service/conta.service';
+import { CartaoService } from '../service/cartao.service';
+import { Conta } from '../model/conta';
+import { Cartao } from '../model/cartao';
 
 @Component({
   selector: 'app-alertapagamento',
   imports: [CommonModule, HttpClientModule],
   templateUrl: './alertapagamento.component.html',
   styleUrl: './alertapagamento.component.css',
-  providers: [AlertapagamentoService, Router]
+  providers: [AlertapagamentoService, Router, ContaService, CartaoService]
 })
 export class AlertapagamentoComponent implements OnInit {
   public listaAlertaspagamento: Alertapagamento[] = [];
   public ultimosAlertas: Alertapagamento[] = [];
+  public contas: Conta[] = [];
+  public cartoes: Cartao[] = [];
 
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
@@ -24,6 +30,8 @@ export class AlertapagamentoComponent implements OnInit {
 
   constructor(
     private alertaService: AlertapagamentoService,
+    private contaService: ContaService,
+    private cartaoService: CartaoService,
     private router: Router
   ) {}
 
@@ -33,6 +41,12 @@ export class AlertapagamentoComponent implements OnInit {
       this.ultimosAlertas = alertas
         .sort((a, b) => new Date(b.dataVencimento).getTime() - new Date(a.dataVencimento).getTime())
         .slice(0, 4);
+    });
+    this.contaService.getConta().subscribe(contas => {
+      this.contas = contas;
+    });
+    this.cartaoService.getCartao().subscribe(cartoes => {
+      this.cartoes = cartoes;
     });
   }
 

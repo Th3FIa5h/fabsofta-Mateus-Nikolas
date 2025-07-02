@@ -18,7 +18,6 @@
               <th>Data</th>
               <th>Banco</th>
               <th>Tipo</th>
-              <th>Conta</th>
               <th>Cartão</th>
             </tr>
           </thead>
@@ -27,7 +26,14 @@
               <td><input type="number" [(ngModel)]="despesa.valor" class="form-control" /></td>
               <td><input type="text" [(ngModel)]="despesa.descricao" class="form-control" /></td>
               <td><input type="date" [(ngModel)]="despesa.data" class="form-control" /></td>
-              <td><input type="text" [(ngModel)]="despesa.conta.banco" class="form-control" /></td>
+              <td>
+                <select [(ngModel)]="despesa.conta" class="form-control" name="contaSelect">
+                  <option [ngValue]="null" disabled selected>Selecione o Banco</option>
+                  <option *ngFor="let conta of contas" [ngValue]="conta">
+                    {{ conta.banco }} - Agência: {{ conta.agencia }} - Conta: {{ conta.numero }}
+                  </option>
+                </select>
+              </td>
               <td>
                 <select [(ngModel)]="despesa.tipo" class="form-control">
                   <option value="" disabled selected>Selecione o Tipo</option>
@@ -35,10 +41,14 @@
                   <option value="Variável">Variável</option>
                 </select>
               </td>
-              <td><input type="text" [(ngModel)]="despesa.conta.numero" class="form-control"
-                  placeholder="Número da Conta" /></td>
-              <td><input type="text" [(ngModel)]="despesa.cartao.numero" class="form-control"
-                  placeholder="Número do Cartão" /></td>
+              <td>
+                <select [(ngModel)]="despesa.cartao" class="form-control" name="cartaoSelect">
+                  <option [ngValue]="null" disabled selected>Selecione o Cartão</option>
+                  <option *ngFor="let cartao of cartoes" [ngValue]="cartao">
+                    {{ cartao.numero }} - {{ cartao.banco }} - {{ cartao.nomeCliente }}
+                  </option>
+                </select>
+              </td>
             </tr>
           </tbody>
         </table>
