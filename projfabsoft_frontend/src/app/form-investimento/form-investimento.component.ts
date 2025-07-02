@@ -54,6 +54,10 @@ export class FormInvestimentoComponent {
     });
   }
 
+  cancelar() {
+    this.router.navigate(['/investimento'])
+  }
+
   irParaInvestimento() {
     this.router.navigate(['/investimento']);
   }

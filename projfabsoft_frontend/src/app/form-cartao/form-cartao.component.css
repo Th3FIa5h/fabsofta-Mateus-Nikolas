@@ -8,7 +8,6 @@
   justify-content: center;
   align-items: center;
   background-color: #e1e3e7;
-
   padding: 40px 0;
 }
 
@@ -16,14 +15,14 @@
   background-color: #fcfdff;
   width: 100%;
   max-width: 900px;
-  border-radius: 30px;
+  border-radius: 50px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
 .header {
   background-color: #ddecfd;
-  border-radius: 25px 25px 0 0;
+  border-radius: 50px 50px 0 0;
   padding: 20px 25px;
   display: flex;
   flex-direction: column;

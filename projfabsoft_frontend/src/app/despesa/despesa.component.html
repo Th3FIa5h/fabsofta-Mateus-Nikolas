@@ -1,113 +1,85 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-<div class="header">
-  <div class="header-top">
-    <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
-    <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
-    <button (click)="irParaReceitas()" class="btn-view"><i class="bi bi-cash-coin"></i> Ver Receitas</button>
-  </div>
-  <h1 class="title">Minhas Despesas</h1>
-</div>
+<div class="pagina-despesa">
+  <div class="overlap-group-wrapper">
+    <div class="overlap-group">
+      <div class="header">
+        <div class="header-top">
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i> Home</button>
+          <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
+          <button (click)="irParaReceitas()" class="btn-view"><i class="bi bi-cash-coin"></i> Ver Receitas</button>
+        </div>
+        <h1 class="title">Minhas Despesas</h1>
+      </div>
 
-<div class="tables-section">
-  <div class="table-card">
-    <h2>Fixas</h2>
-    <div class="tabela-receitas-wrapper">
-      <table class="table tabela-receitas">
-        <thead>
-          <tr>
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th>Data</th>
-            <th>Tipo</th>
-            <th>Numero da Conta</th>
-            <th>Agencia da Conta</th>
-            <th>Banco da Conta</th>
-            <th>Numero do Cartao</th>
-            <th>Cvv do Cartão</th>
-            <th>Validade do Cartão</th>
-            <th>Nome do Cliente</th>
-            <th>Banco do Cartão</th>
-            <th>Bandeira do Cartão</th>
+      <div class="tables-section">
+        <div class="table-card">
+          <h2>Fixas</h2>
+          <div class="tabela-receitas-wrapper">
+            <table class="table tabela-receitas">
+              <thead>
+                <tr>
+                  <th>Descrição</th>
+                  <th>Valor</th>
+                  <th>Data</th>
+                  <th>Tipo</th>
+                  <th>Banco</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let umdespesa of listaDespesasFixa">
+                  <td>{{umdespesa.descricao}}</td>
+                  <td>{{umdespesa.valor}}</td>
+                  <td>{{umdespesa.data}}</td>
+                  <td>{{umdespesa.tipo}}</td>
+                  <td>{{umdespesa.conta.banco}}</td>
+                  <td>
+                    <a (click)="alterar(umdespesa)" class="icon-btn editar">
+                      <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a (click)="abrirConfirmacao(umdespesa)" class="icon-btn excluir">
+                      <i class="bi bi-eraser-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let umdespesa of listaDespesasFixa">
-            <td>{{umdespesa.descricao}}</td>
-            <td>{{umdespesa.valor}}</td>
-            <td>{{umdespesa.data}}</td>
-            <td>{{umdespesa.tipo}}</td>
-            <td>{{umdespesa.conta.numero}}</td>
-            <td>{{umdespesa.conta.agencia}}</td>
-            <td>{{umdespesa.conta.banco}}</td>
-            <td>{{umdespesa.cartao.numero}}</td>
-            <td>{{umdespesa.cartao.cvv}}</td>
-            <td>{{umdespesa.cartao.validade}}</td>
-            <td>{{umdespesa.cartao.nomeCliente}}</td>
-            <td>{{umdespesa.cartao.banco}}</td>
-            <td>{{umdespesa.cartao.bandeira}}</td>
-            <td>
-              <a (click)="alterar(umdespesa)" class="icon-btn editar">
-                <i class="bi bi-pencil-fill"></i>
-              </a>
-              <a (click)="abrirConfirmacao(umdespesa)" class="icon-btn excluir">
-                <i class="bi bi-eraser-fill"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="table-card">
-    <h2>Variáveis</h2>
-    <div class="tabela-receitas-wrapper">
-      <table class="table tabela-receitas">
-        <thead>
-          <tr>
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th>Data</th>
-            <th>Tipo</th>
-            <th>Numero da Conta</th>
-            <th>Agencia da Conta</th>
-            <th>Banco da Conta</th>
-            <th>Numero do Cartao</th>
-            <th>Cvv do Cartão</th>
-            <th>Validade do Cartão</th>
-            <th>Nome do Cliente</th>
-            <th>Banco do Cartão</th>
-            <th>Bandeira do Cartão</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let umdespesa of listaDespesasVariavel">
-            <td>{{umdespesa.descricao}}</td>
-            <td>{{umdespesa.valor}}</td>
-            <td>{{umdespesa.data}}</td>
-            <td>{{umdespesa.tipo}}</td>
-            <td>{{umdespesa.conta.numero}}</td>
-            <td>{{umdespesa.conta.agencia}}</td>
-            <td>{{umdespesa.conta.banco}}</td>
-            <td>{{umdespesa.cartao.numero}}</td>
-            <td>{{umdespesa.cartao.cvv}}</td>
-            <td>{{umdespesa.cartao.validade}}</td>
-            <td>{{umdespesa.cartao.nomeCliente}}</td>
-            <td>{{umdespesa.cartao.banco}}</td>
-            <td>{{umdespesa.cartao.bandeira}}</td>
-            <td>
-              <a (click)="alterar(umdespesa)" class="icon-btn editar">
-                <i class="bi bi-pencil-fill"></i>
-              </a>
-              <a (click)="abrirConfirmacao(umdespesa)" class="icon-btn excluir">
-                <i class="bi bi-eraser-fill"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="table-card">
+          <h2>Variáveis</h2>
+          <div class="tabela-receitas-wrapper">
+            <table class="table tabela-receitas">
+              <thead>
+                <tr>
+                  <th>Descrição</th>
+                  <th>Valor</th>
+                  <th>Data</th>
+                  <th>Tipo</th>
+                  <th>Banco da Conta</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let umdespesa of listaDespesasVariavel">
+                  <td>{{umdespesa.descricao}}</td>
+                  <td>{{umdespesa.valor}}</td>
+                  <td>{{umdespesa.data}}</td>
+                  <td>{{umdespesa.tipo}}</td>
+                  <td>{{umdespesa.conta.banco}}</td>
+                  <td>
+                    <a (click)="alterar(umdespesa)" class="icon-btn editar">
+                      <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a (click)="abrirConfirmacao(umdespesa)" class="icon-btn excluir">
+                      <i class="bi bi-eraser-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

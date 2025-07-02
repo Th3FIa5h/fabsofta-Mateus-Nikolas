@@ -58,6 +58,7 @@
 .btn-home {
   background-color: transparent;
   font-size: 24px;
+  font-weight: bold;
 }
 
 .btn-add {
@@ -102,6 +103,7 @@
 .table-card h2 {
   text-align: center;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .tabela-receitas-wrapper {
