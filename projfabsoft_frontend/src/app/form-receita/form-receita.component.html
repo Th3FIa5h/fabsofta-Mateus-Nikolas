@@ -4,56 +4,50 @@
     <div class="overlap-group">
       <div class="header">
         <div class="header-top">
-          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i></button>
           <button (click)="irParaReceita()" class="btn-view"><i class="bi bi-piggy-bank"></i> Ver Receitas</button>
         </div>
         <h1 class="title">Minhas Receitas</h1>
       </div>
       <div class="overlap-2">
-        <table class="form-tabela">
-          <thead>
-            <tr>
-              <th>Valor</th>
-              <th>Descrição</th>
-              <th>Data</th>
-              <th>Banco</th>
-              <th>Tipo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><input type="number" [(ngModel)]="receita.valor" class="form-control" /></td>
-              <td><input type="text" [(ngModel)]="receita.descricao" class="form-control" /></td>
-              <td><input type="date" [(ngModel)]="receita.data" class="form-control" /></td>
-              <td>
-                <select [(ngModel)]="receita.conta" class="form-control" name="contaSelect">
-                  <option [ngValue]="null" disabled selected>Selecione o Banco</option>
-                  <option *ngFor="let conta of contas" [ngValue]="conta">
-                    {{ conta.banco }} - Agência: {{ conta.agencia }} - Conta: {{ conta.numero }}
-                  </option>
-                </select>
-              </td>
-              <td>
-                <select [(ngModel)]="receita.tipo" class="form-control">
-                  <option value="" disabled selected>Selecione o Tipo</option>
-                  <option value="Fixa">Fixa</option>
-                  <option value="Avulsa">Avulsa</option>
-                </select>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="botoes-centro">
-        <div class="cancelar-wrapper" (click)="cancelar()">
-          <div class="cancelar">Cancelar</div>
-        </div>
-
-        <div class="salvar-wrapper" (click)="salvar()">
-          <div class="salvar">Salvar</div>
+          <table class="form-tabela">
+            <thead>
+              <tr>
+                <th>Valor</th>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Banco</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="number" [(ngModel)]="receita.valor" class="form-control" /></td>
+                <td><input type="text" [(ngModel)]="receita.descricao" class="form-control" /></td>
+                <td><input type="date" [(ngModel)]="receita.data" class="form-control" /></td>
+                <td>
+                  <select [(ngModel)]="receita.conta" class="form-control" name="contaSelect">
+                    <option [ngValue]="null" disabled selected>Selecione o Banco</option>
+                    <option *ngFor="let conta of contas" [ngValue]="conta">
+                      {{ conta.banco }} - Agência: {{ conta.agencia }} - Conta: {{ conta.numero }}
+                    </option>
+                  </select>
+                </td>
+                <td>
+                  <select [(ngModel)]="receita.tipo" class="form-control">
+                    <option value="" disabled selected>Selecione o Tipo</option>
+                    <option value="Fixa">Fixa</option>
+                    <option value="Avulsa">Avulsa</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <div class="botoes">
+          <button (click)="cancelar()" class="btn btn-secundario">Cancelar</button>
+          <button (click)="salvar()" class="btn btn-primario">Salvar</button>
         </div>
       </div>
-
     </div>
   </div>
 </div>
