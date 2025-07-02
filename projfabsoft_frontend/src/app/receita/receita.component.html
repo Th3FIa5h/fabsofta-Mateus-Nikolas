@@ -1,78 +1,83 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-<div class="header">
-  <div class="header-top">
-    <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
-    <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
-    <button (click)="irParaDespesa()" class="btn-view"><i class="bi bi-cash-coin"></i> Ver Despesas</button>
-  </div>
-  <h1 class="title">Minhas Receitas</h1>
-</div>
+<div class="pagina-receita">
+  <div class="overlap-group-wrapper">
+    <div class="overlap-group">
+      <div class="header">
+        <div class="header-top">
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+          <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
+          <button (click)="irParaDespesa()" class="btn-view"><i class="bi bi-cash-coin"></i> Ver Despesas</button>
+        </div>
+        <h1 class="title">Minhas Receitas</h1>
+      </div>
 
-<div class="tables-section">
-  <div class="table-card">
-    <h2>Fixas</h2>
-    <div class="tabela-receitas-wrapper">
-      <table class="table tabela-receitas">
-        <thead>
-          <tr>
-            <th>Valor</th>
-            <th>Descrição</th>
-            <th>Data</th>
-            <th>Banco</th>
-            <th>Editar/Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let umreceita of listaReceitasFixa">
-            <td>{{umreceita.valor}}</td>
-            <td>{{umreceita.descricao}}</td>
-            <td>{{umreceita.data}}</td>
-            <td>{{umreceita.conta.banco}}</td>
-            <td>
-              <a (click)="alterar(umreceita)" class="icon-btn editar">
-                <i class="bi bi-pencil-fill"></i>
-              </a>
-              <a (click)="abrirConfirmacao(umreceita)" class="icon-btn excluir">
-                <i class="bi bi-eraser-fill"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+      <div class="tables-section">
+        <div class="table-card">
+          <h2>Fixas</h2>
+          <div class="tabela-receitas-wrapper">
+            <table class="table tabela-receitas">
+              <thead>
+                <tr>
+                  <th>Valor</th>
+                  <th>Descrição</th>
+                  <th>Data</th>
+                  <th>Banco</th>
+                  <th>Editar/Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let umreceita of listaReceitasFixa">
+                  <td>{{umreceita.valor}}</td>
+                  <td>{{umreceita.descricao}}</td>
+                  <td>{{umreceita.data}}</td>
+                  <td>{{umreceita.conta.banco}}</td>
+                  <td>
+                    <a (click)="alterar(umreceita)" class="icon-btn editar">
+                      <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a (click)="abrirConfirmacao(umreceita)" class="icon-btn excluir">
+                      <i class="bi bi-eraser-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-  <div class="table-card">
-    <h2>Avulsas</h2>
-    <div class="tabela-receitas-wrapper">
-      <table class="table tabela-receitas">
-        <thead>
-          <tr>
-            <th>Valor</th>
-            <th>Descrição</th>
-            <th>Data</th>
-            <th>Banco</th>
-            <th>Editar/Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let umreceita of listaReceitasAvulsa">
-            <td>{{umreceita.valor}}</td>
-            <td>{{umreceita.descricao}}</td>
-            <td>{{umreceita.data}}</td>
-            <td>{{umreceita.conta.banco}}</td>
-            <td>
-              <a (click)="alterar(umreceita)" class="icon-btn editar">
-                <i class="bi bi-pencil-fill"></i>
-              </a>
-              <a (click)="abrirConfirmacao(umreceita)" class="icon-btn excluir">
-                <i class="bi bi-eraser-fill"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
+        <div class="table-card">
+          <h2>Avulsas</h2>
+          <div class="tabela-receitas-wrapper">
+            <table class="table tabela-receitas">
+              <thead>
+                <tr>
+                  <th>Valor</th>
+                  <th>Descrição</th>
+                  <th>Data</th>
+                  <th>Banco</th>
+                  <th>Editar/Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let umreceita of listaReceitasAvulsa">
+                  <td>{{umreceita.valor}}</td>
+                  <td>{{umreceita.descricao}}</td>
+                  <td>{{umreceita.data}}</td>
+                  <td>{{umreceita.conta.banco}}</td>
+                  <td>
+                    <a (click)="alterar(umreceita)" class="icon-btn editar">
+                      <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a (click)="abrirConfirmacao(umreceita)" class="icon-btn excluir">
+                      <i class="bi bi-eraser-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
