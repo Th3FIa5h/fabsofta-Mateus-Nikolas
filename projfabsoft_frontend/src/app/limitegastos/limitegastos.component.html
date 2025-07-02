@@ -4,11 +4,11 @@
     <div class="overlap-group">
       <div class="header">
         <div class="header-top">
-          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i></button>
           <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Adicionar</i></a>
-          <button (click)="irParaDespesas()" class="btn-view"><i class="bi bi-bullseye"></i> Ver Despesas</button>
+          <button (click)="irParaDespesas()" class="btn-view"><i class="bi bi-wallet2"></i> Ver Despesas</button>
         </div>
-        <h1 class="title">Meus Limites de Gastos</h1>
+        <h1 class="title">Meus Limites</h1>
       </div>
       <div class="limites-grid">
         <div class="limite-card" *ngFor="let umlimitegastos of listaLimiteGastos">
