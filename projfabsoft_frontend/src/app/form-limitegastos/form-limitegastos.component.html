@@ -11,25 +11,22 @@
       </div>
             <div class="formulario-limite">
                 <div class="form-group">
+                    <label for="txtTitulo">Título</label>
+                    <input type="text" [(ngModel)]="limitegastos.titulo" class="form-control" id="txtTitulo" name="titulo">
+
+                    <label for="txtCategoria">Categoria</label>
+                    <input type="text" [(ngModel)]="limitegastos.categoria" class="form-control" id="txtCategoria" name="categoria">
+                    
                     <label for="txtvalorLimite">Valor Limite</label>
                     <input type="number" [(ngModel)]="limitegastos.valorLimite" class="form-control"
                         name="valorLimite" id="txtvalorLimite">
 
-                    <label for="txtdespesaDescricao">Descrição da Despesa</label>
-                    <input type="text" [(ngModel)]="limitegastos.despesa.descricao" class="form-control"
-                        name="despesaDescricao" id="txtdespesaDescricao">
-
-                    <label for="txtdespesaValor">Valor da Despesa</label>
-                    <input type="number" [(ngModel)]="limitegastos.despesa.valor" class="form-control"
-                        name="despesaValor" id="txtdespesaValor">
-
-                    <label for="txtdespesaData">Data da Despesa</label>
-                    <input type="date" [(ngModel)]="limitegastos.despesa.data" class="form-control"
-                        name="despesaData" id="txtdespesaData">
-
-                    <label for="txtdespesaTipo">Tipo da Despesa</label>
-                    <input type="text" [(ngModel)]="limitegastos.despesa.tipo" class="form-control"
-                        name="despesaTipo" id="txtdespesaTipo">
+                    <label>Despesas Relacionadas</label>
+                    <select multiple [(ngModel)]="limitegastos.despesa" class="form-control">
+                      <option *ngFor="let despesa of despesasDisponiveis" [ngValue]="despesa">
+                        {{ despesa.descricao }} - {{ despesa.valor | currency }} - {{ despesa.data | date:'dd/MM/yyyy' }}
+                      </option>
+                    </select>
                 </div>
                 <div class="botoes">
                     <button (click)="cancelar()" class="btn btn-secundario">Cancelar</button>

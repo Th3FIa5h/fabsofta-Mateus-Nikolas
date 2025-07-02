@@ -12,6 +12,7 @@
       </div>
       <div class="limites-grid">
         <div class="limite-card" *ngFor="let umlimitegastos of listaLimiteGastos">
+          <div class="limite-titulo">{{ umlimitegastos.titulo }}</div>
           <div class="limite-info">
             <div class="limite-label">Valor Limite</div>
             <div class="limite-valor">R$ {{ umlimitegastos.valorLimite }}</div>
@@ -29,7 +30,7 @@
           <div class="limite-info">
             <div class="limite-label">Categoria</div>
             <div class="limite-valor">
-              {{ getDespesasArray(umlimitegastos)[0]?.tipo || '-' }}
+              {{ umlimitegastos.categoria || '-' }}
             </div>
           </div>
           <div class="limite-acoes">

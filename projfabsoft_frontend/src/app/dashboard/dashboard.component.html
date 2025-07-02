@@ -14,44 +14,32 @@
 
 <main class="dashboard">
   <section class="resumos">
-    <div class="card resumo">Saldo Total Disponível<br><strong>R$15000,00</strong></div>
-    <div class="card resumo">Saldo Mensal Disponível<br><strong>R$3300,00</strong></div>
-    <div class="card resumo">Receita do Mês<br><strong>R$4500,00</strong></div>
-    <div class="card resumo">Despesa do Mês<br><strong>R$1200,00</strong></div>
+    <div class="card resumo">Saldo Total Disponível<br><strong>R${{ saldoTotal | number:'1.2-2' }}</strong></div>
+    <div class="card resumo">Saldo Mensal Disponível<br><strong>R${{ saldoMensal | number:'1.2-2' }}</strong></div>
+    <div class="card resumo">Receita do Mês<br><strong>R${{ receitaMes | number:'1.2-2' }}</strong></div>
+    <div class="card resumo">Despesa do Mês<br><strong>R${{ despesaMes | number:'1.2-2' }}</strong></div>
   </section>
 
-  <section class="limites-grafico">
-    <div class="card limites">
+  <section class="limites-grafico dashboard-grid">
+    <div class="card limites grid-item1">
       <h3>Limite Gastos Por Categoria</h3>
       <div class="categorias">
-        <div class="categoria"></div>
-        <div class="categoria"></div>
-        <div class="categoria"></div>
-        <div class="categoria"></div>
-        <div class="categoria"></div>
-        <div class="categoria"></div>
+        <ng-container *ngFor="let limite of limites">
+          <button class="categoria-btn" [ngStyle]="{'background-color': coresLimite[limite.id]}" title="{{limite.titulo}}">
+            {{ limite.titulo ? limite.titulo.charAt(0).toUpperCase() : '?' }}
+          </button>
+          <span class="percentual-limite">{{ getPercentualLimite(limite) | number:'1.0-0' }}%</span>
+        </ng-container>
       </div>
     </div>
-    <div class="card grafico">
+    <div class="card grafico grid-item4">
       <h3>Gráfico Receitas/Despesas Mês</h3>
-    </div>
-  </section>
-
-  <div class="dash-content">
-    <div class="left-panel">
-      <div class="card alertas">
-        <h3>Alertas Despesas</h3>
-        <ul class="lista-alertas">
-        </ul>
-      </div>
-      <div class="card transacoes">
-        <h3>Últimas Transações</h3>
-        <ul class="lista-transacoes">
-        </ul>
-      </div>
-    </div>
-
-    <div class="right-panel">
+      <canvas baseChart
+        [datasets]="chartData.datasets"
+        [data]="chartData"
+        [options]="chartOptions"
+        [type]="'pie'">
+      </canvas>
       <div class="card botoes-card">
         <div class="acoes">
           <a (click)="irParaNovaReceitas()" class="btn receita">+ Nova Receita</a>
@@ -61,5 +49,25 @@
         </div>
       </div>
     </div>
-  </div>
+    <div class="card alertas grid-item2">
+      <h3>Alertas Despesas</h3>
+      <ul class="lista-alertas" style="list-style: none; padding-left: 0;">
+        <li *ngFor="let alerta of alertasPendentes">
+          {{ alerta.descricao }} - Vencimento: {{ alerta.dataVencimento | date:'dd/MM/yyyy' }} - Status: {{ alerta.status }}
+        </li>
+        <li *ngIf="alertasPendentes.length === 0">Nenhum alerta pendente.</li>
+      </ul>
+    </div>
+    <div class="card transacoes grid-item3">
+      <h3>Últimas Transações</h3>
+      <ul class="lista-transacoes" style="list-style: none; padding-left: 0;">
+        <li *ngFor="let t of ultimasTransacoes">
+          <span [ngClass]="{'receita': t.tipoTransacao === 'Receita', 'despesa': t.tipoTransacao === 'Despesa'}">
+            {{ t.tipoTransacao }} - {{ t.descricao }} - {{ t.data | date:'dd/MM/yyyy' }} - R${{ t.valor | number:'1.2-2' }}
+          </span>
+        </li>
+        <li *ngIf="ultimasTransacoes.length === 0">Nenhuma transação recente.</li>
+      </ul>
+    </div>
+  </section>
 </main>
