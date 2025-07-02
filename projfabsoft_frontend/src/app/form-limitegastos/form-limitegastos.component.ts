@@ -13,7 +13,7 @@ import { DespesaService } from '../service/despesa.service';
   imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './form-limitegastos.component.html',
   styleUrl: './form-limitegastos.component.css',
-  providers: [LimitegastosService, Router, DespesaService]
+  providers: [LimitegastosService, DespesaService]
 })
 export class FormLimitegastosComponent implements OnInit {
   limitegastos: Limitegastos = new Limitegastos();

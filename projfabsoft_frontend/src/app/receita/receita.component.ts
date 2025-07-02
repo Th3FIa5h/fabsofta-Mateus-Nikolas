@@ -11,7 +11,7 @@ import * as bootstrap from 'bootstrap';
   imports: [CommonModule, HttpClientModule],
   templateUrl: './receita.component.html',
   styleUrl: './receita.component.css',
-  providers: [ReceitaService, Router]
+  providers: [ReceitaService]
 })
 export class ReceitaComponent {
   public listaReceitas: Receita[] = [];

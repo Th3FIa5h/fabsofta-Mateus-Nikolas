@@ -15,7 +15,7 @@ import { Cartao } from '../model/cartao';
   imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './form-despesa.component.html',
   styleUrl: './form-despesa.component.css',
-  providers: [DespesaService, Router, ContaService, CartaoService]
+  providers: [DespesaService, ContaService, CartaoService]
 })
 export class FormDespesaComponent {
   despesa: Despesa = new Despesa();
