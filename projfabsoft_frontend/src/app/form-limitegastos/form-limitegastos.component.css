@@ -1,13 +1,10 @@
 * {
-   margin: 0;
-   padding: 0;
    font-family: 'Arial', sans-serif;
 }
 
 .header {
    background-color: #ddecfd;
-   border-bottom: 1px solid #cbd5e0;
-   border-radius: 0 0 25px 25px;
+   border-radius: 50px 50px 0 0;
    padding: 20px 25px;
    display: flex;
    flex-direction: column;
@@ -58,11 +55,35 @@
    text-shadow: 1px 1px 2px #ccc;
 }
 
+.container-limite-gastos {
+  background-color: #e1e3e7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.overlap-group-wrapper {
+  background-color: #e1e3e7;
+  width: 1920px;
+  height: 956px;
+}
+
+.overlap-group {
+  position: relative;
+  width: 1733px;
+  height: 792px;
+  top: 65px;
+  left: 71px;
+  background-color: #fcfdff;
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px 1px #00000040;
+}
+
 .formulario-limite {
-  padding: 40px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   max-width: 500px;
   margin: 40px auto 0 auto;
   background: #fff;

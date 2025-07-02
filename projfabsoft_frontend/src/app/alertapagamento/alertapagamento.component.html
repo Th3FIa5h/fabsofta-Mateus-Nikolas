@@ -1,98 +1,87 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-<div class="header">
-  <div class="header-top">
-    <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i>Home</button>
-    <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Nova Alerta de Pagamento</i></a>
-    <button (click)="irParaDespesa()" class="btn-view"><i class="bi bi-cash-coin"></i> Ver Despesas</button>
-  </div>
-  <h1 class="title">Alerta de Pagamento</h1>
-</div>
+<div class="alerta-pagamento">
+  <div class="overlap-group-wrapper">
+    <div class="overlap-group">
+      <div class="header">
+        <div class="header-top">
+          <button (click)="home()" class="btn-home"><i class="bi bi-house-door-fill"></i> Home</button>
+          <a (click)="novo()" class="btn-add"><i class="bi bi-plus-lg"> Nova Alerta de Pagamento</i></a>
+          <button (click)="irParaDespesa()" class="btn-view"><i class="bi bi-cash-coin"></i> Ver Despesas</button>
+        </div>
+        <h1 class="title">Meus Alertas</h1>
+      </div>
 
-<div class="tables-section">
-  <div class="table-card">
-    <h2>Alertas de Pagamento</h2>
-    <div class="tabela-receitas-wrapper">
-      <table class="table tabela-receitas">
-        <thead>
-          <tr>
-            <th>Descrição</th>
-            <th>DataVencimento</th>
-            <th>Status</th>
-            <th>Numero da Conta</th>
-            <th>Agencia da Conta</th>
-            <th>Banco da Conta</th>
-            <th>Numero do Cartao</th>
-            <th>Cvv do Cartão</th>
-            <th>Validade do Cartão</th>
-            <th>Nome do Cliente</th>
-            <th>Banco do Cartão</th>
-            <th>Bandeira do Cartão</th>
-            <th>Editar/Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let umalertapagamento of listaAlertaspagamento">
-            <td>{{umalertapagamento.descricao}}</td>
-            <td>{{umalertapagamento.dataVencimento}}</td>
-            <td>{{umalertapagamento.status}}</td>
-            <td>{{umalertapagamento.conta.numero}}</td>
-            <td>{{umalertapagamento.conta.agencia}}</td>
-            <td>{{umalertapagamento.conta.banco}}</td>
-            <td>{{umalertapagamento.cartao.numero}}</td>
-            <td>{{umalertapagamento.cartao.cvv}}</td>
-            <td>{{umalertapagamento.cartao.validade}}</td>
-            <td>{{umalertapagamento.cartao.nomeCliente}}</td>
-            <td>{{umalertapagamento.cartao.banco}}</td>
-            <td>{{umalertapagamento.cartao.bandeira}}</td>
-            <td>
-              <a (click)="alterar(umalertapagamento)" class="icon-btn editar">
-                <i class="bi bi-pencil-fill"></i>
-              </a>
-              <a (click)="abrirConfirmacao(umalertapagamento)" class="icon-btn excluir">
-                <i class="bi bi-eraser-fill"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="tables-section">
+        <div class="table-card">
+          <div class="tabela-receitas-wrapper">
+            <table class="table tabela-receitas">
+              <thead>
+                <tr>
+                  <th>Descrição</th>
+                  <th>DataVencimento</th>
+                  <th>Status</th>
+                  <th>Banco</th>
+                  <th>Editar/Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let umalertapagamento of listaAlertaspagamento">
+                  <td>{{umalertapagamento.descricao}}</td>
+                  <td>{{umalertapagamento.dataVencimento}}</td>
+                  <td>{{umalertapagamento.status}}</td>
+                  <td>{{umalertapagamento.conta.banco}}</td>
+                  <td>
+                    <a (click)="alterar(umalertapagamento)" class="icon-btn editar">
+                      <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a (click)="abrirConfirmacao(umalertapagamento)" class="icon-btn excluir">
+                      <i class="bi bi-eraser-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" #myModal tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Excluir Conta</h5>
+            </div>
+            <div class="modal-body">
+              Confirma a exclusão da conta?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+              <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      <div class="form-group">
+        <label for="contaSelect">Conta</label>
+        <select [(ngModel)]="alertapagamento.conta" class="form-control" name="contaSelect" id="contaSelect">
+          <option [ngValue]="null" disabled selected>Selecione a Conta</option>
+          <option *ngFor="let conta of contas" [ngValue]="conta">
+            {{ conta.banco }} - Agência: {{ conta.agencia }} - Conta: {{ conta.numero }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="cartaoSelect">Cartão</label>
+        <select [(ngModel)]="alertapagamento.cartao" class="form-control" name="cartaoSelect" id="cartaoSelect">
+          <option [ngValue]="null" disabled selected>Selecione o Cartão</option>
+          <option *ngFor="let cartao of cartoes" [ngValue]="cartao">
+            {{ cartao.numero }} - {{ cartao.banco }} - {{ cartao.nomeCliente }}
+          </option>
+        </select>
+      </div>-->
     </div>
   </div>
 </div>
-
-<div class="modal fade" #myModal tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Excluir Conta</h5>
-      </div>
-      <div class="modal-body">
-        Confirma a exclusão da conta?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
-        <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--
-<div class="form-group">
-  <label for="contaSelect">Conta</label>
-  <select [(ngModel)]="alertapagamento.conta" class="form-control" name="contaSelect" id="contaSelect">
-    <option [ngValue]="null" disabled selected>Selecione a Conta</option>
-    <option *ngFor="let conta of contas" [ngValue]="conta">
-      {{ conta.banco }} - Agência: {{ conta.agencia }} - Conta: {{ conta.numero }}
-    </option>
-  </select>
-</div>
-
-<div class="form-group">
-  <label for="cartaoSelect">Cartão</label>
-  <select [(ngModel)]="alertapagamento.cartao" class="form-control" name="cartaoSelect" id="cartaoSelect">
-    <option [ngValue]="null" disabled selected>Selecione o Cartão</option>
-    <option *ngFor="let cartao of cartoes" [ngValue]="cartao">
-      {{ cartao.numero }} - {{ cartao.banco }} - {{ cartao.nomeCliente }}
-    </option>
-  </select>
-</div>-->
