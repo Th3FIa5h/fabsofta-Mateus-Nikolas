@@ -25,16 +25,35 @@ export class FormReceitaComponent {
     private router: Router,
     private activedRoute: ActivatedRoute
   ) {
-    this.contaService.getConta().subscribe(contas => {
-      this.contas = contas;
-    });
+    let receitaCarregada: any = null;
     const id = this.activedRoute.snapshot.paramMap.get('id');
     if (id) {
       this.receitaService.getReceitaById(id)
       .subscribe(receita => {
-        this.receita = receita;
+        receitaCarregada = receita;
+        if (receitaCarregada.data && typeof receitaCarregada.data === 'number') {
+          const date = new Date(receitaCarregada.data);
+          receitaCarregada.data = date.toISOString().substring(0, 10) as any;
+        } else if (receitaCarregada.data && typeof receitaCarregada.data === 'string' && (receitaCarregada.data as string).includes('-')) {
+          receitaCarregada.data = (receitaCarregada.data as string).split('T')[0] as any;
+        } else {
+          receitaCarregada.data = undefined as any;
+        }
+        if (receitaCarregada.conta && receitaCarregada.conta.id) {
+          const contaEncontrada = this.contas.find((c: any) => c && c.id === receitaCarregada.conta.id);
+          if (contaEncontrada) receitaCarregada.conta = contaEncontrada;
+        }
+        this.receita = receitaCarregada;
       });
     }
+    this.contaService.getConta().subscribe(contas => {
+      this.contas = contas;
+      if (this.receita && this.receita.conta) {
+        let contaId = typeof this.receita.conta === 'number' ? this.receita.conta : this.receita.conta.id;
+        const contaEncontrada = this.contas.find((c: any) => c && c.id === contaId);
+        if (contaEncontrada) this.receita.conta = contaEncontrada;
+      }
+    });
   }
 
   salvar() {

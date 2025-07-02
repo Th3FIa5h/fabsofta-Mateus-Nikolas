@@ -33,7 +33,7 @@ public class ReceitaController {
         return new ResponseEntity<List<Receita>>(listaReceita,
                     HttpStatus.OK);
     }
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public ResponseEntity<Receita> getReceitaId(@PathVariable Long id) {
         var receita = service.getById(id);
 

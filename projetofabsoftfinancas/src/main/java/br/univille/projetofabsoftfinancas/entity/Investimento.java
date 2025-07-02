@@ -12,7 +12,7 @@ public class Investimento {
     private float valor;
     private String prazo; // Curto, Médio ou Longo prazo
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH},fetch = FetchType.EAGER)
     private Conta conta;
 
     // Getters e Setters

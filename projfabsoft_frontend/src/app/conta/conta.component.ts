@@ -61,6 +61,12 @@ export class ContaComponent {
             );
         },
         error => {
+            this.fecharConfirmacao();
+            if (error && error.status === 500 && error.error && error.error.message && error.error.message.includes('Referential integrity constraint violation')) {
+              alert('Não é possível excluir esta conta porque ela está vinculada a um investimento ou outro registro. Remova os vínculos antes de excluir.');
+            } else {
+              alert('Erro ao excluir conta.');
+            }
             console.error('Erro ao excluir conta:', error);
         }
     );

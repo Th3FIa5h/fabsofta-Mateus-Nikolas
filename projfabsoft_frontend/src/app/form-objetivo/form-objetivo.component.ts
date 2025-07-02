@@ -29,31 +29,76 @@ export class FormObjetivoComponent {
     private router: Router,
     private activedRoute: ActivatedRoute
   ) {
-    const id = this.activedRoute.snapshot.paramMap.get('id');
-    if (id) {
-      this.objetivoService.getObjetivoById(id)
-        .subscribe(objetivo => {
-          this.objetivo = objetivo;
-        });
-    }
-    this.carregarReceitas();
-    this.carregarInvestimentos();
-  }
-
-  carregarReceitas() {
-    this.receitaService.getReceita().subscribe(receitas => {
-      this.receitasDisponiveis = receitas;
+    this.carregarReceitas(() => {
+      this.carregarInvestimentos(() => {
+        const id = this.activedRoute.snapshot.paramMap.get('id');
+        if (id) {
+          this.objetivoService.getObjetivoById(id)
+            .subscribe(objetivo => {
+              if (objetivo.listaReceitas && Array.isArray(objetivo.listaReceitas)) {
+                objetivo.listaReceitas = objetivo.listaReceitas.map((r: any) => {
+                  return this.receitasDisponiveis.find(rd => rd.id === (r.id || r)) || r;
+                });
+              } else {
+                objetivo.listaReceitas = [];
+              }
+              if (objetivo.listaInvestimento && Array.isArray(objetivo.listaInvestimento)) {
+                objetivo.listaInvestimento = objetivo.listaInvestimento.map((i: any) => {
+                  return this.investimentosDisponiveis.find(inv => inv.id === (i.id || i)) || i;
+                });
+              } else {
+                objetivo.listaInvestimento = [];
+              }
+              this.objetivo = objetivo;
+              this.atualizarProgressoAtual();
+            });
+        }
+      });
     });
   }
 
-  carregarInvestimentos() {
+  carregarReceitas(callback?: () => void) {
+    this.receitaService.getReceita().subscribe(receitas => {
+      this.receitasDisponiveis = receitas;
+      if (callback) callback();
+    });
+  }
+
+  carregarInvestimentos(callback?: () => void) {
     this.investimentoService.getInvestimento().subscribe(investimentos => {
       this.investimentosDisponiveis = investimentos;
+      if (callback) callback();
     });
   }
 
   salvar() {
-    this.objetivoService.saveObjetivo(this.objetivo)
+    const objetivoParaSalvar: any = { ...this.objetivo };
+    objetivoParaSalvar.listareceitas = (this.objetivo.listaReceitas || []).map((r: any) => {
+      const receita = typeof r === 'object' && r.id ? this.receitasDisponiveis.find(rd => rd.id === r.id) || r : this.receitasDisponiveis.find(rd => rd.id === r) || { id: r };
+      return {
+        id: receita.id,
+        descricao: receita.descricao || '',
+        valor: receita.valor || 0,
+        data: receita.data || null,
+        tipo: receita.tipo || null,
+        conta: receita.conta || null,
+        cartao: receita.cartao || null
+      };
+    });
+    objetivoParaSalvar.listainvestimento = (this.objetivo.listaInvestimento || []).map((i: any) => {
+      const investimento = typeof i === 'object' && i.id ? this.investimentosDisponiveis.find(inv => inv.id === i.id) || i : this.investimentosDisponiveis.find(inv => inv.id === i) || { id: i };
+      return {
+        id: investimento.id,
+        descricao: investimento.descricao || '',
+        valor: investimento.valor || 0,
+        prazo: investimento.prazo || null,
+        conta: investimento.conta || null
+      };
+    });
+    delete objetivoParaSalvar.listaReceitas;
+    delete objetivoParaSalvar.listaInvestimento;
+
+    this.objetivoService.saveObjetivo(objetivoParaSalvar)
       .subscribe(res => {
         this.router.navigate(['/objetivo']);
       });
@@ -69,5 +114,23 @@ export class FormObjetivoComponent {
 
   home() {
     this.router.navigate(['/dashboard']);
+  }
+  atualizarProgressoAtual() {
+    const totalReceitas = (this.objetivo.listaReceitas || []).reduce((acc, r) => acc + (r.valor || 0), 0);
+    const totalInvestimentos = (this.objetivo.listaInvestimento || []).reduce((acc, i) => acc + (i.valor || 0), 0);
+    const total = totalReceitas + totalInvestimentos;
+    if (this.objetivo.valorAlvo && this.objetivo.valorAlvo > 0) {
+      let percentual = (total / this.objetivo.valorAlvo) * 100;
+      if (percentual > 100) percentual = 100;
+      this.objetivo.progressoAtual = percentual;
+    } else {
+      this.objetivo.progressoAtual = 0;
+    }
+  }
+  onReceitasChange() {
+    this.atualizarProgressoAtual();
+  }
+  onInvestimentosChange() {
+    this.atualizarProgressoAtual();
   }
 }

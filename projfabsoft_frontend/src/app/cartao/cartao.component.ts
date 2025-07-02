@@ -27,8 +27,18 @@ export class CartaoComponent {
   ) {}
 
   ngOnInit(): void {
-    this.cartaoService.getCartao().subscribe(cartao => {
-      this.listaCartoes = cartao;
+    this.cartaoService.getCartao().subscribe(cartaoList => {
+      this.listaCartoes = cartaoList.map(cartao => {
+        if (cartao.validade && typeof cartao.validade === 'number') {
+          const date = new Date(cartao.validade);
+          cartao.validade = date.toISOString().substring(0, 7);
+        } else if (cartao.validade && typeof cartao.validade === 'string' && cartao.validade.includes('-')) {
+          cartao.validade = cartao.validade.split('T')[0].substring(0, 7);
+        } else {
+          cartao.validade = '';
+        }
+        return cartao;
+      });
     });
   }
 

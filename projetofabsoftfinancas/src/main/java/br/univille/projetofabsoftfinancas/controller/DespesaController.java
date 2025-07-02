@@ -33,7 +33,7 @@ public class DespesaController {
         return new ResponseEntity<List<Despesa>>(listaDespesa,
                     HttpStatus.OK);
     }
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public ResponseEntity<Despesa> getDespesaId(@PathVariable Long id) {
         var despesa = service.getById(id);
 

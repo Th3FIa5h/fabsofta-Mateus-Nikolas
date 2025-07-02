@@ -32,7 +32,7 @@ public class LimiteGastosController {
         return new ResponseEntity<List<LimiteGastos>>(listaLimiteGastos,
                     HttpStatus.OK);
     }
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public ResponseEntity<LimiteGastos> getLimiteGastosId(@PathVariable Long id) {
         var limitegastos = service.getById(id);
 
