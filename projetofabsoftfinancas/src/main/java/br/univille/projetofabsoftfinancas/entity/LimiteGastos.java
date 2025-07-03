@@ -1,5 +1,7 @@
 package br.univille.projetofabsoftfinancas.entity;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -8,15 +10,34 @@ public class LimiteGastos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private String titulo;
+    private String categoria;
+
     private float valorLimite;
 
-    @ManyToOne
-    private Despesa despesa;
+    @OneToMany
+    private List<Despesa> despesa;
 
     // Getters e Setters
     
     public long getId() {
         return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public void setId(long id) {
@@ -31,11 +52,11 @@ public class LimiteGastos {
         this.valorLimite = valorLimite;
     }
 
-    public Despesa getDespesa() {
+    public List<Despesa> getDespesa() {
         return despesa;
     }
 
-    public void setDespesa(Despesa despesa) {
+    public void setDespesa(List<Despesa> despesa) {
         this.despesa = despesa;
     }
 

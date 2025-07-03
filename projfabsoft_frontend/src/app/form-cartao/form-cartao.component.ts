@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './form-cartao.component.html',
   styleUrl: './form-cartao.component.css',
-  providers: [CartaoService, Router]
+  providers: [CartaoService]
 })
 export class FormCartaoComponent {
   cartao: Cartao = new Cartao();

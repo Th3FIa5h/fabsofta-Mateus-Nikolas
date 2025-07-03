@@ -11,7 +11,7 @@ import * as bootstrap from 'bootstrap';
   imports: [CommonModule, HttpClientModule],
   templateUrl: './limitegastos.component.html',
   styleUrl: './limitegastos.component.css',
-  providers: [LimitegastosService, Router]
+  providers: [LimitegastosService]
 })
 export class LimitegastosComponent {
   public listaLimiteGastos: Limitegastos[] = [];

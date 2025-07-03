@@ -13,7 +13,7 @@ import { Conta } from '../model/conta';
   imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './form-receita.component.html',
   styleUrl: './form-receita.component.css',
-  providers: [ReceitaService, Router, ContaService]
+  providers: [ReceitaService, ContaService]
 })
 export class FormReceitaComponent {
   receita: Receita = new Receita();

@@ -11,7 +11,7 @@ import * as bootstrap from 'bootstrap';
   imports: [CommonModule, HttpClientModule],
   templateUrl: './cartao.component.html',
   styleUrl: './cartao.component.css',
-  providers: [CartaoService, Router]
+  providers: [CartaoService]
 })
 export class CartaoComponent {
   public listaCartoes: Cartao[] = [];

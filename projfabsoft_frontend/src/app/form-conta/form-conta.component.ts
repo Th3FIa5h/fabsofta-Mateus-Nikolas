@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './form-conta.component.html',
   styleUrl: './form-conta.component.css',
-  providers: [ContaService, Router]
+  providers: [ContaService]
 })
 export class FormContaComponent {
   conta: Conta = new Conta();

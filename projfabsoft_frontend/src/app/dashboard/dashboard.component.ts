@@ -19,7 +19,7 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
   imports: [CommonModule, HttpClientModule, BaseChartDirective],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
-  providers: [ReceitaService, Router, DespesaService, AlertapagamentoService, LimitegastosService ,BaseChartDirective, provideCharts(withDefaultRegisterables())]
+  providers: [ReceitaService, DespesaService, AlertapagamentoService, LimitegastosService ,BaseChartDirective, provideCharts(withDefaultRegisterables())]
 })
 export class DashboardComponent implements OnInit {
   receitaMes: number = 0;

@@ -11,7 +11,7 @@ import * as bootstrap from 'bootstrap';
   imports: [CommonModule, HttpClientModule],
   templateUrl: './despesa.component.html',
   styleUrl: './despesa.component.css',
-  providers: [DespesaService, Router]
+  providers: [DespesaService]
 })
 export class DespesaComponent {
   public listaDespesas: Despesa[] = [];

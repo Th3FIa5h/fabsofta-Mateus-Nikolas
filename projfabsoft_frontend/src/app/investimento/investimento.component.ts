@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   imports: [CommonModule, HttpClientModule],
   templateUrl: './investimento.component.html',
   styleUrl: './investimento.component.css',
-  providers: [InvestimentoService, Router]
+  providers: [InvestimentoService]
 })
 export class InvestimentoComponent {
   public listaInvestimentos: Investimento[] = [];

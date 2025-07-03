@@ -15,7 +15,7 @@ import { Cartao } from '../model/cartao';
   imports: [CommonModule, HttpClientModule],
   templateUrl: './alertapagamento.component.html',
   styleUrl: './alertapagamento.component.css',
-  providers: [AlertapagamentoService, Router, ContaService, CartaoService]
+  providers: [AlertapagamentoService, ContaService, CartaoService]
 })
 export class AlertapagamentoComponent implements OnInit {
   public listaAlertaspagamento: Alertapagamento[] = [];

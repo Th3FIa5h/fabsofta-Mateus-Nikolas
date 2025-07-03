@@ -11,7 +11,7 @@ import * as bootstrap from 'bootstrap';
   imports: [CommonModule, HttpClientModule],
   templateUrl: './conta.component.html',
   styleUrl: './conta.component.css',
-  providers: [ContaService, Router]
+  providers: [ContaService]
 })
 export class ContaComponent {
   public listaContas: Conta[] = [];
