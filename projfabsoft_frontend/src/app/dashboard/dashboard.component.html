@@ -34,12 +34,7 @@
     </div>
     <div class="card grafico grid-item4">
       <h3>Gráfico Receitas/Despesas Mês</h3>
-      <canvas baseChart
-        [datasets]="chartData.datasets"
-        [data]="chartData"
-        [options]="chartOptions"
-        [type]="'pie'">
-      </canvas>
+      <canvas id="grafico-pizza" width="400" height="400"></canvas>
       <div class="card botoes-card">
         <div class="acoes">
           <a (click)="irParaNovaReceitas()" class="btn receita">+ Nova Receita</a>
