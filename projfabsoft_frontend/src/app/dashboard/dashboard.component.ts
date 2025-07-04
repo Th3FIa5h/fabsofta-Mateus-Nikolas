@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+// import { BaseChartDirective } from 'ng2-charts';
+import Chart from 'chart.js/auto';
 import { ReceitaService } from '../service/receita.service';
 import { DespesaService } from '../service/despesa.service';
 import { AlertapagamentoService } from '../service/alertapagamento.service';
@@ -11,15 +13,15 @@ import { Despesa } from '../model/despesa';
 import { Alertapagamento } from '../model/alertapagamento';
 import { Limitegastos } from '../model/limitegastos';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
-import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, HttpClientModule, BaseChartDirective],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
-  providers: [ReceitaService, DespesaService, AlertapagamentoService, LimitegastosService ,BaseChartDirective, provideCharts(withDefaultRegisterables())]
+  providers: [
+    ReceitaService, DespesaService, AlertapagamentoService, LimitegastosService
+  ],
+  imports: [CommonModule, HttpClientModule]
 })
 export class DashboardComponent implements OnInit {
   receitaMes: number = 0;
@@ -35,19 +37,7 @@ export class DashboardComponent implements OnInit {
 
   coresLimite: { [key: number]: string } = {};
 
-  public chartData: ChartConfiguration['data'] = {
-    labels: ['Receita', 'Despesa'],
-    datasets: [
-      { data: [this.receitaMes, this.despesaMes], label: this.getMesAtual() }
-    ],
-  }; 
-
-  public chartOptions: ChartOptions = {
-    responsive: true,
-    plugins: {
-      legend: { display: true, position: 'bottom' }
-    }
-  };
+  private graficoPizza: Chart | undefined;
 
   constructor(
     private router: Router,
@@ -61,6 +51,29 @@ export class DashboardComponent implements OnInit {
     this.carregarDados();
     this.carregarAlertas();
     this.carregarLimites();
+    setTimeout(() => this.renderizarGrafico(), 500); // aguarda dados
+  }
+
+  private renderizarGrafico() {
+    const ctx = document.getElementById('grafico-pizza') as HTMLCanvasElement;
+    if (!ctx) return;
+    if (this.graficoPizza) {
+      this.graficoPizza.destroy();
+    }
+    this.graficoPizza = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Receita', 'Despesa'],
+        datasets: [{
+          data: [this.receitaMes, this.despesaMes],
+          backgroundColor: ['#81c784', '#e57373']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: true, position: 'bottom' } }
+      }
+    });
   }
 
   carregarAlertas() {
@@ -123,12 +136,7 @@ export class DashboardComponent implements OnInit {
     const totalDespesas12 = despesas12.reduce((sum, d) => sum + (d.valor || 0), 0);
     this.saldoTotal = totalReceitas12 - totalDespesas12;
 
-    this.chartData = {
-      labels: ['Receita', 'Despesa'],
-      datasets: [
-        { data: [this.receitaMes, this.despesaMes], label: this.getMesAtual() }
-      ]
-    };
+    setTimeout(() => this.renderizarGrafico(), 100);
   }
 
   getCorAleatoria(): string {
