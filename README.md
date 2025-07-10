@@ -1,3 +1,10 @@
+### Documentação README
+Explica o projeto: como instalar, rodar, contribuir, etc.
+
+Tem a finalidade de ajudar outros desenvolvedores (ou você mesmo no futuro) a entender o projeto.
+
+É bastante utilizado para documentar o projeto em um geral como está sendo feito neste caso.
+
 # Fábrica de Software 2025/1
 
 ## Nome da Equipe

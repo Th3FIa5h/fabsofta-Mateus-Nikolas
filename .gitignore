@@ -1,3 +1,8 @@
+#Documentação do Gitignore
+# O arquivo .gitignore é usado para especificar quais arquivos ou diretórios devem ser ignorados pelo Git.
+# Quando um arquivo ou diretório é listado no .gitignore, o Git não o rastreará, não o incluirá em commits e não o enviará para o repositório remoto.
+# Ou seja, o .gitignore vai literalmente ignorar tudo o que há nele, fazendo com que eles sejam literalmente ignorados pelo Git.
+
 # Logs
 logs
 *.log

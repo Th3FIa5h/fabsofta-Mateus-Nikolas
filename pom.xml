@@ -14,3 +14,8 @@
     </modules>
 
 </project>
+
+<!-- Documentação pom.xml
+Ele é o arquivo de configuração do Maven(back-end build tool) para o projeto Java.
+Ele define o grupo, artefato, versão e módulos do projeto.
+-->

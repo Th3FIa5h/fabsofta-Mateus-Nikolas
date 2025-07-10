@@ -1,0 +1,17 @@
+package-lock.json:
+
+Garante que todos que instalarem as dependências do projeto usem exatamente as mesmas versões.
+Ele existe com o intuito de evitar os problemas de "funciona na minha máquina", garantindo que todos usem as mesmas dependências.
+
+
+package.json:
+
+Define nome, versão, scripts, dependências e outras informações do projeto.
+O que está neste arquivo vai definir qual versão de tal dependência vai ser utilizado no projeto.
+
+
+
+Geral:
+
+O package-lock trava quais versões das dependências vão ser instaladas quando forem utilizadas.
+O package declara que tal dependência vai ser executada e em qual versão.
