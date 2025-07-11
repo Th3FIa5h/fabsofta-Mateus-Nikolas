@@ -15,7 +15,100 @@
 
 </project>
 
-<!-- Documentação pom.xml
-Ele é o arquivo de configuração do Maven(back-end build tool) para o projeto Java.
-Ele define o grupo, artefato, versão e módulos do projeto.
+
+<!--
+Explicação Linha a Linha:
+
+<?xml version="1.0" encoding="UTF-8"?>:
+
+O "version=1.0" indica a versão do XML, e "encoding=UTF-8" especifica a codificação de caracteres usada no arquivo.
+
+-->
+<!--
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">:
+
+Define o namespace do projeto Maven e a localização do esquema XML para validação.
+
+
+<project...>:
+
+É a tag principal do arquivo. Tudo do Maven fica dentro dela.
+
+
+xmlns="http://maven.apache.org/POM/4.0.0":
+
+xmlns = XML Namespace
+
+É como um "sobrenome" para as tags, dizendo: "Essas tags são do padrão Maven, versão 4.0.0."
+
+-->
+<!--
+
+<modelVersion>4.0.0</modelVersion>:
+
+Indica a versão do modelo de projeto Maven usado.
+
+-->
+<!--
+
+<groupId>br.univille</groupId>:
+<artifactId>FSO20251A</artifactId>:
+
+São identificadores únicos do projeto. O "groupId" é como o nome da empresa ou organização, e o "artifactId" é o nome do projeto específico.
+
+Pode ser visto como o nome do pacote em Java, onde "br.univille" é o pacote base e "FSO20251A" é o nome do projeto.
+
+Podem ter projetos com o groupId igual, mas o artifactId deve ser único dentro do groupId.
+
+-->
+<!--
+
+<version>1.0</version>:
+
+Define a versão do projeto. É importante para controle de versões e dependências.
+
+Como o Minecraft, onde cada versão do jogo tem um número de versão específico, aqui também é usado para identificar a versão do projeto.
+
+-->
+<!--
+
+<packaging>pom</packaging>:
+
+O pom indica que é um projeto pai(multi-módulo), ou seja, ele serve só para organizar outros projetos (módulos) dentro dele.
+
+Sempre que o arquivo for um pom.xml de um projeto pai, o packaging será pom.
+
+
+Só deve mudar essa tag se estivesse criando um projeto que não é um multi-módulo, como um jar ou war, por exemplo.
+
+- <packaging>jar</packaging> para um projeto Java que gera um .jar
+- <packaging>war</packaging> para um projeto web que gera um .war
+
+Ou seja, sentro da tag modulos vai haver o nome das pastas que deverão ser criadas, e dentro dessas pastas haverá um pom.xml com o packaging jar ou war, por exemplo.
+
+-->
+<!--
+
+Projeto Multi Módulo:
+É um projeto que contém vários subprojetos (módulos) dentro dele, cada um com seu próprio pom.xml.
+Isso é útil para organizar grandes projetos em partes menores e mais gerenciáveis.
+
+-->
+<!--
+
+<name>Multi Project: FSO 2025 1 A</name>:
+
+É somente o nome do projeto para exibição, não afeta o funcionamento do Maven.
+É como o título do livro, que ajuda a identificar o projeto, mas não influencia no conteúdo.
+Mais para os seres humanos do que para o computador.
+
+-->
+<!--
+
+<modules> e <module>:
+Define os módulos do projeto. Cada módulo é um subprojeto que pode ter seu próprio pom.xml.
+<modules> é a tag que agrupa todos os módulos, e <module> define cada módulo individualmente.
+
 -->

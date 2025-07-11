@@ -41,33 +41,6 @@ Tem a finalidade de ajudar outros desenvolvedores (ou você mesmo no futuro) a e
 
 Repositório com o sistema de controle financeiro que será utilizado como projeto para a disciplina de Fábrica de Software
 
-
-<br>
-<s>
-
-## *Sistema de Cursos Online*
- - Cadastrar usuários
- - Cadastrar cursos
- - Cadastrar vídeos
- - Cadastrar conteúdo
- - Editar usuários
- - Editar cursos
- - Editar conteúdo
- - Deletar usuários
- - Deletar cursos
- - Deletar vídeos
- - Deletar conteúdo
- - Gerar spot de backup
- - Configurar backup dos dados  
- - Configurar gráficos dinâmicos
- - Configurar relatórios mensais
-</s>
-
-<br>
-
-## Livro Eng Software Moderna
-[Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
-<br>
 <br>
 
 ## Histórias de Usuário
@@ -157,13 +130,54 @@ Repositório com o sistema de controle financeiro que será utilizado como proje
  - git config --global user.name "NOME DO USUARIO NO GITHUB"
  - git config --global user.email "EMAIL DA CONTA DO GITHUB"
 
+<br>
+<br>
 
-### Revisão de Java
-
- - JRE - Java Runtime Environment (java.exe)
-    - Máquina Virtual do Java - Interpreta o Bytecode (.class) do Java para linguagem de máquina
- - JDK - Java Development Kit (javac.exe)
-  - Compilar o código Java em bytecode (.class)
-  
+ # Documentação Arquivos
 
 
+## .gitignore
+
+O arquivo .gitignore é usado para determinar quais arquivos ou pastas devem ser ignorados pelo Git.
+
+Quando um arquivo ou pasta é listado no .gitignore, o Git não o incluirá em commits, ou seja, não o enviará para o repositório remoto no Github.
+
+O Git basicamente vai ignorar esses arquivos na hora de fazer o commit.
+
+<br>
+
+ ## package-lock.json
+
+Garante que todos as dependências sejam instaladas nas mesmas versões.
+
+Ele existe com o intuito de evitar os problemas de "funciona na minha máquina", garantindo que todos usem as mesmas dependências.
+
+O package-lock basicamente trava quais versões das dependências vão ser instaladas quando forem utilizadas.
+
+<br>
+
+ ## package.json
+
+Define nome, versão, scripts, dependências e outras informações do projeto.
+
+O que está neste arquivo vai definir qual versão de tal dependência vai ser utilizado no projeto.
+
+O package vai dizer quais dependências declaradas no package-lock vão ser usadas, e vai informar a versão também.
+
+<br>
+
+## pom.xml (Localizado na Raiz do Projeto)
+
+Ele é o arquivo de configuração do Maven(back-end build tool) para o projeto Java.
+
+Ele define o grupo, artefato, versão e módulos do projeto.
+
+<br>
+
+## Maven
+
+Maven é um programa que ajuda a organizar, construir e gerenciar projetos Java.
+
+Ele baixa automaticamente as bibliotecas que seu projeto precisa, compila o código, roda testes e cria o arquivo final para você rodar ou publicar.
+
+Assim, não é necessário fazer tudo isso manualmente: o Maven faz o trabalho pesado e deixa o projeto mais fácil de manter.
