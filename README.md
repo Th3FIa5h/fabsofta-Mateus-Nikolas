@@ -1,10 +1,3 @@
-### Documentação README
-Explica o projeto: como instalar, rodar, contribuir, etc.
-
-Tem a finalidade de ajudar outros desenvolvedores (ou você mesmo no futuro) a entender o projeto.
-
-É bastante utilizado para documentar o projeto em um geral como está sendo feito neste caso.
-
 # Fábrica de Software 2025/1
 
 ## Nome da Equipe
@@ -135,6 +128,9 @@ Repositório com o sistema de controle financeiro que será utilizado como proje
 
  # Documentação Arquivos
 
+<br>
+
+## Arquivos raiz
 
 ## .gitignore
 
@@ -172,6 +168,67 @@ Ele é o arquivo de configuração do Maven(back-end build tool) para o projeto 
 
 Ele define o grupo, artefato, versão e módulos do projeto.
 
+Explicação linha a linha no arquivo.
+
+<br>
+
+## README.md
+
+Explica o projeto: como instalar, rodar, contribuir, etc.
+
+Tem a finalidade de ajudar outros desenvolvedores (ou você mesmo no futuro) a entender o projeto.
+
+É bastante utilizado para documentar o projeto em um geral como está sendo feito neste caso.
+
+<br>
+<br>
+
+## Arquivos pasta ".devcontainer"
+
+## devcontainer.json
+
+<br>
+<br>
+<br>
+
+
+# Documentação Pastas
+
+
+## .devcontainer
+
+<br>
+<br>
+<br>
+
+# Documentação Extensões
+
+<br>
+
+## "." (antes dos arquivos)
+
+<br>
+
+## .json
+
+<br>
+
+## .xml
+
+<br>
+
+## .md
+
+<br>
+
+## .yml
+
+<br>
+<br>
+<br>
+
+# Documentação Extras
+
 <br>
 
 ## Maven
@@ -181,3 +238,7 @@ Maven é um programa que ajuda a organizar, construir e gerenciar projetos Java.
 Ele baixa automaticamente as bibliotecas que seu projeto precisa, compila o código, roda testes e cria o arquivo final para você rodar ou publicar.
 
 Assim, não é necessário fazer tudo isso manualmente: o Maven faz o trabalho pesado e deixa o projeto mais fácil de manter.
+
+<br>
+
+## Docker
