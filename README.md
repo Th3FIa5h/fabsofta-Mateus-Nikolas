@@ -187,6 +187,8 @@ Tem a finalidade de ajudar outros desenvolvedores (ou você mesmo no futuro) a e
 
 ## devcontainer.json
 
+É o arquivo de configuração principal dentro da pasta .devcontainer. Ele diz ao VS Code como criar o ambiente(container).
+
 <br>
 <br>
 <br>
@@ -196,6 +198,12 @@ Tem a finalidade de ajudar outros desenvolvedores (ou você mesmo no futuro) a e
 
 
 ## .devcontainer
+
+Essa pasta serve para centralizar a configuração do Dev Container.
+
+Ela pode conter: devcontainer.json(arquivo principal de configuração), Dockerfile(para criar imagem personalizada), scripts(podem ser executados na criação do ambiente), etc.
+
+Essa pasta existe justamente para crescer no futuro sem bagunçar a raiz do projeto.
 
 <br>
 <br>
@@ -242,3 +250,31 @@ Assim, não é necessário fazer tudo isso manualmente: o Maven faz o trabalho p
 <br>
 
 ## Docker
+
+Docker é uma tecnologia que permite criar e rodar containers, que são ambientes isolados e portáteis onde você pode executar aplicações.
+
+Analogia: Pense no Docker como um navio cargueiro (daí o nome “Docker”), e cada container é um compartimento desse navio com tudo o que uma aplicação precisa para funcionar: sistema operacional, dependências, ferramentas, etc.
+
+<br>
+
+## Container <- Docker
+
+Um container é como uma mini-máquina virtual super leve, que roda uma aplicação de forma isolada.
+
+Ele tem:
+
+Seu próprio sistema de arquivos
+
+Suas próprias bibliotecas
+
+Um comportamento reproduzível (funciona igual em qualquer lugar)
+
+Exemplo real: você pode rodar uma aplicação Java 21 com Angular, mesmo que seu computador só tenha Python instalado — porque o container traz tudo pronto lá dentro.
+
+Seria como uma máquina virtual rodando o sistema pronto basicamente.
+
+<br>
+
+## Dev Container
+
+Assim como o container é como uma máquina virtual, mas como o propósito de desenvolver o sistema.
