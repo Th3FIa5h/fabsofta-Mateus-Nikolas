@@ -28,4 +28,127 @@
       "ms-azuretools.vscode-docker",
       "cweijan.vscode-database-client2"
     ]
+
+/*
+
+    Documentação arquivo linha a linha:
+
+
+    • "name": "Angular dev container":
+
+    Nome do container que será exibido quando estiver rodando. Aparece normalmente no canto inferior esquerdo do VS Code.
+
+
+    • "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm"
+
+    É o molde que a ferramenta(ex: vs code) utilizará para formar o dev container.
+    Ela vem com SO mínimo (geralmente Linux)
+    Vem com as ferramentas instaladas (Nesse exemplo o Node.js, Java, etc)
+    Arquivos e configurações prontas
+    
+    Quando você usa uma imagem, o Docker clona ela e cria um container (como um bolo pronto, feito do molde).
+
+
+    • "features": {}
+
+    Adiciona recursos extras pré-configurados ao Dev Container de forma simples como um combo de instalações automáticas.
+    Instalar Node.js
+
+    Configurar Docker no container
+
+    Adicionar ferramentas de desenvolvimento (como Git, Azure CLI, etc.)
+
+    Tudo isso sem escrever comandos manuais no terminal ou no Dockerfile.
+
+
+   • "ghcr.io/devcontainers/features/docker-in-docker:2": {
+        "version": "latest"
+      }
+    
+    Instala o docker dentro do container.
+    Porque às vezes você precisa rodar containers dentro do seu container, como:
+
+    Rodar um banco de dados de teste (como um MySQL ou PostgreSQL)
+
+    Testar imagens
+
+    Simular produção local
+  
+
+    • "ghcr.io/devcontainers/features/java:1": {
+        "version": "21",
+        "installMaven": true,
+        "installGradle": false
+      }
+
+    Instala o Java 21 no seu container.
+
+    "installMaven": true → instala o Maven, gerenciador de pacotes/projetos Java.
+
+    "installGradle": false → não instala o Gradle, outro gerenciador Java.
+
+    Quando isso é útil?
+    Quando o seu projeto tem alguma parte backend ou microserviço feito em Java.
+    Assim, você pode compilar, testar ou rodar sem sair do container.
+
+
+    • "ghcr.io/devcontainers/features/github-cli:1": {
+        "version": "latest"
+      }
+
+    Instala o GitHub CLI, ferramenta oficial da GitHub para usar via terminal.
+
+    Você pode:
+
+    Clonar repositórios
+
+    Criar pull requests
+
+    Comentar issues
+
+    Fazer login no GitHub
+
+
+    • "postCreateCommand": "npm install -g @angular/cli"
+
+    Essa linha diz ao sistema rodar o que está nela após ter sido criado o ambiente.
+
+    • "postCreateCommand"
+    
+    Essa sentença que declara que o que virá após é para ser executado quando o container ter sido criado.
+   
+    • "npm install -g @angular/cli"
+
+    npm: O gerenciador de pacotes do Node.js.
+
+    install: Comando para instalar um pacote.
+
+    -g: Instala o pacote globalmente no sistema (e não só dentro de um projeto).
+
+    @angular/cli: É o Angular Command Line Interface, ferramenta que permite você criar e rodar projetos Angular com comandos como ng serve.
+
+
+    • "appPort": [4000, 4200, 4433, 5000, 8080, 9876]
+
+    Essas são as portas que eu o sistema usará para acessar a aplicação, APIs ou serviços.
+    Essa linha declara quais portas eu quero deixar aberta, pronta e preparada para o sistema utilizar.
+
+
+    • "extensions": [ ... ]
+
+    Extensões do VS Code que serão instaladas automaticamente.
+
+    Sendo as seguintes:
+
+    "ms-vscode.vscode-typescript-next": Usa a versão mais recente do TypeScript no VS Code
+    "Angular.ng-template": Suporte à sintaxe de templates Angular
+    "dbaeumer.vscode-eslint": Verifica erros de código com ESLint
+    "vscjava.vscode-java-pack": Suporte completo a Java no VS Code
+    "jebbs.plantuml": Cria diagramas UML com código
+    "humao.rest-client": Testa APIs direto do VS Code
+    "ms-azuretools.vscode-docker": Suporte para Docker no VS Code
+    "cweijan.vscode-database-client2": Interface para acessar bancos de dados dentro do VS Code
+
+*/
+
   }
