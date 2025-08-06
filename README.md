@@ -206,6 +206,14 @@ Ela pode conter: devcontainer.json(arquivo principal de configuração), Dockerf
 Essa pasta existe justamente para crescer no futuro sem bagunçar a raiz do projeto.
 
 <br>
+
+## .github
+
+<br>
+
+## workflows
+
+<br>
 <br>
 <br>
 
@@ -278,3 +286,9 @@ Seria como uma máquina virtual rodando o sistema pronto basicamente.
 ## Dev Container
 
 Assim como o container é como uma máquina virtual, mas como o propósito de desenvolver o sistema.
+Exemplo: O codespace do github é um container, porque nós iniciamos ele já com todas as extensões e configurações feitas. O Container configurado no arquivo devcontainer.json seria para que não está como colaborador do projeto no github e deseja executá-lo assim mesmo.
+
+<br>
+
+## buildbackend.yml
+
